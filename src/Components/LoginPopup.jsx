@@ -84,6 +84,6 @@ export default function LoginPopup({ isOpen, close }) {
         </div>
       </div>
     </>,
-    document.getElementById("login")
+    document.getElementById("portal")
   );
 }
