@@ -210,3 +210,21 @@ input{
         .Register-container.right-panel-active.overlay-right{
             transform:translateX(20%);
         }
+
+.exit{
+    position: absolute;
+    top: 4%;
+    right: 2%;
+}
+
+.exit:hover{
+    cursor: pointer;
+}
+
+.googleLogin{
+    padding-left: 17% ;
+}
+
+.googleSignup{
+    padding-left: 17%;
+}
