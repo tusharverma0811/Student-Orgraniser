@@ -1,7 +1,7 @@
 import React from "react";
-import "../login.css";
+import "../Stylesheets/login.css";
 import ReactDom from "react-dom";
-import CloseIcon from '@material-ui/icons/Close';
+import CloseIcon from '@mui/icons-material/Close';
 import GoogleButton from 'react-google-button';
 
 export default function LoginPopup({ isOpen, close }) {
@@ -20,7 +20,7 @@ export default function LoginPopup({ isOpen, close }) {
         <div className="reg">
          <CloseIcon onClick={close} className="exit"></CloseIcon>
           <div className={isLogin?"Register-container form":"Register-container form right-panel-active"}>
-            <div className="form-container sign-up-container" >
+            <form className="form-container sign-up-container" >
                 <h1>Create Account</h1>
                 <input type="text" name="name" placeholder="Enter Name" required />
                 <input type="email" name="email" placeholder="Enter Email" required />
@@ -31,8 +31,8 @@ export default function LoginPopup({ isOpen, close }) {
                 <div className="googleSignup">
                   <GoogleButton ></GoogleButton>
                 </div>
-          </div>
-          <div className="form-container sign-in-container">
+            </form>
+          <form className="form-container sign-in-container">
                 <h1>Sign In</h1>
                 <input type="email" name="email" placeholder="Enter Email" required />
                 <input type="password" name="password" placeholder="Enter Password" required />
@@ -41,7 +41,7 @@ export default function LoginPopup({ isOpen, close }) {
                 <div className="googleLogin">
                   <GoogleButton></GoogleButton>
                </div>
-          </div>
+          </form>
           <div className="overlay-container">
             <div className="overlay-form">
                 {isLogin?
