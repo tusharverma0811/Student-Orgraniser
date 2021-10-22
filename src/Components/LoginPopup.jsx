@@ -1,5 +1,5 @@
 import React from "react";
-import "../login.css";
+import "../Stylesheets/login.css";
 import ReactDom from "react-dom";
 
 export default function LoginPopup({ isOpen, close }) {
