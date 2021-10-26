@@ -1,0 +1,112 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Montserrat", sans-serif;
+  font-size: 62.5%;
+}
+body {
+  background: #eee;
+  padding: 0 16px;
+}
+
+header {
+  background-color: white;
+  margin: auto -20px;
+  padding: 5px 50px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+  height: 7rem;
+}
+
+footer {
+  height: 0;
+  width: 70%;
+  height: 2.5rem;
+}
+
+footer p {
+  color: #ccc;
+}
+
+.note {
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 4px 8px #ccc;
+  padding: 50px;
+  width: 1980px;
+  text-align: center;
+  margin: 50px;
+  float: none;
+}
+.note h3 {
+  font-size: 1.1em;
+}
+.note p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.subcard {
+  margin-top: 20px;
+}
+
+.card-styling {
+  border-radius: 1rem;
+  position: absolute;
+}
+
+.search-styling {
+  width: 7rem;
+  color: white;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+.me-2 {
+  width: 30rem;
+}
+
+.card-title-styling {
+  padding-top: 5rem;
+  text-align: left;
+  font-family: montserrat;
+  font-weight: bolder;
+}
+
+.join-class-button-styling {
+  border-radius: 5rem;
+}
+
+.card-body-styling {
+  font-family: montserrat;
+  padding-bottom: 1px;
+}
+
+.brand-styling {
+  font-family: montserrat;
+  font-weight: 900;
+}
+
+.navbar {
+  padding-top: 1.5rem;
+  z-index: 1;
+}
+
+.search-icon-styling {
+  color: black;
+  size: 100rem;
+}
+
+.btn-primary {
+  position: absolute;
+  bottom: 11%;
+  left: 92%;
+}
+
+Card {
+  position: absolute;
+}
