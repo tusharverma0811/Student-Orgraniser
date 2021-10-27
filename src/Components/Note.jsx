@@ -1,8 +1,12 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
+import "../Stylesheets/noteStyles.css";
+import Header from "./Header";
 
 function Note() {
   return (
+    <>
+    <Header></Header>
     <div className="subcard">
       <Card
         className="card-styling"
@@ -26,6 +30,7 @@ function Note() {
         </Card.Body>
       </Card>
     </div>
+    </>
   );
 }
 

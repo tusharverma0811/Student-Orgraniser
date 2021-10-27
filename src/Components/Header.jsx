@@ -1,4 +1,6 @@
 import React from "react";
+import "../Stylesheets/header-styles.css";
+
 import {
   Navbar,
   Container,

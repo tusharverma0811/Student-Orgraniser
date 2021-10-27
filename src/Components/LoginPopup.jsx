@@ -20,6 +20,8 @@ export default function LoginPopup({ isOpen, close }) {
   
   return ReactDom.createPortal(
     <>
+    <div className="reg">
+    <div className="overlay">
 <div class="main"> 
 
     <input type="checkbox" id="chk" aria-hidden="true" />
@@ -43,6 +45,8 @@ export default function LoginPopup({ isOpen, close }) {
           <button>Login with Google</button>
 			</div>
 
+      </div>
+      </div>
       </div>
    
     </>,
