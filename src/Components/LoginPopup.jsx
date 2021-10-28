@@ -22,32 +22,34 @@ export default function LoginPopup({ isOpen, close }) {
     <>
     <div className="overlayl">
     <div className="regl">
-<div class="main"> 
-
-    <input type="checkbox" id="chk" aria-hidden="true" />
-
+    
+<div className="main"> 
+<i className="fas fa-times fa-2x closeSign"></i>
+    <input className="credInput" type="checkbox" id="chk" aria-hidden="true" />
+    
 			<div className="signup">
-					<label for="chk" aria-hidden="true">Sign up</label>
+      
+					<label className="loginLabel" htmlFor="chk" aria-hidden="true">Sign up</label>
           {/* <a href=""> <i class="fab fa-google fa-2x"></i></a> */}
          
-					<input type="text" name="txt" placeholder="Enter Name" required="" />
-					<input type="email" name="email" placeholder="Enter Email" required="" />
-					<input type="password" name="pswd" placeholder="Enter Password" required="" />
-          <input type="password" name="pswd" placeholder="Re-Enter Password" required="" />
-					<button>Sign up</button>
+					<input className="credInput" type="text" name="txt" placeholder="Enter Name" required="" />
+					<input className="credInput" type="email" name="email" placeholder="Enter Email" required="" />
+					<input className="credInput" type="password" name="pswd" placeholder="Enter Password" required="" />
+          <input className="credInput" type="password" name="pswd" placeholder="Re-Enter Password" required="" />
+					<button className="btnReg">Sign up</button>
           <h1 className="signUpOR">OR</h1>
-          <button>Sign up with Google</button>
+          <button className="btnReg">Sign up with Google</button>
           
 			</div>
 
 			<div className="login">
-					<label for="chk" aria-hidden="true">Login</label>
+					<label className="loginLabel" htmlFor="chk" aria-hidden="true">Login</label>
           
-					<input type="email" name="email" placeholder="Email" required="" />
-					<input type="password" name="pswd" placeholder="Password" required="" />
-					<button>Login</button>
+					<input className="credInput" type="email" name="email" placeholder="Email" required="" />
+					<input className="credInput" type="password" name="pswd" placeholder="Password" required="" />
+					<button className="btnReg">Login</button>
           <h1>OR</h1>
-          <button>Login with Google</button>
+          <button className="btnReg">Login with Google</button>
 			</div>
 
       </div>
