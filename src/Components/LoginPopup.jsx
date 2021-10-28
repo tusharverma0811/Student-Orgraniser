@@ -24,7 +24,7 @@ export default function LoginPopup({ isOpen, close }) {
     <div className="regl">
     
 <div className="main"> 
-<i className="fas fa-times fa-2x closeSign"></i>
+<a href=""><i className="fas fa-times fa-2x closeSign"></i></a>
     <input className="credInput" type="checkbox" id="chk" aria-hidden="true" />
     
 			<div className="signup">
