@@ -82,7 +82,7 @@ const AddSubjectPopup = ({ isOpen, close }) => {
     } = event;
 
     setDays(typeof value === "string" ? value.split(",") : value);
-    times.length = days.length;
+    
   };
 
   const addSubject = (event)=>{
