@@ -3,20 +3,7 @@ import "../Stylesheets/login.css";
 import ReactDom from "react-dom";
 
 export default function LoginPopup({ isOpen, close }) {
-  const [isLogin, setLogin] = React.useState(false);
   if (!isOpen) return null;
-  
-
-  const loginStyle={
-            transform: isLogin?"translateX(100%)":"translateX(0%)",
-            opacity:"1",
-            zIndex:"5",
-            animation: "show 0.6s"
-  }
-
-  function toggleLogin(){
-    setLogin(true);
-  }
   
   return ReactDom.createPortal(
     <>
@@ -24,7 +11,7 @@ export default function LoginPopup({ isOpen, close }) {
     <div className="regl">
     
 <div className="main"> 
-<a href=""><i className="fas fa-times fa-2x closeSign"></i></a>
+<i className="fas fa-times fa-2x closeSign" onClick={close}></i>
     <input className="credInput" type="checkbox" id="chk" aria-hidden="true" />
     
 			<div className="signup">
