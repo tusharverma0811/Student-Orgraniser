@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { StyledEngineProvider } from "@mui/material/styles";
+import AuthState from "../src/Contexts/AuthState";
 
 ReactDOM.render(
-  <StyledEngineProvider injectFirst>
+    <AuthState>
     <App />
-  </StyledEngineProvider>,
-  document.getElementById("root")
+    </AuthState>
+  ,document.getElementById("root")
 );
