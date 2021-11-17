@@ -4,6 +4,7 @@ const router = express.Router();
 const {body, validationResult} = require("express-validator");
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
+const authorizeuser = require("../middlewares/authorizeuser.js");
 
 //Creating a new user using POST: "/auth/createuser"
 router.post(
@@ -94,5 +95,24 @@ router.post(
         }
     }
 );
+
+//Get logged in user details using : GET /auth/getuser (login required)
+
+router.get(
+    "/getuser",
+    authorizeuser,
+    async(req,res)=>{
+        //Get the current user id which was appended to the request by authorizeuser middleware
+        const userId = req.user.id;
+
+        try{
+            let user = await User.findById(userId).select("-password");
+            return res.json({user});
+        }catch(err){
+            console.log(err);
+            return res.status(500).json({error:"Some Internal Error Occurred"});
+        }
+    }
+)
 
 module.exports = router;
