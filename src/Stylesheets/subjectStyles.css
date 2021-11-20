@@ -1,55 +1,58 @@
-.note {
-    background: #fff;
-    border-radius: 7px;
-    box-shadow: 0 4px 8px #ccc;
-    padding: 50px;
-    width: 1980px;
-    text-align: center;
-    margin: 50px;
-    float: none;
-  }
-  .note h3 {
-    font-size: 1.1em;
-  }
-  .note p {
-    font-size: 1.1em;
-    margin-bottom: 10px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-  }
+
+
+.bg{
+  width: 100vw;
+  height: 100vh;
+  background: #ebf5fc;
+}
+
   
-  .subcard {
+  /* .subcard {
     margin-top: 20px;
-  }
+  } */
   
   .card-styling {
-    border-radius: 1rem;
-    position: absolute;
+
+      display: flex;
+      border-radius: 2rem;
+      width: 70%;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      margin-bottom: 2rem;
+      background:#d5eeffb7;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.562);
+      border-radius: 1.5rem;
+
+         
   }
   
-  .search-styling {
+  /* .search-styling {
     width: 7rem;
     color: white;
     background-color: #0d6efd;
     border-color: #0d6efd;
-  }
+  } */
   
-  .me-2 {
+  /* .me-2 {
     width: 30rem;
-  }
+  } */
   
   .card-title-styling {
     padding-top: 5rem;
-    text-align: left;
+    margin-top: -4rem;
+    text-align: center;
     font-family: montserrat;
     font-weight: bolder;
   }
   
   .join-class-button-styling {
-    border-radius: 5rem;
+        border-radius: 10rem;
     position: absolute;
-    bottom: 11%;
-    left: 92%;
+    bottom: 22%;
+    left: 90%;
+    right: 1%;
+      background: #03a9f4;
   }
   
   .card-body-styling {
@@ -57,12 +60,12 @@
     padding-bottom: 1px;
   }
   
-  .brand-styling {
+  /* .brand-styling {
     font-family: montserrat;
     font-weight: 900;
-  }
+  } */
   
-  .navbar {
+  /* .navbar {
     padding-top: 1.5rem;
     z-index: 1;
   }
@@ -70,9 +73,9 @@
   .search-icon-styling {
     color: black;
     size: 100rem;
-  }
+  } */
   
-  Card {
+  /* Card {
     position: absolute;
   }
-  
+   */

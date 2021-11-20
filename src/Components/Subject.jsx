@@ -6,29 +6,75 @@ import Header from "./Header";
 function Subject() {
   return (
     <>
-    <Header></Header>
+    <div className="bg">
+  
     <div className="subcard">
       <Card
         className="card-styling"
-        content="width=device-width"
-        style={{ width: "141rem" }}
+        
       >
-        <Card.Img
-          variant="top"
-          src="card-sample-image.jpg"
-          alt="No image found"
-          class="img-fluid"
-        />
+        
         <Card.Body className="card-body-styling">
           <Card.Title className="card-title-styling">Subject Name</Card.Title>
-          <Card.Text className="card-body-styling">
+          <Card.Text>
             On click, this card expands!
           </Card.Text>
           <Button className="join-class-button-styling" variant="primary">
-            Click to join class
+            Join Class
           </Button>
         </Card.Body>
       </Card>
+
+      <Card
+        className="card-styling"
+      >
+        
+        <Card.Body className="card-body-styling">
+          <Card.Title className="card-title-styling">Subject Name</Card.Title>
+          <Card.Text>
+            On click, this card expands!
+          </Card.Text>
+          <Button className="join-class-button-styling" variant="primary">
+            Join Class
+          </Button>
+        </Card.Body>
+      </Card>
+
+      <Card
+        className="card-styling"
+        
+      >
+        
+        <Card.Body className="card-body-styling">
+          <Card.Title className="card-title-styling">Subject Name</Card.Title>
+          <Card.Text>
+            On click, this card expands!
+          </Card.Text>
+          <Button className="join-class-button-styling" variant="primary">
+            Join Class
+          </Button>
+        </Card.Body>
+      </Card>
+
+      <Card
+        className="card-styling"
+        
+      >
+        
+        <Card.Body className="card-body-styling">
+          <Card.Title className="card-title-styling">Subject Name</Card.Title>
+          <Card.Text>
+            On click, this card expands!
+          </Card.Text>
+          <Button className="join-class-button-styling" variant="primary">
+            Join Class
+          </Button>
+        </Card.Body>
+      </Card>
+
+
+
+    </div>
     </div>
     </>
   );
