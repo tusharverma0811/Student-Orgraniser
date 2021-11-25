@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import ReactDom from "react-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import {
@@ -14,6 +14,7 @@ import { useTheme } from "@mui/material/styles";
 import "../Stylesheets/addSub.css";
 import TimeInput from "./TimeInput";
 import {Button} from "react-bootstrap";
+import SubjectContext from "../Contexts/SubjectContext";
 
 const day = [
   "Monday",
@@ -49,6 +50,8 @@ const AddSubjectPopup = ({ isOpen, close }) => {
   const [days, setDays] = React.useState([]);
   const [subject, setSubject] = useState("");
   const theme = useTheme();
+  const {addSubject} = useContext(SubjectContext);
+
   let times = [];
   if (!isOpen) return null;
 
@@ -85,13 +88,17 @@ const AddSubjectPopup = ({ isOpen, close }) => {
     times.length = days.length;
   };
 
-  const addSubject = (event)=>{
+  const addNewSubject = async(event)=>{  
     event.preventDefault();
-
     console.log(times);
-    setDays([]);
-    setSubject("");
-    close();
+    try{
+      await addSubject(subject,times);
+      setDays([]);
+      setSubject("");
+      close();
+    } catch(err){
+      console.log(err);
+    }
   }
   return ReactDom.createPortal(
     <>
@@ -153,7 +160,7 @@ const AddSubjectPopup = ({ isOpen, close }) => {
                 return <TimeInput name={dayName} key={dayName} storeTime={storeTime}/>
               })}
             </div>
-            <Button variant="primary" onClick={addSubject}>Add Subject</Button>
+            <Button variant="primary" onClick={addNewSubject}>Add Subject</Button>
           </div>
         </div>
       </div>

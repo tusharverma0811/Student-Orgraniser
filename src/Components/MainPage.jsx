@@ -1,15 +1,19 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState,useEffect, useContext } from 'react'
 import { Fab } from '@mui/material'
 import AddIcon from '@mui/icons-material/Add';
 import "../Stylesheets/main.css";
 import AddSubjectPopup from './AddSubjectPopup';
 import { useHistory } from 'react-router-dom';
+import SubjectContext from '../Contexts/SubjectContext';
+import Subject from './Subject';
 
 const MainPage = () => {
-    
+    const {subjects,getSubjects} = useContext(SubjectContext);
     useEffect(()=>{
         if(!localStorage.getItem("token")){
             history.push("/");
+        }else{
+            getSubjects();
         }
     })
     const [popup,setPopup] = useState(false);
@@ -28,6 +32,11 @@ const MainPage = () => {
         <>
         <div className="temp">
             <button className="btn btn-primary" onClick={handleLogout}>Logout</button>
+        </div>
+        <div className="subjects">
+            {subjects.map((subject)=>{
+                return <Subject name={subject.subName} key={subject._id} schedule={subject.routine}/>
+            })}
         </div>
         <div className="addButton">
            <Fab onClick={openPopup} color="primary" aria-label="add" size="large" >
