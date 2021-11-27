@@ -10,6 +10,7 @@ const TimeInput = (props) => {
 
   const handleChange = (newValue) => {
     setValue(newValue);
+
     const temp = newValue.getHours()+":"+newValue.getMinutes();
     props.storeTime(props.name,temp,url);
   };

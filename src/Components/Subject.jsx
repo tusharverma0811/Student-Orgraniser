@@ -1,35 +1,69 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Card, Button } from "react-bootstrap";
 import "../Stylesheets/subjectStyles.css";
-import Header from "./Header";
+// import Header from "./Header";
 
-function Subject() {
+function Subject(props) {
+  const [classToday,setClassToday] = useState(false);
+  const [isClass,setIsClass] = useState("");
+  const allDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"] 
+  const {schedule} = props;
+  let link;
+  useEffect(()=>{
+    checkDay();
+  })
+
+  const checkDay = ()=>{
+    let date = new Date();
+    let dayNum = date.getDay();
+    let day = allDays[dayNum];
+
+    let check = schedule.find((obj)=>{
+      return obj.day === day
+    })
+
+    if(check){
+      const timing = check.time;
+      link = check.link;
+      setClassToday(true);
+      const hours = timing.slice(0,2);
+      let hrs = parseInt(hours);
+      let classTime;
+      if(hrs>12){
+        hrs = hrs -12;
+        classTime = hrs + hours.slice(2) + " P.M";
+      }else{
+        if(hrs===12){
+          classTime = hours + " P.M";
+        }else{
+          classTime = hours + " A.M";
+        }
+      }
+      setIsClass(`You have a class today at ${classTime}`);
+    }else{
+      setIsClass("Wooho! You Don't have a class today");
+    }
+  }
+
+  const joinClass = ()=>{
+    console.log(link);
+    window.open(link);
+  }
   return (
     <>
-    <Header></Header>
-    <div className="subcard">
-      <Card
-        className="card-styling"
-        content="width=device-width"
-        style={{ width: "141rem" }}
-      >
-        <Card.Img
-          variant="top"
-          src="card-sample-image.jpg"
-          alt="No image found"
-          class="img-fluid"
-        />
-        <Card.Body className="card-body-styling">
-          <Card.Title className="card-title-styling">Subject Name</Card.Title>
-          <Card.Text className="card-body-styling">
-            On click, this card expands!
-          </Card.Text>
-          <Button className="join-class-button-styling" variant="primary">
-            Click to join class
-          </Button>
-        </Card.Body>
-      </Card>
-    </div>
+          <Card className="card-styling">
+            <Card.Body className="card-body-styling">
+              <Card.Title className="card-title-styling">
+                {props.name}
+              </Card.Title>
+              <Card.Text>{isClass}</Card.Text>
+              <Button className="join-class-button-styling" variant="primary" disabled = {!classToday} onClick = {joinClass}>
+                Join Class
+              </Button>
+            </Card.Body>
+          </Card>
+
+         
     </>
   );
 }

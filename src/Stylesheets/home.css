@@ -1,6 +1,7 @@
 .temp{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 400px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-bottom: 35px;
+    padding: 10px;
 }
