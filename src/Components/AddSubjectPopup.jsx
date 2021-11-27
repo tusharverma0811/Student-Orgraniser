@@ -50,7 +50,7 @@ const AddSubjectPopup = ({ isOpen, close }) => {
   const [days, setDays] = React.useState([]);
   const [subject, setSubject] = useState("");
   const theme = useTheme();
-  const {addSubject} = useContext(SubjectContext);
+  const {addSubject,getSubjects} = useContext(SubjectContext);
 
   let times = [];
   if (!isOpen) return null;
@@ -96,6 +96,7 @@ const AddSubjectPopup = ({ isOpen, close }) => {
       setDays([]);
       setSubject("");
       close();
+      getSubjects();
     } catch(err){
       console.log(err);
     }

@@ -4,12 +4,14 @@ import "../Stylesheets/subjectStyles.css";
 // import Header from "./Header";
 
 function Subject(props) {
+  const [classToday,setClassToday] = useState(false);
   const [isClass,setIsClass] = useState("");
   const allDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"] 
   const {schedule} = props;
+  let link;
   useEffect(()=>{
     checkDay();
-  },[])
+  })
 
   const checkDay = ()=>{
     let date = new Date();
@@ -22,12 +24,30 @@ function Subject(props) {
 
     if(check){
       const timing = check.time;
-      console.log(timing);
-      console.log(date);
-      setIsClass(`You have a class at `);
+      link = check.link;
+      setClassToday(true);
+      const hours = timing.slice(0,2);
+      let hrs = parseInt(hours);
+      let classTime;
+      if(hrs>12){
+        hrs = hrs -12;
+        classTime = hrs + hours.slice(2) + " P.M";
+      }else{
+        if(hrs===12){
+          classTime = hours + " P.M";
+        }else{
+          classTime = hours + " A.M";
+        }
+      }
+      setIsClass(`You have a class today at ${classTime}`);
     }else{
       setIsClass("Wooho! You Don't have a class today");
     }
+  }
+
+  const joinClass = ()=>{
+    console.log(link);
+    window.open(link);
   }
   return (
     <>
@@ -37,7 +57,7 @@ function Subject(props) {
                 {props.name}
               </Card.Title>
               <Card.Text>{isClass}</Card.Text>
-              <Button className="join-class-button-styling" variant="primary">
+              <Button className="join-class-button-styling" variant="primary" disabled = {!classToday} onClick = {joinClass}>
                 Join Class
               </Button>
             </Card.Body>

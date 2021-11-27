@@ -10,14 +10,15 @@ const TimeInput = (props) => {
 
   const handleChange = (newValue) => {
     setValue(newValue);
-    // const temp = newValue.getHours()+":"+newValue.getMinutes();
-    props.storeTime(props.name,newValue,url);
+
+    const temp = newValue.getHours()+":"+newValue.getMinutes();
+    props.storeTime(props.name,temp,url);
   };
 
   const handleLinkChange = (event)=>{
       setUrl(event.target.value);
-      // const temp = value.getHours()+":"+value.getMinutes();
-      props.storeTime(props.name,value,event.target.value);
+      const temp = value.getHours()+":"+value.getMinutes();
+      props.storeTime(props.name,temp,event.target.value);
   }
   return (
     <>

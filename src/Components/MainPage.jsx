@@ -15,7 +15,7 @@ const MainPage = () => {
         }else{
             getSubjects();
         }
-    })
+    },[])
     const [popup,setPopup] = useState(false);
     const history = useHistory();
     const openPopup = ()=>{
@@ -35,7 +35,7 @@ const MainPage = () => {
         </div>
         <div className="subjects">
             {subjects.map((subject)=>{
-                return <Subject name={subject.subName} key={subject._id} schedule={subject.routine}/>
+                return <Subject name={subject.subName} key={subject._id} sid={subject._id} schedule={subject.routine}/>
             })}
         </div>
         <div className="addButton">

@@ -11,7 +11,7 @@ const subjectSchema = new mongoose.Schema({
         required:true
     },
     routine:{
-        type: [{day:String,time:Date,link:String}]
+        type: [{day:String,time:String,link:String}]
     }
 });
 
