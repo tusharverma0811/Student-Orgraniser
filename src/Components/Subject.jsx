@@ -37,16 +37,20 @@ function Subject(props) {
       link = check.link;
       setClassToday(true);
       const hours = timing.slice(0, 2);
+      let minutes = timing.slice(3);
+      if(minutes==="0"){
+        minutes="00";
+      }
       let hrs = parseInt(hours);
       let classTime;
       if (hrs > 12) {
         hrs = hrs - 12;
-        classTime = hrs + hours.slice(2) + " P.M";
+        classTime = hrs + ":" + minutes + " P.M";
       } else {
         if (hrs === 12) {
-          classTime = hours + " P.M";
+          classTime = hours + ":" + minutes + " P.M";
         } else {
-          classTime = hours + " A.M";
+          classTime = hours + ":" + minutes + " A.M";
         }
       }
       setIsClass(`You have a class today at ${classTime}`);
@@ -56,7 +60,6 @@ function Subject(props) {
   };
 
   const joinClass = () => {
-    console.log(link);
     window.open(link);
   };
 
@@ -77,8 +80,11 @@ function Subject(props) {
           >
             Join Class
           </Button>
+          {/* <i className="fas fa-angle-double-down downShift" onClick={editSubject}></i> */}
+          
         </Card.Body>
       </Card>
+      
     </>
   );
 }

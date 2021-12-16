@@ -116,7 +116,7 @@ router.patch(
                 {safe :true , upsert:true}
             );
 
-            return res.send("Successfully added");
+            return res.json({Success:"Successfully Added"});
         }catch(err){
             console.log(err);
             return res.status(500).json({error:"Some Internal Error Occured"});
@@ -143,7 +143,7 @@ router.delete(
             await Subject.findByIdAndUpdate(req.params.subjectid,
                 {$pull:{"routine":{_id:req.params.routineid}}});
             
-            return res.send("Successfully deleted");
+            return res.json({Success:"Successfully Deleted"});
         }catch(err){
             console.log(err);
             return res.status(500).json({error:"Some Internal Error Occured"});
@@ -197,7 +197,7 @@ router.patch(
                 }}
             );
             
-            return res.send("Successfully Updated");
+            return res.json({Success:"Successfully Updated"});
         }catch(err){
             console.log(err);
             res.status(500).json({error:"Some Internal Error Occured"});
