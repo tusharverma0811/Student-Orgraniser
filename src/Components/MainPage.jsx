@@ -15,6 +15,7 @@ const MainPage = () => {
         }else{
             getSubjects();
         }
+        // eslint-disable-next-line
     },[])
     const [popup,setPopup] = useState(false);
     const history = useHistory();

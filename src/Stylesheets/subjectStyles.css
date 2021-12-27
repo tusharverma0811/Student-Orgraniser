@@ -23,7 +23,7 @@
       background:#d5eeffb7;
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.562);
       border-radius: 1.5rem;
-
+     cursor: pointer;
          
   }
   
@@ -59,6 +59,26 @@
     font-family: montserrat;
     padding-bottom: 1px;
   }
+
+.downShift{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.fas{
+  cursor: pointer;
+}
+/* .downShift {
+    color: black;
+    position: absolute;
+    left: 51rem;
+    z-index: 3;
+    top: 5.5rem;
+    margin-top: 5px;
+} */
+  
   
   /* .brand-styling {
     font-family: montserrat;

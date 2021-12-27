@@ -41,6 +41,30 @@ router.get(
     }
 )
 
+//Get details of a particular subject using : GET /subject/getsubject/subjectid (login required)
+router.get(
+    "/getsubject/:subjectid",
+    authorizeuser,
+    async (req,res)=>{
+        try{
+            const subject = await Subject.findById(req.params.subjectid);
+
+            if(!subject){
+                return res.status(400).json({error:"No Subject Found"});
+            }
+
+            if(subject.user.toString()!==req.user.id){
+                return res.status(400).json({error:"Unathorized"});
+            }
+
+            return res.json(subject);
+        }catch(err){
+            console.log(err);
+            return res.status(500).json({error:"Some Internal Error Occured"});
+        }
+    }
+)
+
 //Delete an entire subject using : DELETE /subject/deletesubject/subjectid (login required)
 router.delete(
     "/deletesubject/:subjectid",
@@ -92,7 +116,7 @@ router.patch(
                 {safe :true , upsert:true}
             );
 
-            return res.send("Successfully added");
+            return res.json({Success:"Successfully Added"});
         }catch(err){
             console.log(err);
             return res.status(500).json({error:"Some Internal Error Occured"});
@@ -119,7 +143,7 @@ router.delete(
             await Subject.findByIdAndUpdate(req.params.subjectid,
                 {$pull:{"routine":{_id:req.params.routineid}}});
             
-            return res.send("Successfully deleted");
+            return res.json({Success:"Successfully Deleted"});
         }catch(err){
             console.log(err);
             return res.status(500).json({error:"Some Internal Error Occured"});
@@ -173,7 +197,7 @@ router.patch(
                 }}
             );
             
-            return res.send("Successfully Updated");
+            return res.json({Success:"Successfully Updated"});
         }catch(err){
             console.log(err);
             res.status(500).json({error:"Some Internal Error Occured"});
