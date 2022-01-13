@@ -13,22 +13,25 @@ const EditSubjectPopup = (props) => {
   const [changesMade,setChangesMade] = useState(false);
   const {isOpen,close,sid,rid,toAdd} = props;  
   let editedSched = {day:props.day,time:"",link:props.url};
+  const [editedDay,setEditedDay] = useState("");
   if (!isOpen) return null;
-
+  
   const storeEditedSched = (nameOfDay,timeOfDay,linkOfTheDay)=>{
-    const temp = {
+     const temp = {
       day: nameOfDay,
       time: timeOfDay,
       link: linkOfTheDay
     }
     setChangesMade(true);
     editedSched = temp;
+    setEditedDay(nameOfDay);
   }
 
   const editSched = async()=>{
     try{
     if(!toAdd){
-    const response = await updateRoutine(editedSched.day,editedSched.time,editedSched.link,sid,rid);
+    console.log(editedDay);
+    const response = await updateRoutine(editedDay,editedSched.time,editedSched.link,sid,rid);
 
       if(!response.hasOwnProperty("error")){
         await getSubject(sid);
