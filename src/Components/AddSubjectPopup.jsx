@@ -46,7 +46,7 @@ const getStyles = (name, personName, theme) => {
   };
 };
 
-const AddSubjectPopup = ({ isOpen, close }) => {
+const AddSubjectPopup = ({ isOpen, close, notify_success, notify_error }) => {
   const [days, setDays] = React.useState([]);
   const [subject, setSubject] = useState("");
   const theme = useTheme();
@@ -90,15 +90,15 @@ const AddSubjectPopup = ({ isOpen, close }) => {
 
   const addNewSubject = async(event)=>{  
     event.preventDefault();
-    console.log(times);
     try{
       await addSubject(subject,times);
       setDays([]);
       setSubject("");
+      notify_success("Subject Added Successfully")
       close();
       getSubjects();
     } catch(err){
-      console.log(err);
+      notify_error(err)
     }
   }
   return ReactDom.createPortal(

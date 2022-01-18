@@ -4,7 +4,7 @@ import ReactDom from "react-dom";
 import AuthContext from "../Contexts/AuthContext";
 import { useHistory } from "react-router-dom";
 
-export default function LoginPopup({ isOpen, close }) {
+export default function LoginPopup({ isOpen, close,notify_success,notify_error }) {
   const { login, signup } = useContext(AuthContext);
   const loginEid = useRef();
   const loginPwd = useRef();
@@ -25,10 +25,11 @@ export default function LoginPopup({ isOpen, close }) {
     );
 
     if (response.hasOwnProperty("error")) {
-      console.log(response.error);
+      notify_error(response.error)
     } else if (response.hasOwnProperty("errors")) {
-      console.log("Some issue with request body");
+      notify_error("Some issues with input format")
     } else {
+      notify_success("Successfully Signed In")
       localStorage.setItem("token", response.authToken);
       history.push("/main");
     }
@@ -43,10 +44,11 @@ export default function LoginPopup({ isOpen, close }) {
     );
 
     if (response.hasOwnProperty("error")) {
-      console.log(response.error);
+      notify_error(response.error)
     } else if (response.hasOwnProperty("errors")) {
-      console.log("Some issue with request body");
+      notify_error("Some issues with input format")
     } else {
+      notify_success("Successfully Signed In");
       localStorage.setItem("token", response.authToken);
       history.push("/main");
     }
@@ -142,6 +144,7 @@ export default function LoginPopup({ isOpen, close }) {
           </div>
         </div>
       </div>
+      
     </>,
     document.getElementById("portal")
   );

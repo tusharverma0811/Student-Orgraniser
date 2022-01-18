@@ -6,8 +6,9 @@ import AddSubjectPopup from './AddSubjectPopup';
 import { useHistory } from 'react-router-dom';
 import SubjectContext from '../Contexts/SubjectContext';
 import Subject from './Subject';
+import Navbar from './Navbar';
 
-const MainPage = () => {
+const MainPage = (props) => {
     const {subjects,getSubjects} = useContext(SubjectContext);
     useEffect(()=>{
         if(!localStorage.getItem("token")){
@@ -22,18 +23,13 @@ const MainPage = () => {
     const openPopup = ()=>{
         setPopup(true);
     }
-    const handleLogout = ()=>{
-        localStorage.removeItem("token");
-        history.push("/");
-    }
+    
     const closePopup = ()=>{
         setPopup(false);
     }
     return (
         <>
-        <div className="temp">
-            <button className="btn btn-primary" onClick={handleLogout}>Logout</button>
-        </div>
+        <Navbar/>
         <div className="subjects">
             {subjects.map((subject)=>{
                 return <Subject name={subject.subName} key={subject._id} sid={subject._id} schedule={subject.routine}/>
@@ -44,7 +40,7 @@ const MainPage = () => {
                <AddIcon ></AddIcon>
            </Fab> 
         </div>
-        <AddSubjectPopup isOpen={popup} close={closePopup}/>
+        <AddSubjectPopup isOpen={popup} close={closePopup} notify_success={props.notify_success} notify_error={props.notify_error}/>
         </>
     )
 }

@@ -1,15 +1,34 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "../Stylesheets/navbar.css";
+import LoginPopup from "./LoginPopup";
 
-const Navbar = () => {
+
+
+const Navbar = (props) => {
+  const [popup, setPopup] = useState(false);
+  const history = useHistory();
+  
+  function openPopup() {
+    setPopup(true);
+  }
+  
+  function closePopup() {
+    setPopup(false);
+  }
+  const handleLogout = ()=>{
+    localStorage.removeItem("token");
+    
+    history.push("/");
+}
   return (
     <>
       <div className="full">
         <div className="header">
-          <div classNameName="navbar">
+          {/* <div classNameName="navbar"> */}
             <nav className="navbar navbar-expand-lg">
-              <Link className="navbar-brand">Logo</Link>
+              <Link className="navbar-brand" to="/">Logo</Link>
               <button
                 className="navbar-toggler"
                 type="button"
@@ -25,14 +44,15 @@ const Navbar = () => {
                 <ul className="navbar-nav ml-auto">
                   <li className="nav-item active">
                     <Link className="nav-link" to="/">
-                      Home{" "}
+                      Home
                     </Link>
                   </li>
                   <li className="nav-item">
                     <Link className="nav-link" to="/">
-                      About{" "}
+                      About
                     </Link>
                   </li>
+                  {localStorage.getItem("token")!=null?
                   <li className="nav-item dropdown">
                     <span
                       className="nav-link dropdown-toggle"
@@ -47,24 +67,27 @@ const Navbar = () => {
                       className="dropdown-menu"
                       aria-labelledby="navbarDropdownMenuLink"
                     >
-                      <Link className="dropdown-item" >
+                      <Link className="dropdown-item" to="/main">
                         <i className="fas fa-book"></i> &nbsp;My Subjects
                       </Link>
                       <Link className="dropdown-item">
                         <i className="fas fa-cog"></i> &nbsp;Edit Password
                       </Link>
 
-                      <Link className="dropdown-item">
+                      <span className="dropdown-item" onClick={handleLogout}>
                         <i className="fas fa-sign-in-alt"></i> &nbsp;Logout
-                      </Link>
+                      </span>
                     </div>
-                  </li>
+                  </li>:
+                  <li className="nav-item" onClick={openPopup}>Get Started</li>
+                  }
                 </ul>
               </div>
             </nav>
-          </div>
+          {/* </div> */}
         </div>
       </div>
+      <LoginPopup isOpen={popup} close={closePopup} notify_success={props.notify_success} notify_error={props.notify_error}></LoginPopup>
     </>
   );
 };

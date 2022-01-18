@@ -5,6 +5,7 @@ import { Card,Button } from "react-bootstrap";
 import "../Stylesheets/detailStyles.css";
 import SubjectDetailCard from "./SubjectDetailCard";
 import EditSubjectPopup from "./EditSubjectPopup";
+import Navbar from "./Navbar";
 
 const SubjectDetail = () => {
   const { subjectid } = useParams();
@@ -26,6 +27,7 @@ const SubjectDetail = () => {
   }
   return (
     <>
+    <Navbar/>
       <Card className="heading-card-styling">
         <Card.Body className="heading-card-body-styling">
           <Card.Title className="heading-card-title-styling">
