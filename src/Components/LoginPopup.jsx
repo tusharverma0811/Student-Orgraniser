@@ -3,8 +3,14 @@ import "../Stylesheets/login.css";
 import ReactDom from "react-dom";
 import AuthContext from "../Contexts/AuthContext";
 import { useHistory } from "react-router-dom";
+import { onGoogleSignIn } from "../Firebase/firebase";
 
-export default function LoginPopup({ isOpen, close,notify_success,notify_error }) {
+export default function LoginPopup({
+  isOpen,
+  close,
+  notify_success,
+  notify_error,
+}) {
   const { login, signup } = useContext(AuthContext);
   const loginEid = useRef();
   const loginPwd = useRef();
@@ -25,11 +31,11 @@ export default function LoginPopup({ isOpen, close,notify_success,notify_error }
     );
 
     if (response.hasOwnProperty("error")) {
-      notify_error(response.error)
+      notify_error(response.error);
     } else if (response.hasOwnProperty("errors")) {
-      notify_error("Some issues with input format")
+      notify_error("Some issues with input format");
     } else {
-      notify_success("Successfully Signed In")
+      notify_success("Successfully Signed In");
       localStorage.setItem("token", response.authToken);
       history.push("/main");
     }
@@ -44,9 +50,9 @@ export default function LoginPopup({ isOpen, close,notify_success,notify_error }
     );
 
     if (response.hasOwnProperty("error")) {
-      notify_error(response.error)
+      notify_error(response.error);
     } else if (response.hasOwnProperty("errors")) {
-      notify_error("Some issues with input format")
+      notify_error("Some issues with input format");
     } else {
       notify_success("Successfully Signed In");
       localStorage.setItem("token", response.authToken);
@@ -138,13 +144,14 @@ export default function LoginPopup({ isOpen, close,notify_success,notify_error }
                   Login
                 </button>
                 <h1>OR</h1>
-                <button className="btnReg">Login with Google</button>
+                <button className="btnReg" onClick={onGoogleSignIn}>
+                  Login with Google
+                </button>
               </form>
             </div>
           </div>
         </div>
       </div>
-      
     </>,
     document.getElementById("portal")
   );
