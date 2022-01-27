@@ -1,42 +1,20 @@
-import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {initializeApp} from "firebase/app";
+import "firebase/auth";
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC36xiM0yKgeQrn5D-vmzC2lAGTlMHZQ3g",
-  authDomain: "student-organiser-44260.firebaseapp.com",
-  projectId: "student-organiser-44260",
-  storageBucket: "student-organiser-44260.appspot.com",
-  messagingSenderId: "880526202453",
-  appId: "1:880526202453:web:4e00f673854c5eec71a6dc",
+  apiKey: "AIzaSyAXa3Ym3ckUwAlOp7Lthmes8Kk9W9KQzeE",
+  authDomain: "student-organiser-94ed3.firebaseapp.com",
+  projectId: "student-organiser-94ed3",
+  storageBucket: "student-organiser-94ed3.appspot.com",
+  messagingSenderId: "425908924897",
+  appId: "1:425908924897:web:2d3379b0a434b1b4d722a0",
+  measurementId: "G-7K29XESLBK"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const authentication = getAuth(app);
 
-const provider = new GoogleAuthProvider();
+export const auth = getAuth(app);
+export default app;
 
-export const onGoogleSignIn = () => {
-  signInWithPopup(authentication, provider)
-    .then((result) => {
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-
-      const user = result.user;
-      console.log(result);
-      console.log(token);
-      console.log(user);
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-
-      const email = error.email;
-
-      const credential = GoogleAuthProvider.credentialFromError(error);
-      console.log(error);
-      console.log(errorCode);
-      console.log(errorMessage);
-      console.log(email);
-      console.log(credential);
-    });
-};
