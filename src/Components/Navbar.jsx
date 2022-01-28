@@ -33,7 +33,7 @@ const Navbar = (props) => {
           {/* <div classNameName="navbar"> */}
           <nav className="navbar navbar-expand-lg">
             <Link className="navbar-brand" to="/">
-              Logo
+              <i class="fas fa-cube"></i> STUDENT FRAME
             </Link>
             <button
               className="navbar-toggler"
@@ -86,9 +86,11 @@ const Navbar = (props) => {
                     </div>
                   </li>
                 ) : (
-                  <li className="nav-item" onClick={openPopup}>
-                    Get Started
-                  </li>
+                  <button className="getstarted">
+                    <li className="nav-link" onClick={openPopup}>
+                      Get Started <i class="fas fa-arrow-right"></i>
+                    </li>
+                  </button>
                 )}
               </ul>
             </div>
@@ -96,6 +98,7 @@ const Navbar = (props) => {
           {/* </div> */}
         </div>
       </div>
+
       <LoginPopup
         isOpen={popup}
         close={closePopup}

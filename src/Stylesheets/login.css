@@ -27,12 +27,13 @@ width: 100%;
 /* Yaha Se Jo Code Tum Likha Tha  */
 .main {
   width: 350px;
-  height: 600px;
-  background: red;
+  height: 450px;
+  background: rgb(124, 153, 172);
+  box-shadow: 10px 10px 10px black;
   overflow: hidden;
-  background: url("../1.jpg") no-repeat center/ cover;
   border-radius: 10px;
-  box-shadow: 5px 20px 50px #000;
+  font-family: "Work Sans", sans-serif;
+  /*box-shadow: 5px 20px 50px rgb(94, 93, 93);*/
 }
 h1 {
   color: black;
@@ -43,24 +44,20 @@ h1 {
   font-weight: bold;
 }
 
-.signUpOR
-{
+.signUpOR {
   color: #fff;
 }
 
-
-.fa-google
-{
+.fa-google {
   color: #fff;
   margin-top: -2rem;
-  margin-bottom: 3rem;;
+  margin-bottom: 3rem;
   align-items: center;
   justify-content: center;
   display: flex;
 }
 
-.login-google
-{
+.login-google {
   color: #6d44b8;
 }
 
@@ -77,23 +74,41 @@ h1 {
   font-size: 2em;
   justify-content: center;
   display: flex;
-  margin: 40px;
+  margin: 30px;
   font-weight: bold;
   cursor: pointer;
   transition: 0.5s ease-in-out;
 }
+
 .credInput {
   width: 60%;
   height: 37px;
-  background: #e0dede;
+  background: white;
   justify-content: center;
   display: flex;
-  margin: 20px auto;
+  margin: 10px auto;
   padding: 10px;
   border: none;
   outline: none;
   border-radius: 5px;
+  opacity: 0.7;
+  font-family: "Work Sans", sans-serif;
 }
+
+.forgot-password {
+  text-align: center;
+  position: absolute;
+  cursor: pointer;
+  right: 110px;
+}
+
+.password-icon {
+  position: absolute;
+  cursor: pointer;
+  top: 181px;
+  right: 80px;
+}
+
 .btnReg {
   width: 60%;
   height: 40px;
@@ -101,18 +116,18 @@ h1 {
   justify-content: center;
   display: block;
   color: #fff;
-  background: #573b8a;
+  background: rgb(44, 122, 123, 0.5);
   font-size: 1em;
   font-weight: bold;
   margin-top: 20px;
   outline: none;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: 0.2s ease-in;
   cursor: pointer;
 }
 .btnReg:hover {
-  background: #6d44b8;
+  background: #2c7a7b;
 }
 .login {
   height: 460px;
@@ -122,7 +137,7 @@ h1 {
   transition: 0.8s ease-in-out;
 }
 .login label {
-  color: #573b8a;
+  color: #2c7a7b;
   transform: scale(0.6);
 }
 
@@ -136,7 +151,7 @@ h1 {
   transform: scale(0.6);
 }
 
-.closeSign{
+.closeSign {
   position: relative;
   left: 300px;
   top: 15px;

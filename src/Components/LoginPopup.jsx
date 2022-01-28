@@ -14,7 +14,6 @@ export default function LoginPopup({
   const { login, signup, googleLogin } = useContext(AuthContext);
   const { googleSignin, firebaseSignup, firebaseLogin } =
     useContext(FirebaseContext);
-
   const loginEid = useRef();
   const loginPwd = useRef();
   const eid = useRef();
@@ -26,15 +25,13 @@ export default function LoginPopup({
 
   const handleGoogleSignin = async (e) => {
     e.preventDefault();
-
     try {
       const result = await googleSignin();
       const user = result.user;
       const name = await user.displayName;
       const emailId = await user.email;
 
-      
-      console.log(user.displayName,user.email);
+      console.log(user.displayName, user.email);
       try {
         const response = await googleLogin(name, emailId);
         if (response.hasOwnProperty("error")) {
@@ -48,11 +45,11 @@ export default function LoginPopup({
         }
       } catch (err) {
         console.log(err);
-        notify_error(err);
+        notify_error("Error signing in through Google");
       }
     } catch (err) {
       console.log(err.message);
-      notify_error(err.message);
+      notify_error("Error signing in through Google");
     }
   };
   const handleSignup = async (e) => {
@@ -76,11 +73,11 @@ export default function LoginPopup({
         }
       } catch (err) {
         console.log(err);
-        notify_error(err);
+        notify_error("Sorry! Try Again");
       }
     } catch (err) {
       console.log(err.message);
-      notify_error(err.message);
+      notify_error("Sorry! Try Again");
     }
   };
 
@@ -102,13 +99,14 @@ export default function LoginPopup({
         }
       } catch (err) {
         console.log(err);
-        notify_error(err);
+        notify_error("Check your email/password");
       }
     } catch (err) {
-      console.log(err.message);
-      notify_error(err.message);
+      console.log(err);
+      notify_error("Check your email/password");
     }
   };
+
   return ReactDom.createPortal(
     <>
       <div className="overlayl">
@@ -153,21 +151,13 @@ export default function LoginPopup({
                   placeholder="Enter Password"
                   required=""
                 />
-                <input
-                  className="credInput"
-                  type="password"
-                  name="pswd"
-                  placeholder="Re-Enter Password"
-                  required=""
-                />
+                <i className="fa fa-eye password-icon" />
                 <button type="submit" className="btnReg" onClick={handleSignup}>
                   Sign up
                 </button>
-                <h1 className="signUpOR">OR</h1>
-                <button className="btnReg">Sign up with Google</button>
+                <label className="forgot-password">forgot password?</label>
               </form>
             </div>
-
             <div className="login">
               <form>
                 <label className="loginLabel" htmlFor="chk" aria-hidden="true">
@@ -195,7 +185,7 @@ export default function LoginPopup({
                 </button>
                 <h1>OR</h1>
                 <button className="btnReg" onClick={handleGoogleSignin}>
-                  Login with Google
+                  Sign In with Google
                 </button>
               </form>
             </div>
