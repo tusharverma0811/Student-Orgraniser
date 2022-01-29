@@ -141,6 +141,13 @@ h1 {
   transform: scale(0.6);
 }
 
+.or {
+  color: rgb(44, 122, 123);
+  padding-top: 6px;
+  padding-bottom: -1px;
+  font-size: large;
+}
+
 #chk:checked ~ .login {
   transform: translateY(-500px);
 }

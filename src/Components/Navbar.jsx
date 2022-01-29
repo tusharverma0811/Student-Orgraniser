@@ -67,7 +67,7 @@ const Navbar = (props) => {
                       aria-haspopup="true"
                       aria-expanded="false"
                     >
-                      <i className="fas fa-user-circle"></i>
+                      <i className="far fa-user-circle icon-2x"></i>
                     </span>
                     <div
                       className="dropdown-menu"
@@ -87,7 +87,7 @@ const Navbar = (props) => {
                   </li>
                 ) : (
                   <button className="getstarted">
-                    <li className="nav-link" onClick={openPopup}>
+                    <li className="nav-link-get-started" onClick={openPopup}>
                       Get Started <i class="fas fa-arrow-right"></i>
                     </li>
                   </button>

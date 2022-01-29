@@ -1,75 +1,98 @@
-
-
-.bg{
+.bg {
   width: 100vw;
   height: 100vh;
   background: #ebf5fc;
 }
 
-  
-  /* .subcard {
+/* .subcard {
     margin-top: 20px;
   } */
-  
-  .card-styling {
 
-      display: flex;
-      border-radius: 2rem;
-      width: 70%;
-      align-items: center;
-      justify-content: center;
-      margin: auto;
-      margin-bottom: 2rem;
-      background:#d5eeffb7;
-      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.562);
-      border-radius: 1.5rem;
-     cursor: pointer;
-     margin-top: 3rem;
-         
-  }
-  
-  /* .search-styling {
+.card-styling {
+  display: flex;
+  border-radius: 2rem;
+  width: 70%;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 2rem;
+  background: #d5eeffb7;
+  box-shadow: 0 0rem 0rem rgba(0, 0, 0, 0.562);
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+/* .search-styling {
     width: 7rem;
     color: white;
     background-color: #0d6efd;
     border-color: #0d6efd;
   } */
-  
-  /* .me-2 {
+
+/* .me-2 {
     width: 30rem;
   } */
-  
-  .card-title-styling {
-    padding-top: 5rem;
-    margin-top: -4rem;
-    text-align: center;
-    font-family: montserrat;
-    font-weight: bolder;
-  }
-  
-  .join-class-button-styling {
-        border-radius: 10rem;
-    position: absolute;
-    bottom: 22%;
-    left: 90%;
-    right: 1%;
-      background: #03a9f4;
-  }
-  
-  .card-body-styling {
-    font-family: montserrat;
-    padding-bottom: 1px;
-  }
 
-.downShift{
+.card-title-styling {
+  padding-top: 3.5rem;
+  margin-top: -4rem;
+  text-align: center;
+  font-family: "Work Sans", sans-serif;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.join-class-button-styling {
+  border-radius: 10px;
+  position: absolute;
+  bottom: 22%;
+  left: 77%;
+  align-self: center;
+  right: 1%;
+  background: rgb(44, 122, 123);
+  font-family: "Work Sans", sans-serif;
+  cursor: pointer;
+  color: white;
+  height: 40px;
+}
+
+.join-class-button-styling:hover {
+  opacity: 1;
+}
+
+.card-body-styling {
+  font-family: "Work Sans", sans-serif;
+  padding-bottom: 1px;
+  width: 390px;
+}
+
+.card-title-styling {
+  text-align: center;
+}
+
+.downShift {
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
 
-.fas{
+.fas {
   cursor: pointer;
+}
+
+.card-styling {
+  width: 450px;
+  left: 11%;
+  margin-right: 900px;
+  margin-left: 25px;
+  background: white;
+  border: 1px solid rgb(44, 122, 123);
+}
+
+.card-styling:hover {
+  background: rgb(44, 122, 123, 0.2);
 }
 /* .downShift {
     color: black;
@@ -79,14 +102,13 @@
     top: 5.5rem;
     margin-top: 5px;
 } */
-  
-  
-  /* .brand-styling {
+
+/* .brand-styling {
     font-family: montserrat;
     font-weight: 900;
   } */
-  
-  /* .navbar {
+
+/* .navbar {
     padding-top: 1.5rem;
     z-index: 1;
   }
@@ -95,8 +117,8 @@
     color: black;
     size: 100rem;
   } */
-  
-  /* Card {
+
+/* Card {
     position: absolute;
   }
    */

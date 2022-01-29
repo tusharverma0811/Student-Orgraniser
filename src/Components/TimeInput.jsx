@@ -11,15 +11,15 @@ const TimeInput = (props) => {
   const handleChange = (newValue) => {
     setValue(newValue);
 
-    const temp = newValue.getHours()+":"+newValue.getMinutes();
-    props.storeTime(props.name,temp,url);
+    const temp = newValue.getHours() + ":" + newValue.getMinutes();
+    props.storeTime(props.name, temp, url);
   };
 
-  const handleLinkChange = (event)=>{
-      setUrl(event.target.value);
-      const temp = value.getHours()+":"+value.getMinutes();
-      props.storeTime(props.name,temp,event.target.value);
-  }
+  const handleLinkChange = (event) => {
+    setUrl(event.target.value);
+    const temp = value.getHours() + ":" + value.getMinutes();
+    props.storeTime(props.name, temp, event.target.value);
+  };
   return (
     <>
       <FormControl sx={{ m: 1, width: 500 }}>
@@ -35,7 +35,6 @@ const TimeInput = (props) => {
           <Grid item xs={4}>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <TimePicker
-                label="Time"
                 value={value}
                 onChange={handleChange}
                 renderInput={(params) => <TextField {...params} />}

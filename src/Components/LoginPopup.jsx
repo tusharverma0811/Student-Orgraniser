@@ -183,7 +183,7 @@ export default function LoginPopup({
                 <button type="submit" className="btnReg" onClick={handleLogin}>
                   Login
                 </button>
-                <h1>OR</h1>
+                <h1 className="or">OR</h1>
                 <button className="btnReg" onClick={handleGoogleSignin}>
                   Sign In with Google
                 </button>

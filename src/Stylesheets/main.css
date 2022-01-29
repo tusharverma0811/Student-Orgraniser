@@ -1,7 +1,26 @@
-.addButton{
-    position: fixed;
-    right: 0%;
-    bottom: 0%;
-    margin-right: 10px;
-    margin-bottom: 10px;
+.addButton {
+  position: fixed;
+  left: 0%;
+  top: 15%;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  background: rgb(44, 122, 123);
+  color: white;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 0.5rem;
+  opacity: 0.8;
+  font-family: "Work Sans", sans-serif;
+}
+
+.addButton:hover {
+  opacity: 1;
+}
+
+.vertical {
+  border-left: 1px solid grey;
+  height: 800px;
+  position: absolute;
+  top: 10%;
+  left: 11%;
 }

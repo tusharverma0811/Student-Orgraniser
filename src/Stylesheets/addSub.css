@@ -3,9 +3,10 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: white;
+  background: #7ba3a3;
   padding: 50px;
   z-index: 1000;
+  border-radius: 10px;
 }
 
 .overlay {
@@ -18,8 +19,23 @@
   z-index: 1000;
 }
 
-.input{
-  color: blue;
+.Add-subject-button {
+  background: rgb(44, 122, 123);
+  color: white;
+  border-color: #2c7a7b;
+  width: 110px;
+  margin-left: 400px;
+  margin-top: 20px;
+  border-radius: 10px;
+  height: 40px;
+  font-family: "Work Sans", sans-serif;
+  opacity: 0.8;
+}
+
+.Add-subject-button:hover {
+  opacity: 1;
+  background-color: #2c7a7b;
+  border-color: #2c7a7b;
 }
 /* .MuiInputLabel-root{
   color: blue;
@@ -28,6 +44,14 @@
   color: red;
 } */
 
-.MuiInput-underline::before{
+.MuiInput-underline::before {
   border-bottom-color: red;
+}
+
+.close {
+  position: absolute;
+  left: 580px;
+  top: 13.5px;
+  color: black;
+  cursor: pointer;
 }
