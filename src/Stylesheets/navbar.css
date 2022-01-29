@@ -52,6 +52,10 @@
   color: #2c7a7b;
 }
 
+.nav-link:focus {
+  color: #2c7a7b;
+}
+
 .navbar-collapse {
   font-size: medium;
   padding: 0.1px;

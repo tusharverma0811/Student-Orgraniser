@@ -5,7 +5,6 @@ import { useHistory } from "react-router-dom";
 import SubjectContext from "../Contexts/SubjectContext";
 import Subject from "./Subject";
 import Navbar from "./Navbar";
-import background from "../img/5293.jpg";
 
 const MainPage = (props) => {
   const { subjects, getSubjects } = useContext(SubjectContext);
@@ -29,7 +28,6 @@ const MainPage = (props) => {
   return (
     <>
       <Navbar />
-      <div style={{ background: `url(${background})` }} />
       <div className="subjects">
         {subjects.map((subject) => {
           return (
