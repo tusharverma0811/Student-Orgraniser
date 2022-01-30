@@ -1,7 +1,35 @@
-.temp{
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    margin-bottom: 35px;
-    padding: 10px;
+.temp {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-bottom: 35px;
+  padding: 10px;
+}
+
+.summary-heading {
+  font-family: "Work-Sans", sans-serif;
+  font-weight: bold;
+  color: #2c7a7b;
+  font-size: 20px;
+}
+
+.brief-summary {
+  font-family: "Work-Sans", sans-serif;
+  display: inline;
+  font-size: medium;
+  color: #2c7a7b;
+  opacity: 0.7;
+}
+.footer {
+  position: fixed;
+  padding: 10px 10px 0px 10px;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: #2c7a7b;
+  opacity: 0.7;
+  font-family: "Work-Sans", sans-serif;
+  color: white;
+  text-align: center;
+  font-weight: medium;
 }

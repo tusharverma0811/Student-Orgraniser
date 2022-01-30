@@ -52,6 +52,9 @@ const MainPage = (props) => {
         notify_success={props.notify_success}
         notify_error={props.notify_error}
       />
+      <div className="footer">
+        &#169; STUDENT FRAME 2022. &nbsp; All Rights Reserved.
+      </div>
     </>
   );
 };
