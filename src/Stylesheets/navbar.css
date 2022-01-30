@@ -10,11 +10,6 @@
   font-size: 1.35rem;
   z-index: 100;
   font-family: "Work Sans", sans-serif;
-  /*overflow: hidden;
-  position: fixed; 
-  top: 0; 
-  width: 100%;
-  margin-bottom: 50px;*/
 }
 .header a {
   text-transform: uppercase;
