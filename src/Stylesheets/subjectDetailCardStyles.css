@@ -37,6 +37,21 @@
   box-shadow: 0 1rem 2rem rgb(0 0 0 / 56%);
 }
 
+@media (max-width: 500px) {
+
+  .details-card-styling {
+
+  width: 20rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  }
+
+  .heading-card-styling {
+    width: 20rem;
+  }
+  
+}
+
 .edit-button-styling {
   border-radius: 76rem;
   position: relative;
@@ -52,4 +67,13 @@
 
 .card-text {
   font-weight: bold;
+  text-align: center;
+}
+@media (max-width: 500pc) {
+  
+}
+
+.add-day-button{
+  margin: 2rem;
+
 }

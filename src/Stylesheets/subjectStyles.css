@@ -27,6 +27,13 @@
      margin-top: 3rem;
          
   }
+
+  @media (max-width: 500px) {
+    
+    .card-styling {
+      height: 15rem;
+    }
+  }
   
   /* .search-styling {
     width: 7rem;
@@ -54,6 +61,16 @@
     left: 90%;
     right: 1%;
       background: #03a9f4;
+  }
+
+  @media(max-width: 500px)
+  {
+    .join-class-button-styling {
+      bottom: 15%;
+    left: 35%;
+    right: 70%;
+    }
+
   }
   
   .card-body-styling {

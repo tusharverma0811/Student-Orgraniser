@@ -42,7 +42,7 @@ const SubjectDetail = () => {
         })}
       </div>
       <div className="routineAdd">
-        <Button variant="primary" onClick={openAddDay}>Add Day</Button>
+        <Button className="add-day-button" variant="primary" onClick={openAddDay}>Add Day</Button>
       </div>
       <EditSubjectPopup isOpen={addSched} close={closeAddDay} sid={subjectid} toAdd={true}></EditSubjectPopup>
     </>
