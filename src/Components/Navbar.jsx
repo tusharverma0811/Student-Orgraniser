@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import "../Stylesheets/navbar.css";
 import LoginPopup from "./LoginPopup";
 import FirebaseContext from "../Contexts/FirebaseContext";
@@ -12,6 +12,7 @@ const Navbar = (props) => {
   const [resetPwdPopup,setResetPwdPopup] = useState(false);
   const [forgotPwdPopup,setForgotPwdPopup] = useState(false);
   const history = useHistory();
+  const location = useLocation();
   const { firebaseLogout } = React.useContext(FirebaseContext);
 
 
@@ -43,7 +44,11 @@ const Navbar = (props) => {
     try {
       await firebaseLogout();
       localStorage.removeItem("token");
-      history.push("/");
+      if(location.pathname === "/"){
+         history.push("/main");
+      }else{
+        history.push("/");
+      }
     } catch (err) {
       console.log(err.message);
       props.notify_error(err.message);
