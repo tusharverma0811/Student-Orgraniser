@@ -1,12 +1,12 @@
 import React, { useContext, useState } from "react";
 import EditSubjectPopup from "./EditSubjectPopup";
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import "../Stylesheets/subjectDetailCardStyles.css";
 import SubjectContext from "../Contexts/SubjectContext";
 
 export default function SubjectDetailCard(props) {
   const [popup, setPopup] = useState(false);
-  const {deleteRoutine,getSubject} = useContext(SubjectContext);
+  const { deleteRoutine, getSubject } = useContext(SubjectContext);
   const openLink = (classLink) => {
     window.open(classLink);
   };
@@ -19,38 +19,39 @@ export default function SubjectDetailCard(props) {
     setPopup(false);
   };
 
-  const deleteSchedule = async()=>{
-    try{
-    await deleteRoutine(props.sid,props.rid);
-    await getSubject(props.sid);
-    }catch(err){
+  const deleteSchedule = async () => {
+    try {
+      await deleteRoutine(props.sid, props.rid);
+      await getSubject(props.sid);
+    } catch (err) {
       console.log(err);
     }
-  }
+  };
   const { sched } = props;
 
-  const setTime = (timing)=>{
+  const setTime = (timing) => {
     const hours = timing.slice(0, 2);
-    let minutes = timing.slice(3);
+    let mins = timing.slice(3);
+    let minutes = parseInt(mins);
     let classTime;
-    if(minutes==="0"){
-      minutes="00";
+    if (minutes<10) {
+      mins = "0"+mins;
     }
-      let hrs = parseInt(hours);
-      if (hrs > 12) {
-        hrs = hrs - 12;
-        classTime = hrs + ":" + minutes + " P.M";
+    let hrs = parseInt(hours);
+    if (hrs > 12) {
+      hrs = hrs - 12;
+      classTime = hrs + ":" + mins + " P.M";
+    } else {
+      if (hrs === 12) {
+        classTime = hours + ":" + mins + " P.M";
       } else {
-        if (hrs === 12) {
-          classTime = hours + ":" + minutes +" P.M";
-        } else {
-          classTime = hours + ":" + minutes +" A.M";
-        }
+        classTime = hours + ":" + mins + " A.M";
       }
+    }
 
-      return classTime;
-  }
-  
+    return classTime;
+  };
+
   return (
     <>
       <Card key={sched._id} className="details-card-styling">
@@ -67,31 +68,25 @@ export default function SubjectDetailCard(props) {
             {sched.link}
           </Card.Subtitle>
           <br />
-          <Button
+          <button
             className="button-styling"
-            variant="primary"
             onClick={(event) => {
               event.preventDefault();
               openLink(sched.link);
             }}
           >
             Join Class
-          </Button>
+          </button>
           <br />
-          <Button
-            className="delete-button-styling"
-            variant="primary"
+          <button
+            className="delete-button-styling fa-2x"
             onClick={deleteSchedule}
           >
-           <i className="fas fa-trash"></i>
-          </Button>
-          <Button
-            className="edit-button-styling"
-            variant="primary"
-            onClick={openEdit}
-          >
-            <i className="fas fa-edit"></i>
-          </Button>
+            <i className="fas fa-trash"></i>
+          </button>
+          <button className="edit-button-styling" onClick={openEdit}>
+            <i className="fas fa-edit fa-2x"></i>
+          </button>
         </Card.Body>
       </Card>
       <EditSubjectPopup

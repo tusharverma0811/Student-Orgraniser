@@ -7,38 +7,44 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-  const notify_success = (msg)=>{
+  const notify_success = (msg) => {
     toast.success(msg, {
-      position: "top-right",
+      position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: "colored"
-   });
- }
-
-
-const notify_error = (msg)=>{
-  toast.error(msg, {
-    position: "top-right",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "colored"
+      theme: "colored",
     });
-} 
+  };
+
+  const notify_error = (msg) => {
+    toast.error(msg, {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+  };
   return (
     <>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" ><Home notify_success={notify_success} notify_error={notify_error}/></Route>
-          <Route exact path="/main"><MainPage notify_success={notify_success} notify_error={notify_error}/></Route>
+          <Route exact path="/">
+            <Home notify_success={notify_success} notify_error={notify_error} />
+          </Route>
+          <Route exact path="/main">
+            <MainPage
+              notify_success={notify_success}
+              notify_error={notify_error}
+            />
+          </Route>
           <Route
             exact
             path="/subject/:subjectid"

@@ -3,9 +3,18 @@ import "../Stylesheets/login.css";
 import ReactDom from "react-dom";
 import AuthContext from "../Contexts/AuthContext";
 import { useHistory } from "react-router-dom";
+import FirebaseContext from "../Contexts/FirebaseContext";
 
-export default function LoginPopup({ isOpen, close,notify_success,notify_error }) {
-  const { login, signup } = useContext(AuthContext);
+export default function LoginPopup({
+  isOpen,
+  close,
+  notify_success,
+  notify_error,
+  openForgotPwdPopup
+}) {
+  const { login, signup, googleLogin } = useContext(AuthContext);
+  const { googleSignin, firebaseSignup, firebaseLogin } =
+    useContext(FirebaseContext);
   const loginEid = useRef();
   const loginPwd = useRef();
   const eid = useRef();
@@ -15,44 +24,94 @@ export default function LoginPopup({ isOpen, close,notify_success,notify_error }
   const history = useHistory();
   if (!isOpen) return null;
 
+  const forgotPwd = ()=>{
+    openForgotPwdPopup();
+    close();
+  }
+  const handleGoogleSignin = async (e) => {
+    e.preventDefault();
+    try {
+      const result = await googleSignin();
+      const user = result.user;
+      const name = await user.displayName;
+      const emailId = await user.email;
+
+      console.log(user.displayName, user.email);
+      try {
+        const response = await googleLogin(name, emailId);
+        if (response.hasOwnProperty("error")) {
+          notify_error(response.error);
+        } else if (response.hasOwnProperty("errors")) {
+          notify_error("Some issues with input format");
+        } else {
+          notify_success("Successfully Signed In");
+          localStorage.setItem("token", response.authToken);
+          history.push("/main");
+        }
+      } catch (err) {
+        console.log(err);
+        notify_error("Error signing in through Google");
+      }
+    } catch (err) {
+      console.log(err.message);
+      notify_error("Error signing in through Google");
+    }
+  };
   const handleSignup = async (e) => {
     e.preventDefault();
+    try {
+      await firebaseSignup(eid.current.value, pwd.current.value);
 
-    const response = await signup(
-      userName.current.value,
-      eid.current.value,
-      pwd.current.value
-    );
-
-    if (response.hasOwnProperty("error")) {
-      notify_error(response.error)
-    } else if (response.hasOwnProperty("errors")) {
-      notify_error("Some issues with input format")
-    } else {
-      notify_success("Successfully Signed In")
-      localStorage.setItem("token", response.authToken);
-      history.push("/main");
+      try {
+        const response = await signup(
+          userName.current.value,
+          eid.current.value
+        );
+        if (response.hasOwnProperty("error")) {
+          notify_error(response.error);
+        } else if (response.hasOwnProperty("errors")) {
+          notify_error("Some issues with input format");
+        } else {
+          notify_success("Successfully Signed In");
+          localStorage.setItem("token", response.authToken);
+          history.push("/main");
+        }
+      } catch (err) {
+        console.log(err);
+        notify_error("Sorry! Try Again");
+      }
+    } catch (err) {
+      console.log(err.message);
+      notify_error("Sorry! Try Again");
     }
   };
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    try {
+      await firebaseLogin(loginEid.current.value, loginPwd.current.value);
+      try {
+        const response = await login(loginEid.current.value);
 
-    const response = await login(
-      loginEid.current.value,
-      loginPwd.current.value
-    );
-
-    if (response.hasOwnProperty("error")) {
-      notify_error(response.error)
-    } else if (response.hasOwnProperty("errors")) {
-      notify_error("Some issues with input format")
-    } else {
-      notify_success("Successfully Signed In");
-      localStorage.setItem("token", response.authToken);
-      history.push("/main");
+        if (response.hasOwnProperty("error")) {
+          notify_error(response.error);
+        } else if (response.hasOwnProperty("errors")) {
+          notify_error("Some issues with input format");
+        } else {
+          notify_success("Successfully Signed In");
+          localStorage.setItem("token", response.authToken);
+          history.push("/main");
+        }
+      } catch (err) {
+        console.log(err);
+        notify_error("Check your email/password");
+      }
+    } catch (err) {
+      console.log(err);
+      notify_error("Check your email/password");
     }
   };
+
   return ReactDom.createPortal(
     <>
       <div className="overlayl">
@@ -97,21 +156,13 @@ export default function LoginPopup({ isOpen, close,notify_success,notify_error }
                   placeholder="Enter Password"
                   required=""
                 />
-                <input
-                  className="credInput"
-                  type="password"
-                  name="pswd"
-                  placeholder="Re-Enter Password"
-                  required=""
-                />
+                <i className="fa fa-eye password-icon" />
                 <button type="submit" className="btnReg" onClick={handleSignup}>
                   Sign up
                 </button>
-                <h1 className="signUpOR">OR</h1>
-                <button className="btnReg">Sign up with Google</button>
+                <label className="forgot-password" onClick={forgotPwd}>forgot password?</label>
               </form>
             </div>
-
             <div className="login">
               <form>
                 <label className="loginLabel" htmlFor="chk" aria-hidden="true">
@@ -137,14 +188,15 @@ export default function LoginPopup({ isOpen, close,notify_success,notify_error }
                 <button type="submit" className="btnReg" onClick={handleLogin}>
                   Login
                 </button>
-                <h1>OR</h1>
-                <button className="btnReg">Login with Google</button>
+                <h1 className="or">OR</h1>
+                <button className="btnReg" onClick={handleGoogleSignin}>
+                  Sign In with Google
+                </button>
               </form>
             </div>
           </div>
         </div>
       </div>
-      
     </>,
     document.getElementById("portal")
   );
