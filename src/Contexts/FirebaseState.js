@@ -1,7 +1,7 @@
 import React from 'react';
 import FirebaseContext from './FirebaseContext';
 import { auth } from '../Firebase/firebase';
-import { signInWithPopup,GoogleAuthProvider,createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut   } from "firebase/auth";
+import { signInWithPopup,GoogleAuthProvider,createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail   } from "firebase/auth";
 
 const FirebaseState = (props)=>{
 
@@ -18,11 +18,16 @@ const FirebaseState = (props)=>{
         return signInWithPopup(auth,provider);
     }
 
+    const resetPwd = (email)=>{
+        return sendPasswordResetEmail(auth,email,{
+            url:"http://localhost:3000"
+        });
+    }
     const firebaseLogout = ()=>{
         return signOut(auth);
     }
     return(
-        <FirebaseContext.Provider value={{firebaseSignup,googleSignin,firebaseLogin,firebaseLogout}}>{props.children}</FirebaseContext.Provider>
+        <FirebaseContext.Provider value={{firebaseSignup,googleSignin,firebaseLogin,firebaseLogout,resetPwd}}>{props.children}</FirebaseContext.Provider>
     )
 }
 

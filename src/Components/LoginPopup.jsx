@@ -10,6 +10,7 @@ export default function LoginPopup({
   close,
   notify_success,
   notify_error,
+  openForgotPwdPopup
 }) {
   const { login, signup, googleLogin } = useContext(AuthContext);
   const { googleSignin, firebaseSignup, firebaseLogin } =
@@ -23,6 +24,10 @@ export default function LoginPopup({
   const history = useHistory();
   if (!isOpen) return null;
 
+  const forgotPwd = ()=>{
+    openForgotPwdPopup();
+    close();
+  }
   const handleGoogleSignin = async (e) => {
     e.preventDefault();
     try {
@@ -155,7 +160,7 @@ export default function LoginPopup({
                 <button type="submit" className="btnReg" onClick={handleSignup}>
                   Sign up
                 </button>
-                <label className="forgot-password">forgot password?</label>
+                <label className="forgot-password" onClick={forgotPwd}>forgot password?</label>
               </form>
             </div>
             <div className="login">

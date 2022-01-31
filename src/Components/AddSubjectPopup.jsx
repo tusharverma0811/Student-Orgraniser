@@ -103,7 +103,7 @@ const AddSubjectPopup = ({ isOpen, close, notify_success, notify_error }) => {
       <div className="overlay">
         <div className="reg">
           <i
-            class="fas fa-times fa-2x close"
+            className="fas fa-times fa-2x close"
             onClick={() => {
               setDays([]);
               setSubject("");
@@ -169,7 +169,7 @@ const AddSubjectPopup = ({ isOpen, close, notify_success, notify_error }) => {
                 );
               })}
             </div>
-            <button className="Add-subject-button" onClick={addNewSubject}>
+            <button className="Add-subject-button" onClick={addNewSubject} >
               Add Subject
             </button>
           </div>
