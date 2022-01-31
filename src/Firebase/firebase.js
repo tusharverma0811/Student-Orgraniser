@@ -1,4 +1,4 @@
-import {initializeApp} from "firebase/app";
+import { initializeApp } from "firebase/app";
 import "firebase/auth";
 import { getAuth } from "firebase/auth";
 
@@ -9,7 +9,7 @@ const firebaseConfig = {
   storageBucket: "student-organiser-94ed3.appspot.com",
   messagingSenderId: "425908924897",
   appId: "1:425908924897:web:2d3379b0a434b1b4d722a0",
-  measurementId: "G-7K29XESLBK"
+  measurementId: "G-7K29XESLBK",
 };
 
 // Initialize Firebase
@@ -17,4 +17,3 @@ const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
 export default app;
-

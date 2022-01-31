@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import "../Stylesheets/subjectStyles.css";
 // import Header from "./Header";
@@ -38,8 +38,8 @@ function Subject(props) {
       setClassToday(true);
       const hours = timing.slice(0, 2);
       let minutes = timing.slice(3);
-      if(minutes==="0"){
-        minutes="00";
+      if (minutes === "0") {
+        minutes = "00";
       }
       let hrs = parseInt(hours);
       let classTime;
@@ -53,7 +53,7 @@ function Subject(props) {
           classTime = hours + ":" + minutes + " A.M";
         }
       }
-      setIsClass(`You have a class today at ${classTime}`);
+      setIsClass(`-> You have a class today at ${classTime}`);
     } else {
       setIsClass("Wooho! You Don't have a class today");
     }
@@ -72,19 +72,19 @@ function Subject(props) {
         <Card.Body className="card-body-styling">
           <Card.Title className="card-title-styling">{props.name}</Card.Title>
           <Card.Text>{isClass}</Card.Text>
-          <Button
+          <button
             className="join-class-button-styling"
-            variant="primary"
             disabled={!classToday}
             onClick={joinClass}
           >
             Join Class
-          </Button>
+          </button>
           {/* <i className="fas fa-angle-double-down downShift" onClick={editSubject}></i> */}
-          
         </Card.Body>
       </Card>
-      
+      <div className="footer">
+        &#169; STUDENT FRAME 2022. &nbsp; All Rights Reserved.
+      </div>
     </>
   );
 }

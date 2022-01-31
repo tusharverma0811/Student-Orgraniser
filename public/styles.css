@@ -4,8 +4,11 @@
   box-sizing: border-box;
 }
 html {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-size: 62.5%;
+}
+title {
+  font-family: "Work Sans", sans-serif;
 }
 body {
   background: #eee;
