@@ -9,7 +9,7 @@ const authorizeuser = (req, res, next) => {
   }
 
   try {
-    const data = jwt.verify(token, "dhaamsuproject");
+    const data = jwt.verify(token, process.env.SIGN);
     req.user = data.user;
     next();
   } catch (err) {
