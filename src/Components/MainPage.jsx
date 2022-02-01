@@ -45,16 +45,13 @@ const MainPage = (props) => {
           Create <i class="fas fa-plus"></i>
         </button>
       </div>
-      <div class="vertical"></div>
+
       <AddSubjectPopup
         isOpen={popup}
         close={closePopup}
         notify_success={props.notify_success}
         notify_error={props.notify_error}
       />
-      <div className="footer">
-        &#169; STUDENT FRAME 2022. &nbsp; All Rights Reserved.
-      </div>
     </>
   );
 };
