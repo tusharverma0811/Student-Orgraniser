@@ -31,20 +31,21 @@ export default function SubjectDetailCard(props) {
 
   const setTime = (timing) => {
     const hours = timing.slice(0, 2);
-    let minutes = timing.slice(3);
+    let mins = timing.slice(3);
+    let minutes = parseInt(mins);
     let classTime;
-    if (minutes === "0") {
-      minutes = "00";
+    if (minutes<10) {
+      mins = "0"+mins;
     }
     let hrs = parseInt(hours);
     if (hrs > 12) {
       hrs = hrs - 12;
-      classTime = hrs + ":" + minutes + " P.M";
+      classTime = hrs + ":" + mins + " P.M";
     } else {
       if (hrs === 12) {
-        classTime = hours + ":" + minutes + " P.M";
+        classTime = hours + ":" + mins + " P.M";
       } else {
-        classTime = hours + ":" + minutes + " A.M";
+        classTime = hours + ":" + mins + " A.M";
       }
     }
 

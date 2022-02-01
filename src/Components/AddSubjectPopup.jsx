@@ -47,6 +47,8 @@ const getStyles = (name, personName, theme) => {
 const AddSubjectPopup = ({ isOpen, close, notify_success, notify_error }) => {
   const [days, setDays] = React.useState([]);
   const [subject, setSubject] = useState("");
+  const [subjectEmpty,setSubjectEmpty] = useState(true);
+  const [btnActive,setBtnActive] = useState(false);
   const theme = useTheme();
   const { addSubject, getSubjects } = useContext(SubjectContext);
 
@@ -76,6 +78,11 @@ const AddSubjectPopup = ({ isOpen, close, notify_success, notify_error }) => {
   };
   const trackChange = (event) => {
     setSubject(event.target.value);
+    if(event.target.value.length>=1){
+      setSubjectEmpty(false)
+    }else{
+      setSubjectEmpty(true)
+    }
   };
   const handleChange = (event) => {
     const {
@@ -83,6 +90,13 @@ const AddSubjectPopup = ({ isOpen, close, notify_success, notify_error }) => {
     } = event;
 
     setDays(typeof value === "string" ? value.split(",") : value);
+
+    if(event.target.value.length>=1)
+    {
+      setBtnActive(true);
+    }else{
+      setBtnActive(false);
+    }
   };
 
   const addNewSubject = async (event) => {
@@ -134,6 +148,7 @@ const AddSubjectPopup = ({ isOpen, close, notify_success, notify_error }) => {
                   multiple
                   variant="filled"
                   value={days}
+                  disabled={subjectEmpty}
                   onChange={handleChange}
                   input={
                     <OutlinedInput id="select-multiple-chip" label="Chip" />
@@ -169,7 +184,7 @@ const AddSubjectPopup = ({ isOpen, close, notify_success, notify_error }) => {
                 );
               })}
             </div>
-            <button className="Add-subject-button" onClick={addNewSubject} >
+            <button className="Add-subject-button" onClick={addNewSubject} disabled={!btnActive}>
               Add Subject
             </button>
           </div>

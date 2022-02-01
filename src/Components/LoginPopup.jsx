@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef,useState } from "react";
 import "../Stylesheets/login.css";
 import ReactDom from "react-dom";
 import AuthContext from "../Contexts/AuthContext";
@@ -20,10 +20,14 @@ export default function LoginPopup({
   const eid = useRef();
   const pwd = useRef();
   const userName = useRef();
+  const [pwdState,setPwdState] = useState(true);
 
   const history = useHistory();
   if (!isOpen) return null;
 
+  const togglePwdState = ()=>{
+    setPwdState(!pwdState)
+  }
   const forgotPwd = ()=>{
     openForgotPwdPopup();
     close();
@@ -130,7 +134,7 @@ export default function LoginPopup({
                 <label className="loginLabel" htmlFor="chk" aria-hidden="true">
                   Sign up
                 </label>
-                {/* <a href=""> <i class="fab fa-google fa-2x"></i></a> */}
+                {/* <a href=""> <i className="fab fa-google fa-2x"></i></a> */}
 
                 <input
                   className="credInput"
@@ -150,17 +154,17 @@ export default function LoginPopup({
                 />
                 <input
                   className="credInput"
-                  type="password"
+                  type={pwdState?"password":"text"}
                   ref={pwd}
                   name="pswd"
                   placeholder="Enter Password"
                   required=""
                 />
-                <i className="fa fa-eye password-icon" />
+                {pwdState?<i className="fa fa-eye password-icon" onClick={togglePwdState}/>:<i className="fas fa-eye-slash password-icon" onClick={togglePwdState}></i>}
                 <button type="submit" className="btnReg" onClick={handleSignup}>
                   Sign up
                 </button>
-                <label className="forgot-password" onClick={forgotPwd}>forgot password?</label>
+                
               </form>
             </div>
             <div className="login">
@@ -180,14 +184,16 @@ export default function LoginPopup({
                 <input
                   className="credInput"
                   ref={loginPwd}
-                  type="password"
+                  type={pwdState?"password":"text"}
                   name="pswd"
                   placeholder="Password"
                   required=""
                 />
+                {pwdState?<i className="fa fa-eye passwordl-icon" onClick={togglePwdState}/>:<i className="fas fa-eye-slash passwordl-icon" onClick={togglePwdState}></i>}
                 <button type="submit" className="btnReg" onClick={handleLogin}>
                   Login
                 </button>
+                <label className="forgot-password" onClick={forgotPwd}>forgot password?</label><br/>
                 <h1 className="or">OR</h1>
                 <button className="btnReg" onClick={handleGoogleSignin}>
                   Sign In with Google

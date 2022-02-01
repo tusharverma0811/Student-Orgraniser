@@ -38,8 +38,9 @@ function Subject(props) {
       setClassToday(true);
       const hours = timing.slice(0, 2);
       let minutes = timing.slice(3);
-      if (minutes === "0") {
-        minutes = "00";
+      let mins = parseInt(minutes);
+      if (mins<10) {
+        minutes = "0"+minutes;
       }
       let hrs = parseInt(hours);
       let classTime;
