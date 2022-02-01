@@ -114,8 +114,8 @@ const Navbar = (props) => {
                     </div>
                   </li>
                 ) : (
-                  <button className="getstarted">
-                    <li className="nav-link-get-started" onClick={openLoginPopup}>
+                  <button className="getstarted" onClick={openLoginPopup}>
+                    <li className="nav-link-get-started" >
                       Get Started <i className="fas fa-arrow-right"></i>
                     </li>
                   </button>
@@ -135,7 +135,7 @@ const Navbar = (props) => {
         openForgotPwdPopup={openForgotPwdPopup}
       ></LoginPopup>
       <ResetPasswordPopup isOpen={resetPwdPopup} close={closeResetPopup} notify_success={props.notify_success} notify_error={props.notify_error} ></ResetPasswordPopup>
-      <ForgotPasswordPopup isOpen={forgotPwdPopup} close ={closeForgotPwdPopup}></ForgotPasswordPopup>
+      <ForgotPasswordPopup isOpen={forgotPwdPopup} close ={closeForgotPwdPopup} notify_success={props.notify_success} notify_error={props.notify_error}></ForgotPasswordPopup>
     </>
   );
 };

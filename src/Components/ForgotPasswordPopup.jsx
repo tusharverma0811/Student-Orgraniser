@@ -3,7 +3,7 @@ import ReactDom from "react-dom";
 import { Form, Button } from "react-bootstrap";
 import FirebaseContext from "../Contexts/FirebaseContext";
 
-export default function ForgotPasswordPopup({ isOpen, close }) {
+export default function ForgotPasswordPopup({ isOpen, close,notify_success,notify_error }) {
   const email = useRef();
   const { resetPwd } = useContext(FirebaseContext);
   if (!isOpen) return null;
@@ -12,9 +12,11 @@ export default function ForgotPasswordPopup({ isOpen, close }) {
     e.preventDefault();
     try {
       await resetPwd(email.current.value);
+      notify_success("Email Sent Scuccessfully with further steps kindly check your inbox")
       close();
     } catch (err) {
       console.log(err);
+      notify_error(err.message)
     }
   };
 

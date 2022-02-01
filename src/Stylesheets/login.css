@@ -165,3 +165,10 @@ h1 {
   color: white;
   cursor: pointer;
 }
+
+.passwordl-icon{
+  position: absolute;
+  left: 250px;
+  top: 136px;
+  cursor: pointer;
+}
