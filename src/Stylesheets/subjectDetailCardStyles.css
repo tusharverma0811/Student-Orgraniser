@@ -5,20 +5,26 @@
 }
 
 .button-styling {
+  position: sticky;
   border-radius: 10px;
   margin: 1.5rem;
   margin-top: 2px;
   top: 2rem;
   width: 7rem;
   height: 3rem;
-  background: rgb(44, 122, 123, 0.8);
-  border: rgb(44, 122, 123);
+  /*background: rgb(44, 122, 123, 0.6);
+  border: rgb(44, 122, 123, 1);*/
+  background: black;
   font-weight: bolder;
+  color: white;
 }
 
-.button-styling:hover {
-  background: rgb(44, 122, 123, 1);
-}
+/*.button-styling:hover {
+  
+  background: rgba(255, 255, 0, 0.89);
+  color: black;
+  opacity: 0.9;
+}*/
 
 .details-card-title-styling {
   padding-top: 4rem;
@@ -38,18 +44,18 @@
   align-items: center;
   justify-content: space-evenly;
   margin: auto;
-  margin-top: 4rem;
+  margin-top: 5.2rem;
   margin-left: 1rem;
   margin-right: 1rem;
   margin-bottom: 4rem;
   background: white;
   box-shadow: 0 0rem 0rem rgba(0, 0, 0, 0.562);
-  border: 2px solid rgb(44, 122, 123, 1);
+  border: 2px solid black;
   border-radius: 10px;
 }
 .details-card-styling:hover {
   overflow: hidden;
-  transform: scale(1.18);
+  transform: scale(1.05);
   cursor: default;
 }
 
@@ -87,17 +93,18 @@
   width: 100px;
   margin-left: 20px;
   margin-bottom: 25px;
-  background: rgb(44, 122, 123);
-  color: white;
+  background: #5ac2bd;
+  color: black;
   border-radius: 10px;
   font-size: 20px;
   padding: 0.5rem;
-  opacity: 0.8;
+  opacity: 1;
   font-family: "Work Sans", sans-serif;
+  font-weight: 800;
 }
 
 .add-day-button:hover {
-  opacity: 1;
+  box-shadow: 5px 5px 5px grey;
 }
 
 .heading-card-styling {

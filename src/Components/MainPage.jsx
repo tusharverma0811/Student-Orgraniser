@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import SubjectContext from "../Contexts/SubjectContext";
 import Subject from "./Subject";
 import Navbar from "./Navbar";
+import img2 from "./img/main-page-vector.jpg";
 
 const MainPage = (props) => {
   const { subjects, getSubjects } = useContext(SubjectContext);
@@ -28,6 +29,9 @@ const MainPage = (props) => {
   return (
     <>
       <Navbar />
+      <div className="main-page-vector">
+        <img src={img2} alt="" width="820" height="450" />
+      </div>
       <div className="subjects">
         {subjects.map((subject) => {
           return (

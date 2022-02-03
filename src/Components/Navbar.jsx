@@ -7,14 +7,13 @@ import FirebaseContext from "../Contexts/FirebaseContext";
 import ResetPasswordPopup from "./ResetPasswordPopup";
 import ForgotPasswordPopup from "./ForgotPasswordPopup";
 
-const Navbar = (props) => {
+export const Navbar = (props) => {
   const [loginPopup, setLoginPopup] = useState(false);
-  const [resetPwdPopup,setResetPwdPopup] = useState(false);
-  const [forgotPwdPopup,setForgotPwdPopup] = useState(false);
+  const [resetPwdPopup, setResetPwdPopup] = useState(false);
+  const [forgotPwdPopup, setForgotPwdPopup] = useState(false);
   const history = useHistory();
   const location = useLocation();
   const { firebaseLogout } = React.useContext(FirebaseContext);
-
 
   function openLoginPopup() {
     setLoginPopup(true);
@@ -24,29 +23,29 @@ const Navbar = (props) => {
     setLoginPopup(false);
   }
 
-  const openResetPopup = ()=>{
+  const openResetPopup = () => {
     setResetPwdPopup(true);
-  }
+  };
 
-  const closeResetPopup = ()=>{
+  const closeResetPopup = () => {
     setResetPwdPopup(false);
-  }
+  };
 
-  const openForgotPwdPopup = ()=>{
+  const openForgotPwdPopup = () => {
     setForgotPwdPopup(true);
-  }
+  };
 
-  const closeForgotPwdPopup = ()=>{
+  const closeForgotPwdPopup = () => {
     setForgotPwdPopup(false);
-  }
+  };
 
   const handleLogout = async () => {
     try {
       await firebaseLogout();
       localStorage.removeItem("token");
-      if(location.pathname === "/"){
-         history.push("/main");
-      }else{
+      if (location.pathname === "/") {
+        history.push("/main");
+      } else {
         history.push("/");
       }
     } catch (err) {
@@ -82,9 +81,9 @@ const Navbar = (props) => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/">
+                  <a href="#about-Section" className="nav-link">
                     About
-                  </Link>
+                  </a>
                 </li>
                 {localStorage.getItem("token") != null ? (
                   <li className="nav-item dropdown">
@@ -104,7 +103,7 @@ const Navbar = (props) => {
                       <Link className="dropdown-item" to="/main">
                         <i className="fas fa-book"></i> &nbsp;My Subjects
                       </Link>
-                      <span className="dropdown-item" onClick = {openResetPopup}>
+                      <span className="dropdown-item" onClick={openResetPopup}>
                         <i className="fas fa-cog"></i> &nbsp;Edit Password
                       </span>
 
@@ -115,7 +114,7 @@ const Navbar = (props) => {
                   </li>
                 ) : (
                   <button className="getstarted" onClick={openLoginPopup}>
-                    <li className="nav-link-get-started" >
+                    <li className="nav-link-get-started">
                       Get Started <i className="fas fa-arrow-right"></i>
                     </li>
                   </button>
@@ -134,8 +133,18 @@ const Navbar = (props) => {
         notify_error={props.notify_error}
         openForgotPwdPopup={openForgotPwdPopup}
       ></LoginPopup>
-      <ResetPasswordPopup isOpen={resetPwdPopup} close={closeResetPopup} notify_success={props.notify_success} notify_error={props.notify_error} ></ResetPasswordPopup>
-      <ForgotPasswordPopup isOpen={forgotPwdPopup} close ={closeForgotPwdPopup} notify_success={props.notify_success} notify_error={props.notify_error}></ForgotPasswordPopup>
+      <ResetPasswordPopup
+        isOpen={resetPwdPopup}
+        close={closeResetPopup}
+        notify_success={props.notify_success}
+        notify_error={props.notify_error}
+      ></ResetPasswordPopup>
+      <ForgotPasswordPopup
+        isOpen={forgotPwdPopup}
+        close={closeForgotPwdPopup}
+        notify_success={props.notify_success}
+        notify_error={props.notify_error}
+      ></ForgotPasswordPopup>
     </>
   );
 };

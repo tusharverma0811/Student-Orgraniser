@@ -50,7 +50,8 @@
   left: 77%;
   align-self: center;
   right: 1%;
-  background: rgb(44, 122, 123);
+  /*background: rgb(199, 29, 103);*/
+  background: black;
   font-family: "Work Sans", sans-serif;
   cursor: pointer;
   color: white;
@@ -88,11 +89,12 @@
   margin-right: 900px;
   margin-left: 25px;
   background: white;
-  border: 1px solid rgb(44, 122, 123);
+  /*border: 1px solid rgb(199, 29, 103);*/
+  border: 1px solid black;
 }
 
 .card-styling:hover {
-  background: rgb(44, 122, 123, 0.2);
+  transform: scale(1.05);
 }
 /* .downShift {
     color: black;

@@ -3,28 +3,35 @@ import ReactDom from "react-dom";
 import { Form, Button } from "react-bootstrap";
 import FirebaseContext from "../Contexts/FirebaseContext";
 
-export default function ForgotPasswordPopup({ isOpen, close,notify_success,notify_error }) {
+export default function ForgotPasswordPopup({
+  isOpen,
+  close,
+  notify_success,
+  notify_error,
+}) {
   const email = useRef();
   const { resetPwd } = useContext(FirebaseContext);
   if (!isOpen) return null;
 
-  const sendLink = async(e) => {
+  const sendLink = async (e) => {
     e.preventDefault();
     try {
       await resetPwd(email.current.value);
-      notify_success("Email Sent Scuccessfully with further steps kindly check your inbox")
+      notify_success(
+        "Email Sent Scuccessfully with further steps kindly check your inbox"
+      );
       close();
     } catch (err) {
       console.log(err);
-      notify_error(err.message)
+      notify_error(err.message);
     }
   };
 
   return ReactDom.createPortal(
     <>
-      <div className="overlay">
-        <div className="reg">
-          <i className="fas fa-times fa-2x close" onClick={close}></i>
+      <div className="overlay-forgot">
+        <div className="reg-forgot">
+          <i className="fas fa-times fa-2x close-sign" onClick={close}></i>
           <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
@@ -38,10 +45,19 @@ export default function ForgotPasswordPopup({ isOpen, close,notify_success,notif
               </Form.Text>
             </Form.Group>
 
-            <Button variant="outline-warning" type="submit" onClick={sendLink}>
+            <Button
+              variant="outline-warning"
+              className="submit-button"
+              type="submit"
+              onClick={sendLink}
+            >
               Submit
             </Button>
-            <Button variant="outline-secondary" onClick={close}>
+            <Button
+              variant="outline-secondary"
+              className="cancel-button-forgot"
+              onClick={close}
+            >
               Cancel
             </Button>
           </Form>

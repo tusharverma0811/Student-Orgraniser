@@ -1,0 +1,113 @@
+.reg-reset {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 130px;
+  transform: translate(-50%, -50%);
+  background: white;
+  z-index: 1000;
+  border-radius: 10px;
+  padding-top: 35px;
+  padding-left: 30px;
+  padding-right: 25px;
+  padding-bottom: 5px;
+}
+
+.reg-forgot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 200px;
+  width: 406px;
+  transform: translate(-50%, -50%);
+  padding: 35px;
+  background: white;
+  z-index: 1000;
+  border-radius: 10px;
+}
+
+.overlay-reset {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.overlay-forgot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.closesign {
+  position: absolute;
+  left: 565px;
+  top: 10px;
+  color: black;
+  cursor: pointer;
+}
+
+.cancel-button {
+  border-color: red;
+  border-radius: 5px;
+  color: red;
+  margin-left: 350px;
+  margin-top: 5px;
+}
+.cancel-button:hover {
+  border-color: red;
+  background-color: red;
+  color: white;
+}
+
+.cancel-button-forgot {
+  border-color: red;
+  border-radius: 5px;
+  color: red;
+  left: 100px;
+  margin-left: 260px;
+  margin-bottom: 50px;
+}
+.cancel-button-forgot:hover {
+  border-color: red;
+  background-color: red;
+  color: white;
+}
+
+.confirm-button {
+  left: 50px;
+  top: 100px;
+  border-color: green;
+  border-radius: 5px;
+  color: green;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+.confirm-button:hover {
+  border-color: green;
+  color: white;
+  background-color: green;
+}
+
+.submit-button:hover {
+  color: white;
+}
+.submit-button {
+  margin-left: 180px;
+}
+
+.close-sign {
+  position: absolute;
+  left: 365px;
+  top: 12px;
+  color: black;
+  cursor: pointer;
+}
