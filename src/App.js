@@ -5,6 +5,7 @@ import MainPage from "./Components/MainPage";
 import SubjectDetail from "./Components/SubjectDetail";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "./App.css";
 
 function App() {
   const notify_success = (msg) => {

@@ -83,9 +83,6 @@ function Subject(props) {
           {/* <i className="fas fa-angle-double-down downShift" onClick={editSubject}></i> */}
         </Card.Body>
       </Card>
-      <div className="footer">
-        &#169; STUDENT FRAME 2022. &nbsp; All Rights Reserved.
-      </div>
     </>
   );
 }
