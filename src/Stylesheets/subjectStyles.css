@@ -1,10 +1,11 @@
-.bg {
+bg{
   width: 100vw;
   height: 100vh;
   background: #ebf5fc;
 }
 
-/* .subcard {
+  
+  /* .subcard {
     margin-top: 20px;
   } */
   
@@ -17,7 +18,7 @@
       justify-content: center;
       margin: auto;
       margin-bottom: 2rem;
-      background:#d5eeffb7;
+      background:#D7FFF4 ;
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.562);
       border-radius: 1.5rem;
      cursor: pointer;
@@ -38,8 +39,8 @@
     background-color: #0d6efd;
     border-color: #0d6efd;
   } */
-
-/* .me-2 {
+  
+  /* .me-2 {
     width: 30rem;
   } */
   
@@ -52,17 +53,20 @@
   }
   
   .join-class-button-styling {
-        border-radius: 10rem;
     position: absolute;
+        border-radius: 10rem;
     bottom: 22%;
     left: 90%;
     right: 1%;
-      background: #03a9f4;
+      background: #007164;
+      color: black;
   }
 
-  @media(max-width: 500px)
+  @media(max-width: 900px)
   {
     .join-class-button-styling {
+      position: initial;
+        border-radius: 10rem;
       bottom: 15%;
     left: 35%;
     right: 70%;
@@ -75,68 +79,117 @@
     padding-bottom: 1px;
   }
 
-.card-title-styling {
-  padding-top: 3.5rem;
-  margin-top: -4rem;
-  text-align: center;
-  font-family: "Work Sans", sans-serif;
-  font-weight: bolder;
-  text-transform: uppercase;
-}
-
-.join-class-button-styling {
-  border-radius: 10px;
-  position: absolute;
-  bottom: 22%;
-  left: 77%;
-  align-self: center;
-  right: 1%;
-  /*background: rgb(199, 29, 103);*/
-  background: black;
-  font-family: "Work Sans", sans-serif;
-  cursor: pointer;
-  color: white;
-  height: 40px;
-}
-
-.join-class-button-styling:hover {
-  opacity: 1;
-}
-
-.card-body-styling {
-  font-family: "Work Sans", sans-serif;
-  padding-bottom: 1px;
-  width: 390px;
-}
-
-.card-title-styling {
-  text-align: center;
-}
-
-.downShift {
+.downShift{
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
 
-.fas {
+.fas{
   cursor: pointer;
 }
 
-.card-styling {
-  width: 450px;
-  left: 11%;
-  margin-right: 900px;
-  margin-left: 25px;
-  background: white;
-  /*border: 1px solid rgb(199, 29, 103);*/
-  border: 1px solid black;
+
+
+
+.main-dots:after {
+    cursor: pointer;
+    color: black;
+    content: '\2807';
+    font-size: 1.7rem;
+    margin-left: -61rem;
+}
+ @media (max-width: 1200px){
+
+  .main-dots:after {
+    margin-left: -30rem;
+  }
+
 }
 
-.card-styling:hover {
-  transform: scale(1.05);
+
+@media (max-width:780px)  {
+
+  .main-dots:after {
+    margin-left: -15rem;
+  }
+
+} 
+
+
+a {
+  text-decoration: none;
+  color: black;
 }
+
+a div {
+  padding: 2px;
+}
+
+.dropdown-main {
+  position: absolute;
+  right: 10px;
+  background-color: #C2DDD8;
+  /* box-shadow: 0px 0px 3px 3px #C2DDD8; */
+  outline: none;
+  opacity: 0;
+  z-index: -1;
+  max-height: 0;
+  transition: opacity 0.1s, z-index 0.1s;
+  padding: 0 5px;
+  
+}
+/* .options{
+  padding: 0.1rem;
+} */
+
+.dropdown-container-main:focus {
+  outline: none;
+}
+
+.dropdown-container-main:focus .dropdown {
+  opacity: 1;
+  z-index: 100;
+  max-height: 100vh;
+  transition: opacity 0.2s, z-index 0.2s;
+}
+
+
+.edit-delete{
+  font-size: 1rem;
+    margin-left: -61rem;
+
+}
+
+.fa-pen{
+  padding: 1rem;
+}
+
+ .fa-trash-can{
+   padding: 0.5rem;;
+
+ }
+
+
+  @media (max-width: 1200px){
+
+  .edit-delete {
+    margin-left: -30rem;
+  }
+
+}
+
+
+@media (max-width:780px)  {
+
+  .edit-delete{
+    margin-left: -11rem;
+  }
+
+}
+
+
 /* .downShift {
     color: black;
     position: absolute;
@@ -145,13 +198,14 @@
     top: 5.5rem;
     margin-top: 5px;
 } */
-
-/* .brand-styling {
+  
+  
+  /* .brand-styling {
     font-family: montserrat;
     font-weight: 900;
   } */
-
-/* .navbar {
+  
+  /* .navbar {
     padding-top: 1.5rem;
     z-index: 1;
   }
@@ -160,8 +214,8 @@
     color: black;
     size: 100rem;
   } */
-
-/* Card {
+  
+  /* Card {
     position: absolute;
   }
    */

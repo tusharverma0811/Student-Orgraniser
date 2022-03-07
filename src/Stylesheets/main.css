@@ -1,32 +1,7 @@
-.addButton {
-  position: fixed;
-  left: 0%;
-  top: 15%;
-  margin-left: 20px;
-  margin-bottom: 20px;
-  background: rgb(44, 122, 123, 1);
-  color: white;
-  border-radius: 10px;
-  font-size: 20px;
-  padding: 0.5rem;
-  font-family: "Work Sans", sans-serif;
+.addButton{
+    position: fixed;
+    right: 0%;
+    bottom: 0%;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
-
-.addButton:hover {
-  box-shadow: 5px 5px 5px grey;
-}
-
-.main-page-vector {
-  background-position: right;
-  position: fixed;
-  left: 570px;
-  top: 120px;
-}
-
-/*.vertical {
-  border-left: 1px solid grey;
-  height: 800px;
-  position: absolute;
-  top: 10%;
-  left: 11%;
-}*/

@@ -56,6 +56,19 @@ export default function SubjectDetailCard(props) {
     <>
       <Card key={sched._id} className="details-card-styling">
         <Card.Body className="details-card-body-styling">
+
+
+
+         <div className="dropdown-container" tabindex="-1">
+    <div className="three-dots"></div>
+    <div className="dropdown">
+      <a className="options" href="#"><div>Edit</div></a>
+      <a className="options" href="#"><div>Delete</div></a>
+    </div>
+  </div>
+
+
+
           <Card.Title className="details-card-title-styling">
             Day: {sched.day}
           </Card.Title>
@@ -78,7 +91,11 @@ export default function SubjectDetailCard(props) {
             Join Class
           </button>
           <br />
-          <button
+
+
+
+
+          {/* <button
             className="delete-button-styling fa-2x"
             onClick={deleteSchedule}
           >
@@ -86,7 +103,7 @@ export default function SubjectDetailCard(props) {
           </button>
           <button className="edit-button-styling" onClick={openEdit}>
             <i className="fas fa-edit fa-2x"></i>
-          </button>
+          </button> */}
         </Card.Body>
       </Card>
       <EditSubjectPopup

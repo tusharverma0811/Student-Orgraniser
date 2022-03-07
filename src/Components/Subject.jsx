@@ -70,7 +70,19 @@ function Subject(props) {
   return (
     <>
       <Card className="card-styling" onClick={editSubject}>
+
         <Card.Body className="card-body-styling">
+
+
+        {/* <div className="dropdown-container-main" tabindex="-1">
+
+        <div className="main-dots"></div>
+    
+    <div className="dropdown-main">
+      <a href="#"><div>Edit</div></a>
+      <a href="#"><div>Delete</div></a>
+    </div>
+  </div> */}
           <Card.Title className="card-title-styling">{props.name}</Card.Title>
           <Card.Text>{isClass}</Card.Text>
           <button
@@ -80,6 +92,17 @@ function Subject(props) {
           >
             Join Class
           </button>
+
+
+          <div className="edit-delete">
+          <i className="fa-solid fa-pen"></i>
+
+          <i class="fa-solid fa-trash-can"></i>
+
+          </div>
+
+
+
           {/* <i className="fas fa-angle-double-down downShift" onClick={editSubject}></i> */}
         </Card.Body>
       </Card>

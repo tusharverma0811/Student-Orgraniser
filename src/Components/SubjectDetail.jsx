@@ -27,9 +27,17 @@ const SubjectDetail = () => {
   return (
     <>
       <Navbar />
+
+     
+
+      <div className="sub-det">
+
+      
       <h1 className="title-styling">{subject.subName}</h1>
 
       <div className="coursecontainer">
+
+      
         {subject.routine.map((schedule) => {
           return (
             <SubjectDetailCard
@@ -40,6 +48,9 @@ const SubjectDetail = () => {
             />
           );
         })}
+
+
+        
       </div>
       <div className="routineAdd">
         <button className="add-day-button" onClick={openAddDay}>
@@ -52,6 +63,8 @@ const SubjectDetail = () => {
         sid={subjectid}
         toAdd={true}
       ></EditSubjectPopup>
+
+      </div>
     </>
   );
 };
