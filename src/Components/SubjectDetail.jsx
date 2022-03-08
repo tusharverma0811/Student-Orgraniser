@@ -28,42 +28,32 @@ const SubjectDetail = () => {
     <>
       <Navbar />
 
-     
-
       <div className="sub-det">
+        <h1 className="title-styling">{subject.subName}</h1>
 
-      
-      <h1 className="title-styling">{subject.subName}</h1>
-
-      <div className="coursecontainer">
-
-      
-        {subject.routine.map((schedule) => {
-          return (
-            <SubjectDetailCard
-              key={schedule._id}
-              sched={schedule}
-              sid={subjectid}
-              rid={schedule._id}
-            />
-          );
-        })}
-
-
-        
-      </div>
-      <div className="routineAdd">
-        <button className="add-day-button" onClick={openAddDay}>
-          Add Day
-        </button>
-      </div>
-      <EditSubjectPopup
-        isOpen={addSched}
-        close={closeAddDay}
-        sid={subjectid}
-        toAdd={true}
-      ></EditSubjectPopup>
-
+        <div className="coursecontainer">
+          {subject.routine.map((schedule) => {
+            return (
+              <SubjectDetailCard
+                key={schedule._id}
+                sched={schedule}
+                sid={subjectid}
+                rid={schedule._id}
+              />
+            );
+          })}
+        </div>
+        <div className="routineAdd">
+          <button className="add-day-button" onClick={openAddDay}>
+            Add Day
+          </button>
+        </div>
+        <EditSubjectPopup
+          isOpen={addSched}
+          close={closeAddDay}
+          sid={subjectid}
+          toAdd={true}
+        ></EditSubjectPopup>
       </div>
     </>
   );

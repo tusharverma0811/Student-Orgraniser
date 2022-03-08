@@ -34,8 +34,8 @@ export default function SubjectDetailCard(props) {
     let mins = timing.slice(3);
     let minutes = parseInt(mins);
     let classTime;
-    if (minutes<10) {
-      mins = "0"+mins;
+    if (minutes < 10) {
+      mins = "0" + mins;
     }
     let hrs = parseInt(hours);
     if (hrs > 12) {
@@ -56,18 +56,17 @@ export default function SubjectDetailCard(props) {
     <>
       <Card key={sched._id} className="details-card-styling">
         <Card.Body className="details-card-body-styling">
-
-
-
-         <div className="dropdown-container" tabindex="-1">
-    <div className="three-dots"></div>
-    <div className="dropdown">
-      <a className="options" href="#"><div>Edit</div></a>
-      <a className="options" href="#"><div>Delete</div></a>
-    </div>
-  </div>
-
-
+          <div className="dropdown-container" tabIndex="-1">
+            <div className="three-dots"></div>
+            <div className="dropdown dropdown1">
+              <span className="options" onClick={openEdit}>
+                <div>Edit</div>
+              </span>
+              <span className="options" onClick={deleteSchedule}>
+                <div>Delete</div>
+              </span>
+            </div>
+          </div>
 
           <Card.Title className="details-card-title-styling">
             Day: {sched.day}
@@ -91,19 +90,6 @@ export default function SubjectDetailCard(props) {
             Join Class
           </button>
           <br />
-
-
-
-
-          {/* <button
-            className="delete-button-styling fa-2x"
-            onClick={deleteSchedule}
-          >
-            <i className="fas fa-trash"></i>
-          </button>
-          <button className="edit-button-styling" onClick={openEdit}>
-            <i className="fas fa-edit fa-2x"></i>
-          </button> */}
         </Card.Body>
       </Card>
       <EditSubjectPopup

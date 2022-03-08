@@ -47,8 +47,8 @@ const getStyles = (name, personName, theme) => {
 const AddSubjectPopup = ({ isOpen, close, notify_success, notify_error }) => {
   const [days, setDays] = React.useState([]);
   const [subject, setSubject] = useState("");
-  const [subjectEmpty,setSubjectEmpty] = useState(true);
-  const [btnActive,setBtnActive] = useState(false);
+  const [subjectEmpty, setSubjectEmpty] = useState(true);
+  const [btnActive, setBtnActive] = useState(false);
   const theme = useTheme();
   const { addSubject, getSubjects } = useContext(SubjectContext);
 
@@ -78,10 +78,10 @@ const AddSubjectPopup = ({ isOpen, close, notify_success, notify_error }) => {
   };
   const trackChange = (event) => {
     setSubject(event.target.value);
-    if(event.target.value.length>=1){
-      setSubjectEmpty(false)
-    }else{
-      setSubjectEmpty(true)
+    if (event.target.value.length >= 1) {
+      setSubjectEmpty(false);
+    } else {
+      setSubjectEmpty(true);
     }
   };
   const handleChange = (event) => {
@@ -91,10 +91,9 @@ const AddSubjectPopup = ({ isOpen, close, notify_success, notify_error }) => {
 
     setDays(typeof value === "string" ? value.split(",") : value);
 
-    if(event.target.value.length>=1)
-    {
+    if (event.target.value.length >= 1) {
       setBtnActive(true);
-    }else{
+    } else {
       setBtnActive(false);
     }
   };
@@ -184,7 +183,11 @@ const AddSubjectPopup = ({ isOpen, close, notify_success, notify_error }) => {
                 );
               })}
             </div>
-            <button className="Add-subject-button" onClick={addNewSubject} disabled={!btnActive}>
+            <button
+              className="Add-subject-button"
+              onClick={addNewSubject}
+              disabled={!btnActive}
+            >
               Add Subject
             </button>
           </div>

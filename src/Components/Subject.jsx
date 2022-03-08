@@ -39,8 +39,8 @@ function Subject(props) {
       const hours = timing.slice(0, 2);
       let minutes = timing.slice(3);
       let mins = parseInt(minutes);
-      if (mins<10) {
-        minutes = "0"+minutes;
+      if (mins < 10) {
+        minutes = "0" + minutes;
       }
       let hrs = parseInt(hours);
       let classTime;
@@ -69,12 +69,9 @@ function Subject(props) {
   };
   return (
     <>
-      <Card className="card-styling" onClick={editSubject}>
-
+      <Card className="card-styling" >
         <Card.Body className="card-body-styling">
-
-
-        {/* <div className="dropdown-container-main" tabindex="-1">
+          {/* <div className="dropdown-container-main" tabindex="-1">
 
         <div className="main-dots"></div>
     
@@ -93,15 +90,11 @@ function Subject(props) {
             Join Class
           </button>
 
-
           <div className="edit-delete">
-          <i className="fa-solid fa-pen"></i>
+            <i className="fa-solid fa-pen" onClick={editSubject}></i>
 
-          <i class="fa-solid fa-trash-can"></i>
-
+            <i className="fa-solid fa-trash-can"></i>
           </div>
-
-
 
           {/* <i className="fas fa-angle-double-down downShift" onClick={editSubject}></i> */}
         </Card.Body>

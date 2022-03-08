@@ -176,7 +176,8 @@ a div {
   padding: 2px;
 }
 
-.dropdown {
+.dropdown1 {
+  cursor: pointer;
   position: absolute;
   right: 10px;
   background-color: #C2DDD8;

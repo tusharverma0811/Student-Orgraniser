@@ -2,8 +2,43 @@ const express = require("express");
 const authorizeuser = require("../middlewares/authorizeuser.js");
 const router = express.Router();
 const Subject = require("../models/subject.js");
+const allDays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
 
+const getCurrentDay = ()=>{
+    let date = new Date();
+    let daynum = date.getDay();
 
+    return allDays[daynum];
+}
+
+  const sortSubject = (a,b)=>{
+    let day = getCurrentDay();
+
+    let check1 = a.routine.find((obj)=>{
+        return obj.day===day;
+    })
+
+    let check2 = b.routine.find((obj)=>{
+        return obj.day === day;
+    })
+
+    if(check1 && check2){
+        return 0;
+    }
+    else if(check1){
+        return -1;
+    }
+    
+    return 1;
+}
 //Add a Subject with routine using : POST /subject/addsubject (login required)
 router.post(
     "/addsubject",
@@ -33,6 +68,7 @@ router.get(
         try{
             //Find all the subjects of the logged in user
             const subjects = await Subject.find({user:req.user.id});
+            subjects.sort(sortSubject);
             return res.json({subjects});
         }catch(err){
             console.log(err);

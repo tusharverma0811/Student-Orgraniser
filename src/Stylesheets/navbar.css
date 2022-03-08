@@ -124,9 +124,6 @@
   border-radius: 10px;
 }
 
-.show-cart {
-  display: none;
-}
 .nav-link {
   color: black;
   cursor: pointer;
@@ -143,6 +140,13 @@
 .navbar-nav li {
   margin: 0 1.2rem;
 }
+
+.nav-about {
+  text-transform: uppercase;
+  font-size: x-large;
+  text-align: center;
+}
+
 @media screen and (max-width: 990px) {
   header {
     font-size: 1.5rem;
@@ -166,8 +170,5 @@
     font-size: 1.5rem;
     padding: 10rem;
     border-radius: 10px;
-  }
-  .show-cart {
-    display: inline;
   }
 }
