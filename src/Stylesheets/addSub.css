@@ -19,6 +19,12 @@
   z-index: 1000;
 }
 
+@media(max-width:700px){
+  .exp{
+    width: 15rem;
+    height: fit-content;
+  }
+}
 .Add-subject-button {
     background: rgb(44, 122, 123);
     color: white;

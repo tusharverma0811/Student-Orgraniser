@@ -23,7 +23,7 @@ const TimeInput = (props) => {
   return (
     <>
       <FormControl sx={{ m: 1, width: "100%" }}>
-        <Grid container spacing={3}>
+        <Grid container spacing={1}>
           <Grid item xs="auto">
             <TextField
               variant="filled"
@@ -41,7 +41,7 @@ const TimeInput = (props) => {
               ></TimePicker>
             </LocalizationProvider>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs="auto">
             <TextField
               variant="filled"
               id="filled-required"

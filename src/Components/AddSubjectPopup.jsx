@@ -123,7 +123,7 @@ const AddSubjectPopup = ({ isOpen, close, notify_success, notify_error }) => {
               close();
             }}
           ></i>
-          <div className="fields">
+          <div className="exp">
             <FormControl sx={{ m: 1, width: "100%" }}>
               <TextField
                 className="Subject"
