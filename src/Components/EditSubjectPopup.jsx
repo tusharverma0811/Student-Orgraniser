@@ -3,6 +3,7 @@ import ReactDom from "react-dom";
 import "../Stylesheets/editSub.css";
 import SubjectContext from "../Contexts/SubjectContext";
 import EditTime from "./EditTime";
+import { FormControl } from "@mui/material";
 
 const EditSubjectPopup = (props) => {
   const { updateRoutine, getSubject, addRoutine } = useContext(SubjectContext);
@@ -74,7 +75,8 @@ const EditSubjectPopup = (props) => {
               close();
             }}
           ></i>
-          <div>
+          <div className="exp">
+          <FormControl sx={{ m: 1, width: "100%" }}>
             <EditTime
               day={props.day}
               url={props.url}
@@ -88,6 +90,7 @@ const EditSubjectPopup = (props) => {
             >
               {toAdd ? "Add" : "Edit"}
             </button>
+            </FormControl>
           </div>
         </div>
       </div>

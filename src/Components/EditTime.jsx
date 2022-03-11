@@ -29,9 +29,9 @@ const EditTime = (props) => {
   };
   return (
     <>
-      <FormControl sx={{ m: 1, width: 500 }}>
-        <Grid container columnSpacing={{ xs: 2 }} rowSpacing={{ xs: 2 }}>
-          <Grid item xs={4}>
+      <FormControl sx={{ m: 1, width: "100%" }}>
+        <Grid container spacing={1}>
+          <Grid item xs="auto">
             <select
               className="form-select daySelect"
               aria-label="Default select example"
@@ -48,7 +48,7 @@ const EditTime = (props) => {
               <option value="Saturday">Saturday</option>
             </select>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs="auto">
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <TimePicker
                 value={value}
@@ -57,7 +57,7 @@ const EditTime = (props) => {
               ></TimePicker>
             </LocalizationProvider>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs="auto">
             <TextField
               variant="filled"
               id="filled-required"

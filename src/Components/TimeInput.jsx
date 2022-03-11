@@ -22,9 +22,9 @@ const TimeInput = (props) => {
   };
   return (
     <>
-      <FormControl sx={{ m: 1, width: 500 }}>
-        <Grid container columnSpacing={{ xs: 2 }} rowSpacing={{ xs: 2 }}>
-          <Grid item xs={4}>
+      <FormControl sx={{ m: 1, width: "100%" }}>
+        <Grid container spacing={1}>
+          <Grid item xs="auto">
             <TextField
               variant="filled"
               id="filled-required"
@@ -32,7 +32,7 @@ const TimeInput = (props) => {
               disabled
             ></TextField>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs="auto">
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <TimePicker
                 value={value}
@@ -41,7 +41,7 @@ const TimeInput = (props) => {
               ></TimePicker>
             </LocalizationProvider>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs="auto">
             <TextField
               variant="filled"
               id="filled-required"
