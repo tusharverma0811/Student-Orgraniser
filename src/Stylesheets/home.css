@@ -15,7 +15,7 @@
 .photo {
   width: 48rem;
   height: 31rem;
-  margin-top: 7rem;
+  margin-top: 0rem;
   margin-left: -1rem;
 }
 
@@ -28,6 +28,11 @@
     width: 20rem;
     margin-top: -15rem;
   }
+}
+
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    margin-bottom: -0.5rem;
 }
 
 .custom-shape-divider-bottom-1646078770 {
@@ -68,12 +73,12 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-top: 8.5rem;
+  padding-top: 2.5rem;
   margin: 2.5rem;
 }
 
 .heading-text h1 {
-  font-size: 4vw;
+  font-size: 3vw;
   margin-right: -11rem;
   margin-left: -11rem;
   background: -webkit-linear-gradient(#4c7361, #007164);
@@ -84,7 +89,7 @@
 }
 
 .heading-text p {
-  font-size: 1.8vw;
+  font-size: 1.6vw;
   color: #004820;
   font-family: "Merriweather", serif;
   /* margin-left: 2rem; */
@@ -92,9 +97,9 @@
   align-items: center;
 }
 
-.btn {
+.main-button {
   height: 4rem;
-  width: 11rem;
+  width: 16rem;
   margin-left: 12rem;
   margin-bottom: 4rem;
   align-items: center;
@@ -137,9 +142,9 @@
     width: 20rem;
   }
 
-  .btn {
+  .main-button {
     height: 3rem;
-    width: 8rem;
+    width: 10rem;
     margin-left: 0rem;
     margin-top: -2rem;
     margin-left: 6rem;
@@ -184,9 +189,9 @@
     width: 20rem;
   }
 
-  .btn {
+  .main-button {
     height: 3rem;
-    width: 8rem;
+    width: 10rem;
     margin-left: 0rem;
     margin-top: -2rem;
     margin-left: 6rem;
@@ -283,12 +288,13 @@
 .developers-container {
   margin: auto;
   width: 80%;
-  margin-left: 21rem;
+  margin-left: 15rem;
 }
 
 @media only screen and (min-width: 200px) and (max-width: 767px) {
   .developers-container {
     width: 50%;
+    margin-left: 6rem;;
   }
 }
 

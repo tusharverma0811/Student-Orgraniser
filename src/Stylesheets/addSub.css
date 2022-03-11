@@ -20,15 +20,14 @@
 }
 
 .Add-subject-button {
-  background: rgb(44, 122, 123);
-  color: white;
-  border-color: #2c7a7b;
-  width: 110px;
-  margin-left: 400px;
-  margin-top: 20px;
-  border-radius: 10px;
-  height: 40px;
-  font-family: "Work Sans", sans-serif;
+    background: rgb(44, 122, 123);
+    color: white;
+    border-color: #2c7a7b;
+    width: 9rem;
+    margin: 2rem;
+    border-radius: 10px;
+    height: 3.6rem;
+    font-family: "Work Sans", sans-serif;
 }
 
 .Add-subject-button:hover {
@@ -47,4 +46,48 @@
   top: 13.5px;
   color: black;
   cursor: pointer;
+}
+.css-la3dzh-MuiFormControl-root {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    vertical-align: top;
+    margin: 8px;
+    width: 223px;
+}
+ /* .fields{
+    width: 21rem;
+  } */
+
+  .close:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    margin-left: -35rem;
+}
+
+
+@media(max-width: 700px)
+{
+   .fields{
+    width: 21rem;
+  } 
+
+  /* .reg {
+    width: 85%;
+    height: 75%;
+} */
+
+  .close:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    margin-left: -20rem;
+}
+
 }

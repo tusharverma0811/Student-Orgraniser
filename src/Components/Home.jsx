@@ -68,7 +68,7 @@ export default function Home(props) {
                 {localStorage.getItem("token")==null ?<button type="button" className="btn btn-success" onClick={openLoginPopup}>
                   Get Started
                 </button>:
-                <button className="btn btn-success"><Link to="/main">Check Your Schedule</Link></button>}
+                <button className="btn btn-success main-button"><Link to="/main">Check Your Schedule</Link></button>}
               </div>
             </div>
           </div>

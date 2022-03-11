@@ -11,7 +11,7 @@ bg {
 .card-styling {
   display: flex;
   border-radius: 2rem;
-  width: 70%;
+  width: 60%;
   align-items: center;
   justify-content: center;
   margin: auto;
@@ -70,9 +70,16 @@ bg {
 
 .card-body-styling {
   font-family: montserrat;
-  padding-bottom: 1px;
+  padding-bottom: 0px;
 }
-
+.card-body {
+    flex: 1 1 auto;
+    padding: 0rem;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 .downShift {
   display: flex;
   align-items: center;
@@ -141,7 +148,7 @@ a div {
 
 .edit-delete {
   font-size: 1rem;
-  margin-left: -61rem;
+  margin-left: -50rem;
 }
 
 .fa-pen {

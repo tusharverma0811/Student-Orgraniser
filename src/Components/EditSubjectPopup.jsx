@@ -80,7 +80,9 @@ const EditSubjectPopup = (props) => {
               url={props.url}
               makeChange={storeEditedSched}
             ></EditTime>
+          </div>
 
+          <div>
             <button
               className="edit-button"
               onClick={editSched}

@@ -29,8 +29,8 @@ const EditTime = (props) => {
   };
   return (
     <>
-      <FormControl sx={{ m: 1, width: 500 }}>
-        <Grid container columnSpacing={{ xs: 2 }} rowSpacing={{ xs: 2 }}>
+      <FormControl sx={{ m: 1, width: "100%" }}>
+        <Grid container spacing={3}>
           <Grid item xs={4}>
             <select
               className="form-select daySelect"

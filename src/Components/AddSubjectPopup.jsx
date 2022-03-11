@@ -30,7 +30,7 @@ const MenuProps = {
   PaperProps: {
     style: {
       maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
+      // width: 250,
     },
   },
 };
@@ -123,8 +123,8 @@ const AddSubjectPopup = ({ isOpen, close, notify_success, notify_error }) => {
               close();
             }}
           ></i>
-          <div>
-            <FormControl sx={{ m: 1, width: 500 }}>
+          <div className="fields">
+            <FormControl sx={{ m: 1, width: "100%" }}>
               <TextField
                 className="Subject"
                 required
@@ -138,7 +138,7 @@ const AddSubjectPopup = ({ isOpen, close, notify_success, notify_error }) => {
             </FormControl>
             <br />
             <div>
-              <FormControl sx={{ m: 1, width: 500 }}>
+              <FormControl sx={{ m: 1, width: "100%" }}>
                 {/* <p>Days</p> */}
                 {/* <InputLabel id="demo-multiple-name-label">Days</InputLabel> */}
                 <Select

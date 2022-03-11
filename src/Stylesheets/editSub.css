@@ -63,4 +63,21 @@
   top: 13.5px;
   color: black;
   cursor: pointer;
+  margin-left: -34rem;
+}
+
+@media(max-width:1000px)
+{
+  .close-edit-subject {
+    position: absolute;
+    left: 580px;
+    top: 13.5px;
+    color: black;
+    cursor: pointer;
+    margin-left: -34rem;
+}
+
+.edit-button {
+  margin-left: -9rem;;
+}
 }
