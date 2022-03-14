@@ -73,7 +73,8 @@
   border-radius: 5px;
   color: red;
   left: 100px;
-  margin-left: 260px;
+  margin-left: 16rem;
+  margin-top: -3.25rem;
   margin-bottom: 50px;
 }
 .cancel-button-forgot:hover {
@@ -101,7 +102,7 @@
   color: white;
 }
 .submit-button {
-  margin-left: 180px;
+  margin-left: 10rem;
 }
 
 .close-sign {
@@ -110,4 +111,71 @@
   top: 12px;
   color: black;
   cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  .reg-forgot {
+    width: 82%;
+    height: 16rem;
+  }
+
+  .submit-button {
+    margin-left: 0rem;
+  }
+
+  .cancel-button-forgot {
+    margin-left: 10rem;
+  }
+
+  .close-sign {
+    /* position: absolute; */
+    position: relative;
+    left: -1rem;
+    top: -1rem;
+    color: black;
+    cursor: pointer;
+  }
+
+  .main {
+    margin-left: -4rem;
+  }
+  .reg-reset {
+    width: 80%;
+    height: 18rem;
+  }
+  .confirm-button {
+    margin-left: 1rem;
+    margin-top: 5rem;
+  }
+  .cancel-button {
+    margin-left: -2rem;
+    margin-top: 5rem;
+  }
+  .closesign {
+    margin-left: -34rem;
+  }
+
+  .btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    margin-bottom: -5.5rem;
+  }
+}
+
+@media only screen and (min-width: 701px) and (max-width: 1224px) {
+  .confirm-button {
+    margin-left: 5rem;
+    margin-top: 7rem;
+  }
+  .cancel-button {
+    margin-left: 5rem;
+    margin-top: 5rem;
+  }
+  .closesign {
+    margin-left: -34rem;
+  }
+
+  .btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    margin-bottom: -5.5rem;
+  }
 }

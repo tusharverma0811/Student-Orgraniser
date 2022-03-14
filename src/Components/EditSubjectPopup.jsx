@@ -76,22 +76,20 @@ const EditSubjectPopup = (props) => {
             }}
           ></i>
           <div className="exp">
-          <FormControl sx={{ m: 1, width: "100%" }}>
-            <EditTime
-              day={props.day}
-              url={props.url}
-              makeChange={storeEditedSched}
-            ></EditTime>
-          </div>
+            <FormControl sx={{ m: 1, width: "100%" }}>
+              <EditTime
+                day={props.day}
+                url={props.url}
+                makeChange={storeEditedSched}
+              ></EditTime>
 
-          <div>
-            <button
-              className="edit-button"
-              onClick={editSched}
-              disabled={!changesMade}
-            >
-              {toAdd ? "Add" : "Edit"}
-            </button>
+              <button
+                className="edit-button"
+                onClick={editSched}
+                disabled={!changesMade}
+              >
+                {toAdd ? "Add" : "Edit"}
+              </button>
             </FormControl>
           </div>
         </div>

@@ -61,7 +61,7 @@
 }
 
 .getstarted {
-  background-color: rgba(255, 255, 0, 0.89);
+  background-color: #007164;
   border-radius: 10px;
   padding-bottom: 0.5px;
   position: relative;
@@ -105,8 +105,8 @@
   padding-bottom: 30px;
 }
 .dropdown-menu a:hover {
-  background: rgba(255, 255, 0, 0.89);
-  color: black;
+  background: #007164;;
+  color: white;
 }
 .dropdown-item {
   text-align: left;
@@ -119,8 +119,8 @@
 }
 
 .dropdown-item:hover {
-  background: rgba(255, 255, 0, 0.89);
-  color: black;
+  background: #007164;;
+  color: white;
   border-radius: 10px;
 }
 
@@ -150,25 +150,27 @@
 @media screen and (max-width: 990px) {
   header {
     font-size: 1.5rem;
-    position: fixed;
   }
-  .navbar-brand img {
+  nav .navbar-brand img {
     width: 6rem;
   }
-  .nav-link {
+  nav .nav-link {
     width: 25rem;
     margin: 0 auto;
   }
-  .dropdown-menu {
+  nav .dropdown-menu {
     padding: 0.5rem;
-    width: 25rem;
-    margin: 0 auto;
+    width: 19rem;
+    margin: 0.5rem 0.7rem;
     border-radius: 5px;
   }
-  .dropdown-menu a {
+  nav .dropdown-menu a {
     color: #333333;
-    font-size: 1.5rem;
-    padding: 10rem;
-    border-radius: 10px;
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+  }
+  nav .show-cart {
+    display: inline;
   }
 }

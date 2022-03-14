@@ -39,7 +39,7 @@ export default function ResetPasswordPopup({
       <div className="overlay-reset">
         <div className="reg-reset">
           <i className="fas fa-times fa-2x closesign" onClick={close}></i>
-          <div>
+          <div className="edit-password-popup">
             <b>
               Note: A link will be sent to your registered email to reset your
               password

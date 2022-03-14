@@ -98,16 +98,19 @@
 }
 
 .main-button {
-  height: 4rem;
-  width: 16rem;
-  margin-left: 12rem;
-  margin-bottom: 4rem;
-  align-items: center;
-  justify-content: center;
-  background-color: #007164;
-  font-family: "Merriweather", serif;
-  font-size: 1.7vw;
+      height: 4rem;
+    width: 16rem;
+    margin-left: 12rem;
+    margin-bottom: 4rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #007164;
+    font-family: "Merriweather", serif;
+    font-size: 1.7vw;
+    text-decoration: none;
+    color: white;
 }
+
 
 @media (max-width: 70rem) {
   .heading-text {
@@ -143,16 +146,17 @@
   }
 
   .main-button {
-    height: 3rem;
-    width: 10rem;
-    margin-left: 0rem;
-    margin-top: -2rem;
-    margin-left: 6rem;
+      height: 4rem;
+    width: 16rem;
+    margin-left: 12rem;
+    margin-bottom: 4rem;
     align-items: center;
     justify-content: center;
     background-color: #007164;
     font-family: "Merriweather", serif;
-    font-size: 3.7vw;
+    font-size: 1.7vw;
+    text-decoration: none;
+    color: white;
   }
 }
 

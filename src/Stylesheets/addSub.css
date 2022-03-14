@@ -19,8 +19,8 @@
   z-index: 1000;
 }
 
-@media(max-width:700px){
-  .exp{
+@media (max-width: 700px) {
+  .exp {
     width: 15rem;
     height: fit-content;
   }
@@ -29,10 +29,11 @@
     background: rgb(44, 122, 123);
     color: white;
     border-color: #2c7a7b;
-    width: 9rem;
-    margin: 2rem;
+    width: 110px;
+    margin-left: 40rem;
+    margin-top: 2rem;
     border-radius: 10px;
-    height: 3.6rem;
+    height: 3.5rem;
     font-family: "Work Sans", sans-serif;
 }
 
@@ -52,48 +53,34 @@
   top: 13.5px;
   color: black;
   cursor: pointer;
-}
-.css-la3dzh-MuiFormControl-root {
-    display: -webkit-inline-box;
-    display: -webkit-inline-flex;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    position: relative;
-    min-width: 0;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    vertical-align: top;
-    margin: 8px;
-    width: 223px;
-}
- /* .fields{
-    width: 21rem;
-  } */
-
-  .close:not(:disabled):not(.disabled) {
-    cursor: pointer;
-    margin-left: -35rem;
+  margin-left: -35rem;
 }
 
-
-@media(max-width: 700px)
+@media(max-width:900px)
 {
-   .fields{
-    width: 21rem;
-  } 
-
-  /* .reg {
-    width: 85%;
-    height: 75%;
-} */
-
-  .close:not(:disabled):not(.disabled) {
-    cursor: pointer;
-    margin-left: -20rem;
+  .Add-subject-button {
+    margin-left: 3rem;
+  }
+  .reg {
+    position: absolute;
+    top: 36%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 50px;
+    padding-bottom: 65px;
+    z-index: 1000;
+    /* height: 100%; */
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  height: 100%;
+}
 }

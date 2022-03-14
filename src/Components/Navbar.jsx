@@ -105,17 +105,17 @@ export const Navbar = (props) => {
                         aria-labelledby="navbarDropdownMenuLink"
                       >
                         <Link className="dropdown-item" to="/main">
-                          <i className="fas fa-book"></i> &nbsp;My Subjects
+                          <i className="fas fa-book"></i> &nbsp;MY SUBJECTS
                         </Link>
                         <span
                           className="dropdown-item"
                           onClick={openResetPopup}
                         >
-                          <i className="fas fa-cog"></i> &nbsp;Edit Password
+                          <i className="fas fa-cog"></i> &nbsp;EDIT PASSWORD
                         </span>
 
                         <span className="dropdown-item" onClick={handleLogout}>
-                          <i className="fas fa-sign-in-alt"></i> &nbsp;Logout
+                          <i className="fas fa-sign-in-alt"></i> &nbsp;LOGOUT
                         </span>
                       </div>
                     </li>
