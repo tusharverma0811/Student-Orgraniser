@@ -8,7 +8,7 @@ import { FormControl } from "@mui/material";
 const EditSubjectPopup = (props) => {
   const { updateRoutine, getSubject, addRoutine } = useContext(SubjectContext);
   const [changesMade, setChangesMade] = useState(false);
-  const { isOpen, close, sid, rid, toAdd } = props;
+  const { isOpen, close, sid, rid, toAdd,notify_success,notify_error } = props;
   let editedSched = { day: props.day, time: "", link: props.url };
   const [editedDay, setEditedDay] = useState("");
   if (!isOpen) return null;
@@ -27,7 +27,7 @@ const EditSubjectPopup = (props) => {
   const editSched = async () => {
     try {
       if (!toAdd) {
-        console.log(editedDay);
+        console.log(editedSched);
         const response = await updateRoutine(
           editedDay,
           editedSched.time,
@@ -40,12 +40,15 @@ const EditSubjectPopup = (props) => {
           await getSubject(sid);
           setChangesMade(false);
           close();
+          notify_success("Successfully Updated Schedule")
         } else {
+          notify_error(response.error);
           console.log(response.error);
         }
       } else {
+        console.log(editedSched);
         const response = await addRoutine(
-          editedSched.day,
+          editedDay,
           editedSched.time,
           editedSched.link,
           sid
@@ -55,11 +58,14 @@ const EditSubjectPopup = (props) => {
           await getSubject(sid);
           setChangesMade(false);
           close();
+          notify_success("Successfully Added Another Day")
         } else {
+          notify_error(response.error)
           console.log(response.error);
         }
       }
     } catch (err) {
+      notify_error("Sorry! Please Try Again")
       console.log(err);
     }
   };

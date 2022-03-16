@@ -6,7 +6,7 @@ import SubjectDetailCard from "./SubjectDetailCard";
 import EditSubjectPopup from "./EditSubjectPopup";
 import Navbar from "./Navbar";
 
-const SubjectDetail = () => {
+const SubjectDetail = (props) => {
   const { subjectid } = useParams();
   const { getSubject, subject } = useContext(SubjectContext);
   const [addSched, setaddSched] = useState(false);
@@ -39,6 +39,8 @@ const SubjectDetail = () => {
                 sched={schedule}
                 sid={subjectid}
                 rid={schedule._id}
+                notify_success={props.notify_success}
+                notify_error={props.notify_error}
               />
             );
           })}
@@ -53,6 +55,8 @@ const SubjectDetail = () => {
           close={closeAddDay}
           sid={subjectid}
           toAdd={true}
+          notify_success={props.notify_success}
+          notify_error={props.notify_error}
         ></EditSubjectPopup>
       </div>
     </>

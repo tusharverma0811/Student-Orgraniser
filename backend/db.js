@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const connectToMongo = ()=>{
-     mongoose.connect("mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&ssl=false",()=>{
+     mongoose.connect("mongodb+srv://admin-tushar:tushar0811@cluster0.w3h0a.mongodb.net/studentframeDB?retryWrites=true&w=majority",()=>{
         console.log("Connected to DB");
     })
 }

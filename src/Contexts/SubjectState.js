@@ -4,7 +4,12 @@ import SubjectContext from "./SubjectContext";
 const SubjectState = (props) => {
   const initialSubjects = [];
   const [subjects, setSubjects] = useState(initialSubjects);
-  const [subject,setSubject] = useState({subName:"",time:"",link:"",routine:[]});
+  const [subject, setSubject] = useState({
+    subName: "",
+    time: "",
+    link: "",
+    routine: [],
+  });
 
   const getSubjects = async () => {
     try {
@@ -25,21 +30,21 @@ const SubjectState = (props) => {
     }
   };
 
-  const getSubject = async(sid)=>{
-    try{
-      const response = await fetch(`/subject/getsubject/${sid}`,{
-        method:"GET",
-        headers:{
-          "Content-Type":"application/json",
-          "auth-token":localStorage.getItem("token")
-        }
+  const getSubject = async (sid) => {
+    try {
+      const response = await fetch(`/subject/getsubject/${sid}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          "auth-token": localStorage.getItem("token"),
+        },
       });
 
       const data = await response.json();
       if (!data.hasOwnProperty("error")) {
         setSubject(data);
       }
-    }catch(err){
+    } catch (err) {
       console.log(err);
     }
   };
@@ -56,67 +61,99 @@ const SubjectState = (props) => {
       });
       const data = await response.json();
       return data;
-
     } catch (err) {
       console.log(err);
     }
   };
 
-  const updateRoutine = async(day,time,link,sid,rid)=>{
-    try{
-      const response = await fetch(`/subject/routine/updateroutine/${sid}/${rid}`,{
-        method:"PATCH",
-        headers:{
+  const deleteSubject = async (id) => {
+    try {
+      const response = await fetch(`/subject/deletesubject/${id}`, {
+        method: "DELETE",
+        headers: {
           "Content-Type": "application/json",
-          "auth-token": localStorage.getItem("token")
+          "auth-token": localStorage.getItem("token"),
         },
-        body: JSON.stringify({day,time,link})
       });
 
       const data = await response.json();
       return data;
-    }catch(err){
+    } catch (err) {
       console.log(err);
     }
-
-  }
-
-  const deleteRoutine = async(sid,rid)=>{
-    try{
-      const response = await fetch(`/subject/routine/deleteroutine/${sid}/${rid}`,{
-        method:"DELETE",
-        headers:{
-          "Content-Type":"application/json",
-          "auth-token":localStorage.getItem("token")
+  };
+  const updateRoutine = async (day, time, link, sid, rid) => {
+    try {
+      const response = await fetch(
+        `/subject/routine/updateroutine/${sid}/${rid}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            "auth-token": localStorage.getItem("token"),
+          },
+          body: JSON.stringify({ day, time, link }),
         }
-      });
-      
+      );
+
       const data = await response.json();
       return data;
-    }catch(err){
+    } catch (err) {
       console.log(err);
     }
-  }
+  };
 
-  const addRoutine = async(day,time,link,sid)=>{
-    try{
-      const response = await fetch(`/subject/routine/addroutine/${sid}`,{
-        method:"PATCH",
-        headers:{
-          "Content-Type":"application/json",
-          "auth-token":localStorage.getItem("token")
+  const deleteRoutine = async (sid, rid) => {
+    try {
+      const response = await fetch(
+        `/subject/routine/deleteroutine/${sid}/${rid}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            "auth-token": localStorage.getItem("token"),
+          },
+        }
+      );
+
+      const data = await response.json();
+      return data;
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const addRoutine = async (day, time, link, sid) => {
+    try {
+      const response = await fetch(`/subject/routine/addroutine/${sid}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          "auth-token": localStorage.getItem("token"),
         },
-        body: JSON.stringify({day,time,link})
+        body: JSON.stringify({ day, time, link }),
       });
 
       const data = await response.json();
       return data;
-    }catch(err){
+    } catch (err) {
       console.log(err);
     }
-  }
+  };
   return (
-    <SubjectContext.Provider value={{ subjects, subject,getSubjects, addSubject, getSubject, updateRoutine,deleteRoutine,addRoutine }}>
+    <SubjectContext.Provider
+      value={{
+        subjects,
+        subject,
+        getSubjects,
+        addSubject,
+        getSubject,
+        updateRoutine,
+        deleteRoutine,
+        addRoutine,
+        deleteSubject,
+      }}
+    >
       {props.children}
     </SubjectContext.Provider>
   );

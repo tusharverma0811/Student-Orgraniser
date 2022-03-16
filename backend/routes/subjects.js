@@ -123,7 +123,7 @@ router.delete(
             //Delete the subject
             await Subject.findByIdAndDelete(req.params.subjectid);
 
-            return res.send("Successfully Deleted");
+            return res.json({Success:"Successfully deleted"});
         }catch(err){
             console.log(err);
             return res.status(500).json({error:"Some Internal Error Occured"});

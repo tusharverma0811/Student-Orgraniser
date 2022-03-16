@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useContext } from "react";
 import { Card } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
+import SubjectContext from "../Contexts/SubjectContext";
 import "../Stylesheets/subjectStyles.css";
 // import Header from "./Header";
 
 function Subject(props) {
   const [classToday, setClassToday] = useState(false);
+  const {deleteSubject,getSubjects} = useContext(SubjectContext);
   const [isClass, setIsClass] = useState("");
   const allDays = [
     "Sunday",
@@ -16,7 +18,7 @@ function Subject(props) {
     "Friday",
     "Saturday",
   ];
-  const { schedule, sid } = props;
+  const { schedule, sid, notify_success, notify_error } = props;
   const history = useHistory();
   let link;
   useEffect(() => {
@@ -36,8 +38,9 @@ function Subject(props) {
       const timing = check.time;
       link = check.link;
       setClassToday(true);
-      const hours = timing.slice(0, 2);
-      let minutes = timing.slice(3);
+      const time = timing.split(":");
+      const hours = time[0];
+      let minutes = time[1];
       let mins = parseInt(minutes);
       if (mins < 10) {
         minutes = "0" + minutes;
@@ -59,6 +62,22 @@ function Subject(props) {
       setIsClass("Wooho! You Don't have a class today");
     }
   };
+
+  const deleteSub = async()=>{
+    try{
+      const response = await deleteSubject(sid);
+      if (response.hasOwnProperty("error")) {
+        notify_error(response.error);
+      } 
+      else {
+        notify_success("Successfully Deleted");
+        await getSubjects();
+      }
+    } catch (err) {
+      console.log(err);
+      notify_error("Sorry! Try Again");
+    }
+  }
 
   const joinClass = () => {
     window.open(link);
@@ -93,7 +112,7 @@ function Subject(props) {
           <div className="edit-delete">
             <i className="fa-solid fa-pen" onClick={editSubject}></i>
 
-            <i className="fa-solid fa-trash-can"></i>
+            <i className="fa-solid fa-trash-can" onClick={deleteSub}></i>
           </div>
 
           {/* <i className="fas fa-angle-double-down downShift" onClick={editSubject}></i> */}

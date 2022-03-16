@@ -1,5 +1,4 @@
 import React,{useState} from "react";
-import {Link} from "react-router-dom";
 import "../Stylesheets/home.css";
 import Navbar from "./Navbar";
 import LoginPopup from "./LoginPopup";
@@ -10,6 +9,7 @@ import shubham from "./img/shubham-photo.png";
 import homepic from "./img/hometop.png";
 import ScrollButton from "./ScrollButton";
 import { Card } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 
 export default function Home(props) {
   const aboutRef = React.useRef(null);
@@ -19,6 +19,7 @@ export default function Home(props) {
   };
   const [loginPopup, setLoginPopup] = useState(false);
   const [forgotPwdPopup, setForgotPwdPopup] = useState(false);
+  const history = useHistory();
 
   function openLoginPopup() {
     setLoginPopup(true);
@@ -36,6 +37,9 @@ export default function Home(props) {
     setForgotPwdPopup(false);
   };
 
+  const redirectToMain = ()=>{
+    history.push("/main");
+  }
   return (
     <>
       <Navbar
@@ -65,10 +69,10 @@ export default function Home(props) {
                   <br />
                 </p>
 
-                {localStorage.getItem("token")==null ?<button type="button" className="btn btn-success" onClick={openLoginPopup}>
+                {localStorage.getItem("token")==null ?<button type="button" className="btn btn-success main-button" onClick={openLoginPopup}>
                   Get Started
                 </button>:
-                <button className="btn btn-success main-button"><Link to="/main">Check Your Schedule</Link></button>}
+                <button className="btn btn-success main-button" onClick={redirectToMain}>Check Your Schedule</button>}
               </div>
             </div>
           </div>

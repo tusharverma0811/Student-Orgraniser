@@ -21,8 +21,14 @@ export default function SubjectDetailCard(props) {
 
   const deleteSchedule = async () => {
     try {
-      await deleteRoutine(props.sid, props.rid);
-      await getSubject(props.sid);
+      const response = await deleteRoutine(props.sid, props.rid);
+      if (!response.hasOwnProperty("error")) {
+        await getSubject(props.sid);
+        props.notify_success("Successfully Deleted Schedule")
+      } else {
+        props.notify_error(response.error);
+        console.log(response.error);
+      }
     } catch (err) {
       console.log(err);
     }
@@ -30,8 +36,9 @@ export default function SubjectDetailCard(props) {
   const { sched } = props;
 
   const setTime = (timing) => {
-    const hours = timing.slice(0, 2);
-    let mins = timing.slice(3);
+    const time = timing.split(":");
+    const hours = time[0];
+    let mins = time[1];
     let minutes = parseInt(mins);
     let classTime;
     if (minutes < 10) {
@@ -100,6 +107,8 @@ export default function SubjectDetailCard(props) {
         sid={props.sid}
         rid={sched._id}
         toAdd={false}
+        notify_success={props.notify_success} 
+        notify_error={props.notify_error}
       />
     </>
   );

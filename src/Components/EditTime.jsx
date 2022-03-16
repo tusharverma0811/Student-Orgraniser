@@ -25,6 +25,7 @@ const EditTime = (props) => {
   const handleDayChange = (event) => {
     setDay(event.target.value);
     const temp = value.getHours() + ":" + value.getMinutes();
+    console.log(temp);
     props.makeChange(event.target.value, temp, url);
   };
   return (

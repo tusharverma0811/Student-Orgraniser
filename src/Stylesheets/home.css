@@ -1,4 +1,3 @@
-
 .footer {
   padding: 10px 10px 10px 10px;
   font-size: medium;
@@ -31,8 +30,8 @@
 }
 
 .btn:not(:disabled):not(.disabled) {
-    cursor: pointer;
-    margin-bottom: -0.5rem;
+  cursor: pointer;
+  margin-bottom: -0.5rem;
 }
 
 .custom-shape-divider-bottom-1646078770 {
@@ -98,19 +97,18 @@
 }
 
 .main-button {
-      height: 4rem;
-    width: 16rem;
-    margin-left: 12rem;
-    margin-bottom: 4rem;
-    align-items: center;
-    justify-content: center;
-    background-color: #007164;
-    font-family: "Merriweather", serif;
-    font-size: 1.7vw;
-    text-decoration: none;
-    color: white;
+  height: 4rem;
+  width: 16rem;
+  margin-left: 12rem;
+  margin-bottom: 4rem;
+  align-items: center;
+  justify-content: center;
+  background-color: #007164;
+  font-family: "Merriweather", serif;
+  font-size: 1.7vw;
+  text-decoration: none;
+  color: white;
 }
-
 
 @media (max-width: 70rem) {
   .heading-text {
@@ -146,7 +144,8 @@
   }
 
   .main-button {
-      height: 4rem;
+    position: relative;
+    height: 4rem;
     width: 16rem;
     margin-left: 12rem;
     margin-bottom: 4rem;
@@ -154,9 +153,23 @@
     justify-content: center;
     background-color: #007164;
     font-family: "Merriweather", serif;
-    font-size: 1.7vw;
+    font-size: 5.7vw;
     text-decoration: none;
     color: white;
+    top: 80%;
+    right: 50%;
+  }
+  .hfewaj {
+    position: fixed;
+    width: 100%;
+    left: 87%;
+    margin-bottom: 50px;
+    bottom: 40px;
+    height: 20px;
+    font-size: 3rem;
+    z-index: 1;
+    cursor: pointer;
+    color: black;
   }
 }
 
@@ -233,6 +246,18 @@
     border: none;
     border-radius: 0.25rem;
   }
+  .hfewaj {
+    position: fixed;
+    width: 100%;
+    left: 87%;
+    margin-bottom: 50px;
+    bottom: 40px;
+    height: 20px;
+    font-size: 3rem;
+    z-index: 1;
+    cursor: pointer;
+    color: black;
+  }
 }
 
 #about-us {
@@ -298,7 +323,7 @@
 @media only screen and (min-width: 200px) and (max-width: 767px) {
   .developers-container {
     width: 50%;
-    margin-left: 6rem;;
+    margin-left: 6rem;
   }
 }
 

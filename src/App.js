@@ -46,11 +46,12 @@ function App() {
               notify_error={notify_error}
             />
           </Route>
-          <Route
-            exact
-            path="/subject/:subjectid"
-            component={SubjectDetail}
-          ></Route>
+          <Route exact path="/subject/:subjectid">
+            <SubjectDetail
+              notify_success={notify_success}
+              notify_error={notify_error}
+            />
+          </Route>
         </Switch>
       </BrowserRouter>
       <ToastContainer />
