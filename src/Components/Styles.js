@@ -21,4 +21,17 @@ export const Button = styled.div`
   z-index: 1;
   cursor: pointer;
   color: black;
+
+@media (max-width: 90rem) {
+  position: fixed;
+    width: 100%;
+    left: 85%;
+    margin-bottom: 50px;
+    bottom: 40px;
+    height: 20px;
+    font-size: 3rem;
+    z-index: 1;
+    cursor: pointer;
+    color: black;
+}
 `;
