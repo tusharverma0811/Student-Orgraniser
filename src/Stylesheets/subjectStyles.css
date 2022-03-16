@@ -26,6 +26,7 @@ bg {
 @media (max-width: 500px) {
   .card-styling {
     height: 15rem;
+    width: 60%;
   }
 }
 
@@ -154,7 +155,7 @@ a div {
 .edit-delete {
   position: relative;
   font-size: 1rem;
-  right: 106%;
+  /* right: 106%; */
   /* left: 2%; */
   /* margin-left: -50rem; */
   /* align-content: center; */
@@ -170,14 +171,14 @@ a div {
 
 @media (max-width: 1200px) {
   .edit-delete {
-    margin-left: -30rem;
+    /* margin-left: -30rem; */
   }
 }
 
 @media (max-width: 780px) {
   .edit-delete {
     position: relative;
-    left: 143%;
+    left: 100%;
     top: 5%;
 }
 }

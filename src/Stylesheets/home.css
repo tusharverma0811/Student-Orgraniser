@@ -98,8 +98,10 @@
 
 .main-button {
   height: 4rem;
-  width: 16rem;
-  margin-left: 12rem;
+  width: 40%;
+  position: relative;
+  left: 30%;
+  /* margin-left: 12rem; */
   margin-bottom: 4rem;
   align-items: center;
   justify-content: center;
@@ -110,7 +112,21 @@
   color: white;
 }
 
-@media (max-width: 70rem) {
+.hfewaj {
+    position: fixed;
+    width: 100%;
+    left: 95%;
+    margin-bottom: 50px;
+    bottom: 40px;
+    height: 20px;
+    font-size: 3rem;
+    z-index: 1;
+    cursor: pointer;
+    color: black;
+}
+
+
+@media (max-width: 90rem) {
   .heading-text {
     position: relative;
     display: flex;
@@ -147,8 +163,8 @@
     position: relative;
     height: 4rem;
     width: 16rem;
-    margin-left: 12rem;
-    margin-bottom: 4rem;
+    left: 7%;
+    margin-top: 4rem;
     align-items: center;
     justify-content: center;
     background-color: #007164;
@@ -159,10 +175,13 @@
     top: 80%;
     right: 50%;
   }
+}
+
+@media (min-width: 320px) {
   .hfewaj {
     position: fixed;
     width: 100%;
-    left: 87%;
+    left: 82%;
     margin-bottom: 50px;
     bottom: 40px;
     height: 20px;
@@ -180,9 +199,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-left: -1rem;
-    margin-top: 4rem;
+    /* margin-left: -1rem; */
+    /* margin-top: 4rem; */
     padding: 8.5rem;
+    left: 20%;
   }
 
   .heading-text h1 {
@@ -220,16 +240,18 @@
     width: 20rem;
   }
   .photo {
-    margin-left: 12rem;
-
-    margin-bottom: 3rem;
-    height: 17rem;
-    width: 23rem;
-    margin-top: 3rem;
+    position: relative;
+    height: 22rem;
+    width: 35rem;
+    left: 14%;
+    margin-top: 10rem;
   }
   .btn:not(:disabled):not(.disabled) {
     cursor: pointer;
-    width: 20rem;
+    position: relative;
+    top: -14%;
+    height: 7rem;
+    left: -19%;
   }
 
   .card {
@@ -315,15 +337,18 @@
 }
 
 .developers-container {
+  position: relative;
   margin: auto;
   width: 80%;
-  margin-left: 15rem;
+  /* margin-left: 15rem; */
+  left: 6%;
 }
 
 @media only screen and (min-width: 200px) and (max-width: 767px) {
   .developers-container {
     width: 50%;
-    margin-left: 6rem;
+    position: relative;
+    left: -2%;
   }
 }
 
@@ -353,9 +378,11 @@
 }
 .fa-linkedin {
   color: #0077b5;
+  padding: 1rem;
 }
 .fa-github {
   color: #171515;
+  padding: 1rem;
 }
 
 /* .devs{
@@ -382,9 +409,11 @@
 }
 .fa-linkedin {
   color: #0077b5;
+  padding: 1rem;
 }
 .fa-github {
   color: #171515;
+  padding: 1rem;
 }
 
 .footer {
