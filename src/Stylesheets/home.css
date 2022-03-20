@@ -9,6 +9,7 @@
 .landing-page-bg {
   position: absolute;
   top: 58px;
+  background-attachment: local;
 }
 
 .brief-summary {
@@ -25,7 +26,7 @@
   color: black;
   /*text-decoration: underline;*/
 }
-.fa-arrow-right {
+.fa-arrow {
   color: black;
   animation-duration: 1.6s;
   animation-name: slidein;
@@ -36,7 +37,7 @@
     margin-left: 0%;
   }
   50% {
-    margin-left: 15px;
+    margin-left: 8px;
   }
   100% {
     margin-left: 0%;

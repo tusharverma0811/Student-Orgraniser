@@ -14,7 +14,7 @@ export default function Home(props) {
         notify_success={props.notify_success}
         notify_error={props.notify_error}
       />
-      <div className="horizontal"></div>
+
       <div className="landing-page-bg">
         <img src={img1} alt="" width="1350" height="718" />
       </div>
@@ -33,7 +33,7 @@ export default function Home(props) {
           <strong className="strong">
             Try out the new Student Essentials Organizer now
           </strong>{" "}
-          <i className="fas fa-arrow-right"></i>
+          <i className="fas fa-arrow-right fa-arrow"></i>
         </p>
       </div>
       <div id="about-Section">
