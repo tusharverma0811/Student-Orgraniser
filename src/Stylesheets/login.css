@@ -71,7 +71,7 @@ h1 {
   height: 102.5%;
 }
 .loginLabel {
-  color: #2c7a7b;
+  color: #398bb9;
   font-size: 2em;
   justify-content: center;
   display: flex;
@@ -84,7 +84,7 @@ h1 {
 .credInput {
   width: 60%;
   height: 37px;
-  background: #eee;
+  background: #e8f6fd;
   justify-content: center;
   display: flex;
   margin: 10px auto;
@@ -115,6 +115,7 @@ h1 {
   position: absolute;
   cursor: pointer;
   right: 110px;
+  color: #ff7682;
 }
 
 .password-icon {
@@ -131,7 +132,8 @@ h1 {
   justify-content: center;
   display: block;
   color: #fff;
-  background: rgb(44, 122, 123, 0.5);
+  background: #398bb9;
+  opacity: 0.7;
   font-size: 1em;
   font-weight: bold;
   margin-top: 20px;
@@ -142,22 +144,23 @@ h1 {
   cursor: pointer;
 }
 .btnReg:hover {
-  background: #2c7a7b;
+  background: #398bb9;
+  opacity: 1;
 }
 .login {
   height: 460px;
-  background: #eee;
+  background: #e8f6fd;
   border-radius: 60% / 10%;
   transform: translateY(-180px);
   transition: 0.8s ease-in-out;
 }
 .login label {
-  color: #2c7a7b;
+  color: #398bb9;
   transform: scale(0.6);
 }
 
 .or {
-  color: rgb(44, 122, 123);
+  color: #398bb9;
   padding-top: 6px;
   padding-bottom: -1px;
   font-size: large;
@@ -177,7 +180,7 @@ h1 {
   position: relative;
   left: 300px;
   top: 15px;
-  color: #2c7a7b;
+  color: black;
   cursor: pointer;
 }
 

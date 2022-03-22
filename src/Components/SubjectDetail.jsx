@@ -30,7 +30,11 @@ const SubjectDetail = (props) => {
 
       <div className="sub-det">
         <h1 className="title-styling">{subject.subName}</h1>
-
+        <div className="routineAdd">
+          <button className="add-day-button" onClick={openAddDay}>
+            Add Day
+          </button>
+        </div>
         <div className="coursecontainer">
           {subject.routine.map((schedule) => {
             return (
@@ -45,11 +49,7 @@ const SubjectDetail = (props) => {
             );
           })}
         </div>
-        <div className="routineAdd">
-          <button className="add-day-button" onClick={openAddDay}>
-            Add Day
-          </button>
-        </div>
+
         <EditSubjectPopup
           isOpen={addSched}
           close={closeAddDay}

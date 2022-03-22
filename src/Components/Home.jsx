@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "../Stylesheets/home.css";
 import Navbar from "./Navbar";
 import LoginPopup from "./LoginPopup";
@@ -6,7 +6,8 @@ import ForgotPasswordPopup from "./ForgotPasswordPopup";
 import tushar from "./img/tushar-photo.png";
 import debarghya from "./img/debarghya-photo.png";
 import shubham from "./img/shubham-photo.png";
-import homepic from "./img/hometop.png";
+//import homepic from "./img/hometop.png";
+import landingpage from "./img/landing-page.png";
 import ScrollButton from "./ScrollButton";
 import { Card } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
@@ -15,7 +16,7 @@ export default function Home(props) {
   const aboutRef = React.useRef(null);
 
   const executeScroll = () => {
-    aboutRef.current.scrollIntoView({behavior: 'smooth'});
+    aboutRef.current.scrollIntoView({ behavior: "smooth" });
   };
   const [loginPopup, setLoginPopup] = useState(false);
   const [forgotPwdPopup, setForgotPwdPopup] = useState(false);
@@ -37,9 +38,9 @@ export default function Home(props) {
     setForgotPwdPopup(false);
   };
 
-  const redirectToMain = ()=>{
+  const redirectToMain = () => {
     history.push("/main");
-  }
+  };
   return (
     <>
       <Navbar
@@ -52,14 +53,13 @@ export default function Home(props) {
         <div className="row">
           <div className="col-lg-6 col-md-12 col-sm-12 d-flex my-auto maintext">
             <div className="heading-text">
-              <h1>STUDENT FRAME</h1>
-
               <div className="summary-container">
                 <p className="brief-summary">
                   Do you also wake up at 7 am and struggle to find where is
                   which subject's meeting link?
                   <br />
                   We got you covered!
+                  <br />
                   <br />
                   Your <strong className="strong">
                     One-stop destination
@@ -69,17 +69,29 @@ export default function Home(props) {
                   <br />
                 </p>
 
-                {localStorage.getItem("token")==null ?<button type="button" className="btn btn-success main-button" onClick={openLoginPopup}>
-                  Get Started
-                </button>:
-                <button className="btn btn-success main-button" onClick={redirectToMain}>Check Your Schedule</button>}
+                {localStorage.getItem("token") == null ? (
+                  <button
+                    type="button"
+                    className="btn btn-success main-button"
+                    onClick={openLoginPopup}
+                  >
+                    Click to explore!
+                  </button>
+                ) : (
+                  <button
+                    className="btn btn-success main-button"
+                    onClick={redirectToMain}
+                  >
+                    Check Your Schedule
+                  </button>
+                )}
               </div>
             </div>
           </div>
 
           <div className="col-lg-6 col-md-12 col-sm-12 justify-content-center photomain">
             <div id="homephoto">
-              <img className="photo" src={homepic} alt="" />
+              <img className="photo" src={landingpage} alt="" />
             </div>
           </div>
         </div>
@@ -139,33 +151,27 @@ export default function Home(props) {
               <h3>
                 <i className="fa-solid fa-calendar-check fa-2x"></i>
                 <br />
+                <br />
                 Maintains Timetable
               </h3>
-              <p>So, we cover the complete spectrum of Medical Specialities</p>
             </div>
 
             <div className="feature col-lg-4">
               <h3>
                 <i className="fa-solid fa-link fa-2x"></i>
                 <br />
+                <br />
                 Maintains Meeting Links
               </h3>
-              <p>
-                We have super specialist doctors and state of the art
-                technology.
-              </p>
             </div>
 
             <div className="feature col-lg-4">
               <h3>
                 <i className="fa-solid fa-pen-to-square fa-2x"></i>
                 <br />
+                <br />
                 Editable
               </h3>
-              <p>
-                Links and Timings can be changed as per changes in one's
-                timetable
-              </p>
             </div>
           </div>
         </div>
@@ -173,103 +179,138 @@ export default function Home(props) {
 
       <section id="developers">
         <div className="devs">
-          <h1>Designed and Developed by</h1>
+          <h1>Designed & Developed by</h1>
 
           <div className="developers-container">
             <div className="row">
               <div className="col-lg-4">
                 <Card style={{ width: "14rem" }}>
-                  <Card.Img variant="top" src={debarghya} />
-                  <Card.Body>
-                    <Card.Title>Debarghya Mukherjee</Card.Title>
-                    <Card.Text>
-                      Frontend Development
-                      <br></br>
-                      UI/ UX Designing
-                    </Card.Text>
+                  <div className="developer-cards">
+                    <Card.Img variant="top" src={debarghya} />
 
-                    <div className="socials">
+                    <Card.Body>
+                      <br />
+                      <Card.Title>Debarghya Mukherjee</Card.Title>
+
                       <Card.Text>
-                        <div className="flex-container">
-                          <div className="icons">
-                            <a href="https://www.linkedin.com/in/debarghya-mukherjee"  rel="noreferrer" target="_blank">
-                              <i className="fab fa-linkedin fa-2x"></i>
-                            </a>
-                          </div>
-
-                          <div className="icons">
-                            <a href="https://github.com/Debarghya-20" rel="noreferrer" target="_blank">
-                              <i className="fab fa-github fa-2x"></i>
-                            </a>
-                          </div>
-                        </div>
+                        (Frontend Development)
+                        <br></br>
+                        (UI/UX Designing)
                       </Card.Text>
-                    </div>
-                  </Card.Body>
+
+                      <div className="socials">
+                        <Card.Text>
+                          <div className="flex-container">
+                            <div className="icons">
+                              <a
+                                href="https://www.linkedin.com/in/debarghya-mukherjee"
+                                rel="noreferrer"
+                                target="_blank"
+                              >
+                                <i className="fab fa-linkedin fa-2x"></i>
+                              </a>
+                            </div>
+
+                            <div className="icons">
+                              <a
+                                href="https://github.com/Debarghya-20"
+                                rel="noreferrer"
+                                target="_blank"
+                              >
+                                <i className="fab fa-github fa-2x"></i>
+                              </a>
+                            </div>
+                          </div>
+                        </Card.Text>
+                      </div>
+                    </Card.Body>
+                  </div>
                 </Card>
               </div>
 
               <div className="col-lg-4">
                 <Card style={{ width: "14rem" }}>
-                  <Card.Img variant="top" src={tushar} />
-                  <Card.Body>
-                    <Card.Title>Tushar Verma</Card.Title>
-                    <Card.Text>
-                      Backend Development
-                      <br></br>
-                      React Development
-                    </Card.Text>
-
-                    <div className="socials">
+                  <div className="developer-cards">
+                    <Card.Img variant="top" src={tushar} />
+                    <Card.Body>
+                      <br />
+                      <Card.Title>Tushar Verma</Card.Title>
                       <Card.Text>
-                        <div className="flex-container">
-                          <div className="icons">
-                            <a href="https://www.linkedin.com/in/tushar-verma-0811/" rel="noreferrer" target="_blank">
-                              <i className="fab fa-linkedin fa-2x"></i>
-                            </a>
-                          </div>
-
-                          <div className="icons">
-                            <a href="https://github.com/tusharverma0811"  rel="noreferrer" target="_blank">
-                              <i className="fab fa-github fa-2x"></i>
-                            </a>
-                          </div>
-                        </div>
+                        (Backend Development)
+                        <br></br>
+                        (React Development)
                       </Card.Text>
-                    </div>
-                  </Card.Body>
+
+                      <div className="socials">
+                        <Card.Text>
+                          <div className="flex-container">
+                            <div className="icons">
+                              <a
+                                href="https://www.linkedin.com/in/tushar-verma-0811/"
+                                rel="noreferrer"
+                                target="_blank"
+                              >
+                                <i className="fab fa-linkedin fa-2x"></i>
+                              </a>
+                            </div>
+
+                            <div className="icons">
+                              <a
+                                href="https://github.com/tusharverma0811"
+                                rel="noreferrer"
+                                target="_blank"
+                              >
+                                <i className="fab fa-github fa-2x"></i>
+                              </a>
+                            </div>
+                          </div>
+                        </Card.Text>
+                      </div>
+                    </Card.Body>
+                  </div>
                 </Card>
               </div>
 
               <div className="col-lg-4">
                 <Card style={{ width: "14rem" }}>
-                  <Card.Img variant="top" src={shubham} />
-                  <Card.Body>
-                    <Card.Title>Shubham Sabat</Card.Title>
-                    <Card.Text>
-                      UI/UX Designing
-                      <br></br>
-                      Frontend Designing
-                    </Card.Text>
-
-                    <div className="socials">
+                  <div className="developer-cards">
+                    <Card.Img variant="top" src={shubham} />
+                    <Card.Body>
+                      <br />
+                      <Card.Title>Shubham Sabat</Card.Title>
                       <Card.Text>
-                        <div className="flex-container">
-                          <div className="icons">
-                            <a href="https://www.linkedin.com/in/shubham-sabat-2781931ab/" rel="noreferrer" target="_blank">
-                              <i className="fab fa-linkedin fa-2x"></i>
-                            </a>
-                          </div>
-
-                          <div className="icons">
-                            <a href="https://github.com/Shubham1928196" rel="noreferrer" target="_blank">
-                              <i className="fab fa-github fa-2x"></i>
-                            </a>
-                          </div>
-                        </div>
+                        (UI/UX Designing)
+                        <br></br>
+                        (Frontend Development)
                       </Card.Text>
-                    </div>
-                  </Card.Body>
+
+                      <div className="socials">
+                        <Card.Text>
+                          <div className="flex-container">
+                            <div className="icons">
+                              <a
+                                href="https://www.linkedin.com/in/shubham-sabat-2781931ab/"
+                                rel="noreferrer"
+                                target="_blank"
+                              >
+                                <i className="fab fa-linkedin fa-2x"></i>
+                              </a>
+                            </div>
+
+                            <div className="icons">
+                              <a
+                                href="https://github.com/Shubham1928196"
+                                rel="noreferrer"
+                                target="_blank"
+                              >
+                                <i className="fab fa-github fa-2x"></i>
+                              </a>
+                            </div>
+                          </div>
+                        </Card.Text>
+                      </div>
+                    </Card.Body>
+                  </div>
                 </Card>
               </div>
             </div>
