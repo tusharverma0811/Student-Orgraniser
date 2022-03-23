@@ -25,7 +25,7 @@ export const Button = styled.div`
 @media (max-width: 90rem) {
   position: fixed;
     width: 100%;
-    left: 85%;
+    left: 80%;
     margin-bottom: 50px;
     bottom: 40px;
     height: 20px;

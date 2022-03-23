@@ -19,11 +19,20 @@
   z-index: 1000;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .exp {
     width: 15rem;
     height: fit-content;
   }
+  .close {
+    position: relative;
+    right: 106%;
+    margin-top: 0rem;
+    /* bottom: 62%; */
+    color: black;
+    cursor: pointer;
+    margin-left: -35rem;
+}
 }
 .Add-subject-button {
   background: #398bb9;

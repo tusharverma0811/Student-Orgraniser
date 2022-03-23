@@ -182,7 +182,7 @@ a div {
 @media (max-width: 780px) {
   .edit-delete {
     position: relative;
-    left: 100%;
+    left: 0%;
     top: 5%;
   }
 }

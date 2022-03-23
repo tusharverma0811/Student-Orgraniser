@@ -183,4 +183,15 @@ cube {
   nav .show-cart {
     display: inline;
   }
+  .getstarted {
+    background-color: #398bb9;
+    border-color: #398bb9;
+    border-radius: 10px;
+    padding-bottom: 0.5px;
+    position: relative;
+    margin-bottom: 2px;
+    font-weight: bold;
+    width: 40%;
+    left: 34%;
+}
 }
