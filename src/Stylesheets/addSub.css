@@ -46,7 +46,7 @@
   font-family: "Work Sans", sans-serif;
 }
 
-.Add-subject-button:hover {
+.add-btn-hover:hover {
   opacity: 1;
   background-color: #ff6782;
   border-color: #ff6782;

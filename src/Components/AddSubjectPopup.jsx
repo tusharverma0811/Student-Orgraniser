@@ -184,7 +184,7 @@ const AddSubjectPopup = ({ isOpen, close, notify_success, notify_error }) => {
               })}
             </div>
             <button
-              className="Add-subject-button"
+              className={!btnActive?"Add-subject-button":"Add-subject-button add-btn-hover"}
               onClick={addNewSubject}
               disabled={!btnActive}
             >

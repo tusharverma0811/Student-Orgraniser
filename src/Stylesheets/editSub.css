@@ -52,7 +52,7 @@
   width: 100px;
 }
 
-.edit-button:hover {
+.edit-btn-hover:hover {
   opacity: 1;
   background-color: #ff6782;
   border-color: #ff6782;

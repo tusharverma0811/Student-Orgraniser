@@ -9,6 +9,7 @@ function Subject(props) {
   const [classToday, setClassToday] = useState(false);
   const {deleteSubject,getSubjects} = useContext(SubjectContext);
   const [isClass, setIsClass] = useState("");
+  const[hadClass,setHadClass] = useState(false);
   const allDays = [
     "Sunday",
     "Monday",
@@ -29,6 +30,8 @@ function Subject(props) {
     let date = new Date();
     let dayNum = date.getDay();
     let day = allDays[dayNum];
+    let currHour = date.getHours();
+    let currMins = date.getMinutes();
 
     let check = schedule.find((obj) => {
       return obj.day === day;
@@ -37,7 +40,6 @@ function Subject(props) {
     if (check) {
       const timing = check.time;
       link = check.link;
-      setClassToday(true);
       const time = timing.split(":");
       const hours = time[0];
       let minutes = time[1];
@@ -46,6 +48,16 @@ function Subject(props) {
         minutes = "0" + minutes;
       }
       let hrs = parseInt(hours);
+
+      if(hrs>currHour){
+        setClassToday(true);
+      }else if(hrs === currHour && mins>=currMins){
+        setClassToday(true);
+      }
+      else{
+        setHadClass(true);
+      }
+
       let classTime;
       if (hrs > 12) {
         hrs = hrs - 12;
@@ -57,7 +69,13 @@ function Subject(props) {
           classTime = hours + ":" + minutes + " A.M";
         }
       }
-      setIsClass(`-> You have a class today at ${classTime}`);
+      let classMsg;
+      if(hadClass){
+        classMsg = `-> You had a class today at ${classTime}`
+      }else{
+        classMsg = `-> You have a class today at ${classTime}`
+      }
+      setIsClass(classMsg);
     } else {
       setIsClass("Wooho! You Don't have a class today");
     }
@@ -102,8 +120,8 @@ function Subject(props) {
           <Card.Title className="card-title-styling">{props.name}</Card.Title>
           <Card.Text>{isClass}</Card.Text>
           <button
-            className="join-class-button-styling"
-            disabled={!classToday}
+            className={!classToday && !hadClass?"join-class-button-styling":"join-class-button-styling join-btn-hover"}
+            disabled={!classToday && !hadClass}
             onClick={joinClass}
           >
             Join Class
