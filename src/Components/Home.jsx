@@ -154,7 +154,7 @@ export default function Home(props) {
                 <br />
                 Maintains Timetable
               </h3>
-              <p>So that you don't have to face the hastle of keeping a track of your day to day timetable</p>
+              {/* <p>So that you don't have to face the hastle of keeping a track of your day to day timetable</p> */}
             </div>
 
             <div className="feature col-lg-4">
@@ -164,7 +164,7 @@ export default function Home(props) {
                 <br />
                 Maintains Meeting Links
               </h3>
-              <p>So that you don't have to search your mailbox or WhatsApp Group Descriptions just for the sake of finding the link to join class</p>
+              {/* <p>So that you don't have to search your mailbox or WhatsApp Group Descriptions just for the sake of finding the link to join class</p> */}
             </div>
 
             <div className="feature col-lg-4">
@@ -174,7 +174,7 @@ export default function Home(props) {
                 <br />
                 Editable
               </h3>
-              <p>Just in case your teacher changes the class timings or the class link!</p>
+              {/* <p>Just in case your teacher changes the class timings or the class link!</p> */}
             </div>
           </div>
         </div>

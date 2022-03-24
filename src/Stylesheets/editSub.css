@@ -82,6 +82,16 @@
     height: 120%;
   }
 
+  .close-edit-subject {
+    position: relative;
+    /* left: -9%; */
+    bottom: 1.7rem;
+    /* top: 13.5px; */
+    color: black;
+    cursor: pointer;
+    /* margin-left: -35rem; */
+}
+
   .reg {
     position: absolute;
     top: 50%;
