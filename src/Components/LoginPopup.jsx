@@ -134,6 +134,7 @@ export default function LoginPopup({
                 <label className="loginLabel" htmlFor="chk" aria-hidden="true">
                   Sign up
                 </label>
+
                 {/* <a href=""> <i className="fab fa-google fa-2x"></i></a> */}
 
                 <input
@@ -173,6 +174,10 @@ export default function LoginPopup({
                 )}
                 <button type="submit" className="btnReg" onClick={handleSignup}>
                   Sign up
+                </button>
+                <h1 className="or">OR</h1>
+                <button className="btnReg" onClick={handleGoogleSignin}>
+                  Sign In with Google
                 </button>
               </form>
             </div>

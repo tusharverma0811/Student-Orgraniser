@@ -5,7 +5,7 @@
     to right,
     rgba(0, 172, 193, 1) 0%,
     rgba(84, 58, 183, 1) 100%
-  ); #edf2f7;*/ #53bbb7;
+  ); #edf2f7;*/ white;
   top: 0;
   font-size: 1.35rem;
   z-index: 100;
@@ -48,11 +48,11 @@
 
 .nav-link:hover {
   /*color: #2c7a7b;*/
-  color: white;
+  color: #398bb9;
 }
 
 .nav-link:focus {
-  color: white;
+  color: #398bb9;
 }
 
 .navbar-collapse {
@@ -61,12 +61,18 @@
 }
 
 .getstarted {
-  background-color: #007164;
+  background-color: #398bb9;
+  border-color: #398bb9;
   border-radius: 10px;
   padding-bottom: 0.5px;
   position: relative;
   margin-bottom: 2px;
   font-weight: bold;
+}
+
+.getstarted:hover {
+  background-color: #ff6782;
+  border-color: #ff6782;
 }
 
 .getstarted a {
@@ -81,8 +87,12 @@
   color: black;
 }
 .fa-user-circle:hover {
-  color: white;
+  color: #398bb9;
   opacity: 1;
+}
+
+cube {
+  color: linear-gradient(to right, #398bb9, #ff6782);
 }
 
 .dropdown-menu {
@@ -105,7 +115,7 @@
   padding-bottom: 30px;
 }
 .dropdown-menu a:hover {
-  background: #007164;;
+  background: #398bb9;
   color: white;
 }
 .dropdown-item {
@@ -119,7 +129,7 @@
 }
 
 .dropdown-item:hover {
-  background: #007164;;
+  background: #398bb9;
   color: white;
   border-radius: 10px;
 }
@@ -173,4 +183,15 @@
   nav .show-cart {
     display: inline;
   }
+  .getstarted {
+    background-color: #398bb9;
+    border-color: #398bb9;
+    border-radius: 10px;
+    padding-bottom: 0.5px;
+    position: relative;
+    margin-bottom: 2px;
+    font-weight: bold;
+    width: 40%;
+    left: 34%;
+}
 }

@@ -41,7 +41,9 @@
   left: 74%;
   align-self: center;
   right: 1%;
-  background: rgb(44, 122, 123);
+  background: #398bb9;
+  color: white;
+  border-color: #2c7a7b;
   opacity: 0.7;
   font-family: "Work Sans", sans-serif;
   cursor: pointer;
@@ -50,12 +52,14 @@
   width: 100px;
 }
 
-.edit-button:hover {
+.edit-btn-hover:hover {
   opacity: 1;
+  background-color: #ff6782;
+  border-color: #ff6782;
 }
 
 .edit-button:focus {
-  background: rgb(44, 122, 123, 1);
+  background: #398bb9;
 }
 
 .close-edit-subject {
@@ -78,6 +82,16 @@
     height: 120%;
   }
 
+  .close-edit-subject {
+    position: relative;
+    /* left: -9%; */
+    bottom: 1.7rem;
+    /* top: 13.5px; */
+    color: black;
+    cursor: pointer;
+    /* margin-left: -35rem; */
+}
+
   .reg {
     position: absolute;
     top: 50%;
@@ -90,4 +104,25 @@
     /* height: 100%; */
 }
 
+}
+
+@media(max-width:1200px){
+
+  .edit-button {
+    border-radius: 10px;
+    position: absolute;
+    bottom: -25%;
+    left: 67%;
+    align-self: center;
+    right: 1%;
+    background: #398bb9;
+    color: white;
+    border-color: #2c7a7b;
+    opacity: 0.7;
+    font-family: "Work Sans", sans-serif;
+    cursor: pointer;
+    color: white;
+    height: 40px;
+    width: 100px;
+}
 }

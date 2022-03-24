@@ -116,7 +116,7 @@
 @media (max-width: 1200px) {
   .reg-forgot {
     width: 82%;
-    height: 16rem;
+    height: 20rem;
   }
 
   .submit-button {
@@ -128,16 +128,16 @@
   }
 
   .close-sign {
-    /* position: absolute; */
-    position: relative;
-    left: -1rem;
+       position: relative;
+    left: 0%;
     top: -1rem;
     color: black;
     cursor: pointer;
   }
 
   .main {
-    margin-left: -4rem;
+    position: relative;
+    right: 2%;
   }
   .reg-reset {
     width: 80%;
@@ -175,7 +175,11 @@
   }
 
   .btn:not(:disabled):not(.disabled) {
+    margin-top: 2rem;
     cursor: pointer;
-    margin-bottom: -5.5rem;
+    margin-bottom: -4.5rem;
+    width: 10rem;
+    position: relative;
+    left: 7%;
   }
 }

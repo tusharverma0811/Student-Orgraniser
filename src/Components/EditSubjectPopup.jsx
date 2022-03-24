@@ -90,7 +90,7 @@ const EditSubjectPopup = (props) => {
               ></EditTime>
 
               <button
-                className="edit-button"
+                className={!changesMade?"edit-button":"edit-button edit-btn-hover"}
                 onClick={editSched}
                 disabled={!changesMade}
               >

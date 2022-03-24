@@ -19,28 +19,37 @@
   z-index: 1000;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .exp {
     width: 15rem;
     height: fit-content;
   }
+  .close {
+    position: relative;
+    right: 106%;
+    margin-top: 0rem;
+    /* bottom: 62%; */
+    color: black;
+    cursor: pointer;
+    margin-left: -35rem;
+}
 }
 .Add-subject-button {
-    background: rgb(44, 122, 123);
-    color: white;
-    border-color: #2c7a7b;
-    width: 110px;
-    margin-left: 40rem;
-    margin-top: 2rem;
-    border-radius: 10px;
-    height: 3.5rem;
-    font-family: "Work Sans", sans-serif;
+  background: #398bb9;
+  color: white;
+  border-color: #2c7a7b;
+  width: 110px;
+  margin-left: 40rem;
+  margin-top: 2rem;
+  border-radius: 10px;
+  height: 3.5rem;
+  font-family: "Work Sans", sans-serif;
 }
 
-.Add-subject-button:hover {
+.add-btn-hover:hover {
   opacity: 1;
-  background-color: #2c7a7b;
-  border-color: #2c7a7b;
+  background-color: #ff6782;
+  border-color: #ff6782;
 }
 
 .MuiInput-underline::before {
@@ -56,8 +65,7 @@
   margin-left: -35rem;
 }
 
-@media(max-width:900px)
-{
+@media (max-width: 900px) {
   .Add-subject-button {
     margin-left: 3rem;
   }
@@ -71,16 +79,16 @@
     padding-bottom: 65px;
     z-index: 1000;
     /* height: 100%; */
-}
+  }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1000;
-  height: 100%;
-}
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    height: 100%;
+  }
 }
