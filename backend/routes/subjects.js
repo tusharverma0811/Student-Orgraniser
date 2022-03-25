@@ -39,6 +39,23 @@ const getCurrentDay = ()=>{
     
     return 1;
 }
+const sortSubjectDetail = (a,b)=>{
+    let val1 = allDays.findIndex((obj)=>{
+        return obj == a.day
+    });
+    let val2 = allDays.findIndex((obj)=>{
+        return obj == b.day
+    });
+
+    if(val1<val2){
+        return -1;
+    }
+    else if(val2>val1){
+        return 1;
+    }
+
+    return 0;
+}
 //Add a Subject with routine using : POST /subject/addsubject (login required)
 router.post(
     "/addsubject",
@@ -93,6 +110,7 @@ router.get(
                 return res.status(400).json({error:"Unathorized"});
             }
 
+            subject.routine.sort(sortSubjectDetail);
             return res.json(subject);
         }catch(err){
             console.log(err);
