@@ -41,12 +41,17 @@
 
 .custom-shape-divider-bottom-1646078770 {
   position: absolute;
+<<<<<<< HEAD
   bottom: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
   line-height: 0;
   transform: rotate(180deg);
+=======
+  top: 58px;
+  background-attachment: local;
+>>>>>>> 26ea17246e19634bc26775928486192b2f516b97
 }
 
 .custom-shape-divider-bottom-1646078770 svg {
@@ -124,6 +129,7 @@
   background-color: #398bb9;
   border-color: #398bb9;
 }
+<<<<<<< HEAD
 
 .developer-cards {
   background: #e8f6fd;
@@ -139,6 +145,9 @@
   font-size: 3rem;
   z-index: 1;
   cursor: pointer;
+=======
+.fa-arrow {
+>>>>>>> 26ea17246e19634bc26775928486192b2f516b97
   color: black;
 }
 
@@ -171,10 +180,15 @@
     text-align: center;
     margin-top: -7rem;
   }
+<<<<<<< HEAD
 
   .summary-container {
     height: 14rem;
     width: 20rem;
+=======
+  50% {
+    margin-left: 8px;
+>>>>>>> 26ea17246e19634bc26775928486192b2f516b97
   }
 
   .main-button {
