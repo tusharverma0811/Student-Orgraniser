@@ -10,9 +10,9 @@
   font-weight: medium;
   z-index: 100;
 }
- h3 {
-    font-size: 1.8rem;
-    font-weight: bold;
+h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
 .photo {
@@ -24,7 +24,7 @@
 
 @media (max-width: 70rem) {
   .photo {
-       position: relative;
+    position: relative;
     left: 25%;
     bottom: -23%;
     margin-bottom: 5rem;
@@ -41,17 +41,12 @@
 
 .custom-shape-divider-bottom-1646078770 {
   position: absolute;
-<<<<<<< HEAD
   bottom: 0;
   left: 0;
   width: 100%;
   overflow: hidden;
   line-height: 0;
   transform: rotate(180deg);
-=======
-  top: 58px;
-  background-attachment: local;
->>>>>>> 26ea17246e19634bc26775928486192b2f516b97
 }
 
 .custom-shape-divider-bottom-1646078770 svg {
@@ -61,7 +56,6 @@
   height: 149px;
   transform: rotateY(180deg);
 }
-
 .custom-shape-divider-bottom-1646078770 .shape-fill {
   fill: #e8f6fd;
 }
@@ -129,7 +123,10 @@
   background-color: #398bb9;
   border-color: #398bb9;
 }
-<<<<<<< HEAD
+.main-button:active {
+  background-color: #0077b5;
+  border-color: #0077b5;
+}
 
 .developer-cards {
   background: #e8f6fd;
@@ -145,9 +142,6 @@
   font-size: 3rem;
   z-index: 1;
   cursor: pointer;
-=======
-.fa-arrow {
->>>>>>> 26ea17246e19634bc26775928486192b2f516b97
   color: black;
 }
 
@@ -180,15 +174,10 @@
     text-align: center;
     margin-top: -7rem;
   }
-<<<<<<< HEAD
 
   .summary-container {
     height: 14rem;
     width: 20rem;
-=======
-  50% {
-    margin-left: 8px;
->>>>>>> 26ea17246e19634bc26775928486192b2f516b97
   }
 
   .main-button {
@@ -282,7 +271,7 @@
     margin-top: 10rem;
   }
   .btn:not(:disabled):not(.disabled) {
-       cursor: pointer;
+    cursor: pointer;
     margin-bottom: -5.5rem;
     width: 24rem;
     position: relative;
@@ -429,9 +418,9 @@
 }
 
 .devs {
-    background: #e8f6fd;
-    margin-top: -3rem;
-    padding-top: 3rem;
+  background: #e8f6fd;
+  margin-top: -3rem;
+  padding-top: 3rem;
 }
 
 .devs h1 {

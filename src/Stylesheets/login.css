@@ -30,7 +30,6 @@ width: 100%;
   height: 515px;
   /*background: #84b9b8;*/
   background: white;
-  box-shadow: 10px 10px 10px black;
   overflow: hidden;
   border-radius: 10px;
   font-family: "Work Sans", sans-serif;
@@ -189,4 +188,25 @@ h1 {
   left: 250px;
   top: 136px;
   cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .regl {
+    position: fixed;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    z-index: 1000;
+  }
+
+  .overlayl {
+    position: fixed;
+    top: 0;
+    left: -1px;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+  }
 }

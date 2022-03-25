@@ -24,7 +24,7 @@ export default function SubjectDetailCard(props) {
       const response = await deleteRoutine(props.sid, props.rid);
       if (!response.hasOwnProperty("error")) {
         await getSubject(props.sid);
-        props.notify_success("Successfully Deleted Schedule")
+        props.notify_success("Successfully Deleted Schedule");
       } else {
         props.notify_error(response.error);
         console.log(response.error);
@@ -67,10 +67,10 @@ export default function SubjectDetailCard(props) {
             <div className="three-dots"></div>
             <div className="dropdown dropdown1">
               <span className="options" onClick={openEdit}>
-                <div>Edit</div>
+                <i className="fa-solid fa-pen"></i>
               </span>
               <span className="options" onClick={deleteSchedule}>
-                <div>Delete</div>
+                <i className="fa-solid fa-trash-can"></i>
               </span>
             </div>
           </div>
@@ -107,7 +107,7 @@ export default function SubjectDetailCard(props) {
         sid={props.sid}
         rid={sched._id}
         toAdd={false}
-        notify_success={props.notify_success} 
+        notify_success={props.notify_success}
         notify_error={props.notify_error}
       />
     </>

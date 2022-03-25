@@ -17,6 +17,11 @@
   background: #0077b5;
   font-weight: bolder;
   color: white;
+  border-radius: 10rem;
+}
+.button-styling:hover {
+  background-color: #ff6782;
+  border-color: #ff6782;
 }
 
 /*.button-styling:hover {
@@ -165,10 +170,14 @@ a div {
 }
 
 .dropdown1 {
+  width: 4rem;
+  height: 6rem;
+  font-size: large;
   cursor: pointer;
   position: absolute;
-  right: 10px;
+  right: 2px;
   background-color: #0077b5;
+  border-radius: 0.5rem;
   /* box-shadow: 0px 0px 3px 3px #C2DDD8; */
   outline: none;
   opacity: 0.1;
@@ -176,11 +185,15 @@ a div {
   max-height: 0;
   transition: opacity 0.1s, z-index 0.1s;
   padding: 0 5px;
+  color: white;
 }
 /* .options{
   padding: 0.1rem;
 } */
 
+.options {
+  border-radius: 2rem;
+}
 .dropdown-container:focus {
   outline: none;
 }
