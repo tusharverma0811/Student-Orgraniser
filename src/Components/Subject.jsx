@@ -105,6 +105,10 @@ function Subject(props) {
   return (
     <>
       <Card className="card-styling">
+        <div className="main-card-top">
+          <Card.Title className="card-title-styling">{props.name}</Card.Title>
+          <Card.Text>{isClass}</Card.Text>
+        </div>
         <Card.Body className="card-body-styling">
           {/* <div className="dropdown-container-main" tabindex="-1">
 
@@ -115,8 +119,6 @@ function Subject(props) {
       <a href="#"><div>Delete</div></a>
     </div>
   </div> */}
-          <Card.Title className="card-title-styling">{props.name}</Card.Title>
-          <Card.Text>{isClass}</Card.Text>
 
           <div className="card-bottom">
             <button
