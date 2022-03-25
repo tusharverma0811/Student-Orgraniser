@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Card } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 import SubjectContext from "../Contexts/SubjectContext";
@@ -7,9 +7,9 @@ import "../Stylesheets/subjectStyles.css";
 
 function Subject(props) {
   const [classToday, setClassToday] = useState(false);
-  const {deleteSubject,getSubjects} = useContext(SubjectContext);
+  const { deleteSubject, getSubjects } = useContext(SubjectContext);
   const [isClass, setIsClass] = useState("");
-  const[hadClass,setHadClass] = useState(false);
+  const [hadClass, setHadClass] = useState(false);
   const allDays = [
     "Sunday",
     "Monday",
@@ -49,12 +49,11 @@ function Subject(props) {
       }
       let hrs = parseInt(hours);
 
-      if(hrs>currHour){
+      if (hrs > currHour) {
         setClassToday(true);
-      }else if(hrs === currHour && mins>=currMins){
+      } else if (hrs === currHour && mins >= currMins) {
         setClassToday(true);
-      }
-      else{
+      } else {
         setHadClass(true);
       }
 
@@ -70,10 +69,10 @@ function Subject(props) {
         }
       }
       let classMsg;
-      if(hadClass){
-        classMsg = `-> You had a class today at ${classTime}`
-      }else{
-        classMsg = `-> You have a class today at ${classTime}`
+      if (hadClass) {
+        classMsg = `-> You had a class today at ${classTime}`;
+      } else {
+        classMsg = `-> You have a class today at ${classTime}`;
       }
       setIsClass(classMsg);
     } else {
@@ -81,13 +80,12 @@ function Subject(props) {
     }
   };
 
-  const deleteSub = async()=>{
-    try{
+  const deleteSub = async () => {
+    try {
       const response = await deleteSubject(sid);
       if (response.hasOwnProperty("error")) {
         notify_error(response.error);
-      } 
-      else {
+      } else {
         notify_success("Successfully Deleted");
         await getSubjects();
       }
@@ -95,7 +93,7 @@ function Subject(props) {
       console.log(err);
       notify_error("Sorry! Try Again");
     }
-  }
+  };
 
   const joinClass = () => {
     window.open(link);
@@ -106,7 +104,7 @@ function Subject(props) {
   };
   return (
     <>
-      <Card className="card-styling" >
+      <Card className="card-styling">
         <Card.Body className="card-body-styling">
           {/* <div className="dropdown-container-main" tabindex="-1">
 
@@ -119,20 +117,26 @@ function Subject(props) {
   </div> */}
           <Card.Title className="card-title-styling">{props.name}</Card.Title>
           <Card.Text>{isClass}</Card.Text>
-          <button
-            className={!classToday && !hadClass?"join-class-button-styling":"join-class-button-styling join-btn-hover"}
-            disabled={!classToday && !hadClass}
-            onClick={joinClass}
-          >
-            Join Class
-          </button>
 
-          <div className="edit-delete">
-            <i className="fa-solid fa-pen" onClick={editSubject}></i>
+          <div className="card-bottom">
+            <button
+              className={
+                !classToday && !hadClass
+                  ? "join-class-button-styling"
+                  : "join-class-button-styling join-btn-hover"
+              }
+              disabled={!classToday && !hadClass}
+              onClick={joinClass}
+            >
+              Join Class
+            </button>
 
-            <i className="fa-solid fa-trash-can" onClick={deleteSub}></i>
+            <div className="edit-delete">
+              <i className="fa-solid fa-pen" onClick={editSubject}></i>
+
+              <i className="fa-solid fa-trash-can" onClick={deleteSub}></i>
+            </div>
           </div>
-
           {/* <i className="fas fa-angle-double-down downShift" onClick={editSubject}></i> */}
         </Card.Body>
       </Card>

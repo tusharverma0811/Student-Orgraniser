@@ -10,9 +10,9 @@
   font-weight: medium;
   z-index: 100;
 }
- h3 {
-    font-size: 1.8rem;
-    font-weight: bold;
+h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
 .photo {
@@ -24,7 +24,7 @@
 
 @media (max-width: 70rem) {
   .photo {
-       position: relative;
+    position: relative;
     left: 25%;
     bottom: -23%;
     margin-bottom: 5rem;
@@ -56,7 +56,6 @@
   height: 149px;
   transform: rotateY(180deg);
 }
-
 .custom-shape-divider-bottom-1646078770 .shape-fill {
   fill: #e8f6fd;
 }
@@ -123,6 +122,10 @@
 .main-button:hover {
   background-color: #398bb9;
   border-color: #398bb9;
+}
+.main-button:active {
+  background-color: #0077b5;
+  border-color: #0077b5;
 }
 
 .developer-cards {
@@ -268,7 +271,7 @@
     margin-top: 10rem;
   }
   .btn:not(:disabled):not(.disabled) {
-       cursor: pointer;
+    cursor: pointer;
     margin-bottom: -5.5rem;
     width: 24rem;
     position: relative;
@@ -415,9 +418,9 @@
 }
 
 .devs {
-    background: #e8f6fd;
-    margin-top: -3rem;
-    padding-top: 3rem;
+  background: #e8f6fd;
+  margin-top: -3rem;
+  padding-top: 3rem;
 }
 
 .devs h1 {
