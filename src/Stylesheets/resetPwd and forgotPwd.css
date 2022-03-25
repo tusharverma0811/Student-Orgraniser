@@ -144,7 +144,7 @@
   }
   .reg-reset {
     width: 80%;
-    height: 56%;
+    height: 62%;
   }
   .confirm-button {
     margin-left: 1rem;
@@ -155,7 +155,10 @@
     margin-top: 5rem;
   }
   .closesign {
-    margin-left: -34rem;
+        position: relative;
+    /* margin-left: -34rem; */
+    left: -5%;
+    top: -3%;
   }
 
   .cancel-button {
@@ -192,14 +195,14 @@
   }
 
   .main-button {
-            margin-top: 14rem;
+          margin-top: 21rem;
     cursor: pointer;
-    margin-bottom: 0.5rem;
+    /* margin-bottom: 0.5rem; */
     width: 27rem;
     height: 6rem;
     position: inherit;
     left: 8%;
-    margin-left: 5rem;
+    margin-left: 2rem;
   }
   .cancel-button{
     margin-top: 5rem;
