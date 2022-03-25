@@ -76,7 +76,7 @@
   color: red;
   left: 100px;
   margin-left: 16rem;
-  margin-top: -3.25rem;
+  margin-top: -2.3rem;
   margin-bottom: 50px;
 }
 .cancel-button-forgot:hover {
@@ -117,8 +117,8 @@
 
 @media (max-width: 1200px) {
   .reg-forgot {
-    width: 82%;
-    height: 20rem;
+        width: 82%;
+    height: 35%;
   }
 
   .submit-button {
@@ -126,7 +126,8 @@
   }
 
   .cancel-button-forgot {
-    margin-left: 10rem;
+    margin-left: 5rem;
+    margin-top: 3rem;
   }
 
   .close-sign {
@@ -143,7 +144,7 @@
   }
   .reg-reset {
     width: 80%;
-    height: 20rem;
+    height: 56%;
   }
   .confirm-button {
     margin-left: 1rem;
@@ -157,14 +158,23 @@
     margin-left: -34rem;
   }
 
-  .btn:not(:disabled):not(.disabled) {
+  .cancel-button {
     cursor: pointer;
     margin-top: 8rem;
     margin-bottom: -5rem;
     margin-left: 1rem;
   }
+
+  .confirm-button {
+    cursor: pointer;
+    margin-top: 8rem;
+    margin-bottom: -5rem;
+    margin-left: 1rem;
+  }
+
   .edit-password-text {
     margin-top: 5rem;
+    font-size: 4vw;
   }
 }
 
@@ -181,15 +191,38 @@
     margin-left: -34rem;
   }
 
-  .btn:not(:disabled):not(.disabled) {
-        margin-top: 4rem;
+  .main-button {
+            margin-top: 14rem;
     cursor: pointer;
-    margin-bottom: 66.5rem;
+    margin-bottom: 0.5rem;
     width: 27rem;
     height: 6rem;
     position: inherit;
     left: 8%;
     margin-left: 5rem;
+  }
+  .cancel-button{
+    margin-top: 5rem;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    width: 22rem;
+    height: 6rem;
+    position: inherit;
+    left: 7%;
+    margin-left: 5rem;
+    font-size: 4vw;
+  }
+
+  .confirm-button{
+    margin-top: 5rem;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    width: 22rem;
+    height: 6rem;
+    position: inherit;
+    left: 7%;
+    margin-left: 5rem;
+    font-size: 4vw;
   }
   /* .edit-password-text{
 
