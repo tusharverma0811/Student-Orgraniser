@@ -61,11 +61,8 @@ bg {
   /* vertical-align: middle; */
   /* position: relative; */
 }
-.join-class-button-styling:hover {
-  background-color: #ff6782;
-}
 
-.join-class-button-styling:active {
+.join-btn-hover:hover{
   background-color: #ff6782;
 }
 
