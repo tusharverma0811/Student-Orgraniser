@@ -117,7 +117,7 @@
 
 @media (max-width: 1200px) {
   .reg-forgot {
-        width: 82%;
+    width: 82%;
     height: 35%;
   }
 
@@ -140,7 +140,7 @@
 
   .main {
     position: relative;
-    right: -5.25%;
+    right: 1.5%;
   }
   .reg-reset {
     width: 80%;
@@ -155,7 +155,7 @@
     margin-top: 5rem;
   }
   .closesign {
-        position: relative;
+    position: relative;
     /* margin-left: -34rem; */
     left: -5%;
     top: -3%;
@@ -195,7 +195,7 @@
   }
 
   .main-button {
-          margin-top: 21rem;
+    margin-top: 21rem;
     cursor: pointer;
     /* margin-bottom: 0.5rem; */
     width: 27rem;
@@ -204,7 +204,7 @@
     left: 8%;
     margin-left: 2rem;
   }
-  .cancel-button{
+  .cancel-button {
     margin-top: 5rem;
     cursor: pointer;
     margin-bottom: 0.5rem;
@@ -216,7 +216,7 @@
     font-size: 4vw;
   }
 
-  .confirm-button{
+  .confirm-button {
     margin-top: 5rem;
     cursor: pointer;
     margin-bottom: 0.5rem;

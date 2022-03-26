@@ -176,25 +176,22 @@ a div {
   padding: 0.5rem;
 }
 
-
-
 @media (max-width: 780px) {
   .edit-delete {
     position: relative;
     left: 0%;
     top: 5%;
+  }
 }
-}
-
 
 .main-card-top {
-   width: 100%;
-    margin-bottom: 1rem;
-    background: #398bb9;
-    border-top-left-radius: 1.5rem;
-    border-top-right-radius: 1.5rem;
-    cursor: pointer;
-    padding-bottom: 1rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  background: #77aaca;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+  cursor: pointer;
+  padding-bottom: 1rem;
 }
 
 /* .downShift {
