@@ -17,9 +17,7 @@ export default function ForgotPasswordPopup({
     e.preventDefault();
     try {
       await resetPwd(email.current.value);
-      notify_success(
-        "Email Sent Scuccessfully with further steps kindly check your inbox"
-      );
+      notify_success("Email sent!  Kindly check your inbox");
       close();
     } catch (err) {
       console.log(err);

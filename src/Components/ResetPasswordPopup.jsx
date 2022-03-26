@@ -40,10 +40,13 @@ export default function ResetPasswordPopup({
         <div className="reg-reset">
           <i className="fas fa-times fa-2x closesign" onClick={close}></i>
           <div className="edit-password-popup">
-            <b>
-              Note: A link will be sent to your registered email to reset your
-              password
-            </b>
+            <div className="edit-password-text">
+              <b>
+                Note: A link will be sent to your registered email to reset your
+                password
+              </b>
+            </div>
+
             <Button
               variant="outline-secondary"
               className="cancel-button"
