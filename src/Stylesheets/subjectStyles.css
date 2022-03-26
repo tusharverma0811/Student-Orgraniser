@@ -61,6 +61,9 @@ bg {
   /* vertical-align: middle; */
   /* position: relative; */
 }
+.join-class-button-styling:hover {
+  background-color: #ff6782;
+}
 
 .join-class-button-styling:active {
   background-color: #ff6782;
@@ -173,18 +176,25 @@ a div {
   padding: 0.5rem;
 }
 
-@media (max-width: 1200px) {
-  .edit-delete {
-    /* margin-left: -30rem; */
-  }
-}
+
 
 @media (max-width: 780px) {
   .edit-delete {
     position: relative;
-    left: 100%;
+    left: 0%;
     top: 5%;
-  }
+}
+}
+
+
+.main-card-top {
+   width: 100%;
+    margin-bottom: 1rem;
+    background: #398bb9;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+    cursor: pointer;
+    padding-bottom: 1rem;
 }
 
 /* .downShift {
