@@ -3,13 +3,13 @@ import "firebase/auth";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAXa3Ym3ckUwAlOp7Lthmes8Kk9W9KQzeE",
-  authDomain: "student-organiser-94ed3.firebaseapp.com",
-  projectId: "student-organiser-94ed3",
-  storageBucket: "student-organiser-94ed3.appspot.com",
-  messagingSenderId: "425908924897",
-  appId: "1:425908924897:web:2d3379b0a434b1b4d722a0",
-  measurementId: "G-7K29XESLBK",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGE_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 
 // Initialize Firebase

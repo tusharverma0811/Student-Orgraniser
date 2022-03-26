@@ -26,7 +26,7 @@ const SubjectDetail = (props) => {
   };
   return (
     <>
-      <Navbar />
+      <Navbar notify_error={props.notify_error} notify_success={props.notify_success}/>
 
       <div className="sub-det">
         <h1 className="title-styling">{subject.subName}</h1>

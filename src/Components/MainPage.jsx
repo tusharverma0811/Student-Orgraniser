@@ -29,7 +29,7 @@ const MainPage = (props) => {
   };
   return (
     <>
-      <Navbar />
+      <Navbar notify_error={props.notify_error} notify_success={props.notify_success}/>
 
       <div className="subjects">
         {subjects.map((subject) => {

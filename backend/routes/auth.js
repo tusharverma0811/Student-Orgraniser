@@ -32,7 +32,7 @@ router.post("/createuser", [body("email").isEmail()], async (req, res) => {
         },
       };
 
-      const authToken = jwt.sign(payload, "dhaamsuproject");
+      const authToken = jwt.sign(payload, process.env.SIGN);
       return res.json({ authToken });
     }
     //If a user aldready exists
@@ -71,7 +71,7 @@ router.post("/login", [body("email").isEmail()], async (req, res) => {
       },
     };
 
-    const authToken = jwt.sign(payload, "dhaamsuproject");
+    const authToken = jwt.sign(payload, process.env.SIGN);
 
     res.json({ authToken });
   } catch (err) {
@@ -101,7 +101,7 @@ router.post("/firebaseuser", async (req, res) => {
       },
     };
 
-    const authToken = jwt.sign(payload, "dhaamsuproject");
+    const authToken = jwt.sign(payload, process.env.SIGN);
 
     return res.json({ authToken });
   } catch (err) {
