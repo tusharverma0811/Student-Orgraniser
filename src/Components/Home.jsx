@@ -201,30 +201,26 @@ export default function Home(props) {
                         (UI/UX Designing)
                       </Card.Text>
 
-                      <div className="socials">
-                        <Card.Text>
-                          <div className="flex-container">
-                            <div className="icons">
-                              <a
-                                href="https://www.linkedin.com/in/debarghya-mukherjee"
-                                rel="noreferrer"
-                                target="_blank"
-                              >
-                                <i className="fab fa-linkedin fa-2x"></i>
-                              </a>
-                            </div>
+                      <div className="flex-container">
+                        <div className="icons">
+                          <a
+                            href="https://www.linkedin.com/in/debarghya-mukherjee"
+                            rel="noreferrer"
+                            target="_blank"
+                          >
+                            <i className="fab fa-linkedin fa-2x"></i>
+                          </a>
+                        </div>
 
-                            <div className="icons">
-                              <a
-                                href="https://github.com/Debarghya-20"
-                                rel="noreferrer"
-                                target="_blank"
-                              >
-                                <i className="fab fa-github fa-2x"></i>
-                              </a>
-                            </div>
-                          </div>
-                        </Card.Text>
+                        <div className="icons">
+                          <a
+                            href="https://github.com/Debarghya-20"
+                            rel="noreferrer"
+                            target="_blank"
+                          >
+                            <i className="fab fa-github fa-2x"></i>
+                          </a>
+                        </div>
                       </div>
                     </Card.Body>
                   </div>
@@ -244,30 +240,26 @@ export default function Home(props) {
                         (React Development)
                       </Card.Text>
 
-                      <div className="socials">
-                        <Card.Text>
-                          <div className="flex-container">
-                            <div className="icons">
-                              <a
-                                href="https://www.linkedin.com/in/tushar-verma-0811/"
-                                rel="noreferrer"
-                                target="_blank"
-                              >
-                                <i className="fab fa-linkedin fa-2x"></i>
-                              </a>
-                            </div>
+                      <div className="flex-container">
+                        <div className="icons">
+                          <a
+                            href="https://www.linkedin.com/in/tushar-verma-0811/"
+                            rel="noreferrer"
+                            target="_blank"
+                          >
+                            <i className="fab fa-linkedin fa-2x"></i>
+                          </a>
+                        </div>
 
-                            <div className="icons">
-                              <a
-                                href="https://github.com/tusharverma0811"
-                                rel="noreferrer"
-                                target="_blank"
-                              >
-                                <i className="fab fa-github fa-2x"></i>
-                              </a>
-                            </div>
-                          </div>
-                        </Card.Text>
+                        <div className="icons">
+                          <a
+                            href="https://github.com/tusharverma0811"
+                            rel="noreferrer"
+                            target="_blank"
+                          >
+                            <i className="fab fa-github fa-2x"></i>
+                          </a>
+                        </div>
                       </div>
                     </Card.Body>
                   </div>
@@ -287,30 +279,26 @@ export default function Home(props) {
                         (Frontend Development)
                       </Card.Text>
 
-                      <div className="socials">
-                        <Card.Text>
-                          <div className="flex-container">
-                            <div className="icons">
-                              <a
-                                href="https://www.linkedin.com/in/shubham-sabat-2781931ab/"
-                                rel="noreferrer"
-                                target="_blank"
-                              >
-                                <i className="fab fa-linkedin fa-2x"></i>
-                              </a>
-                            </div>
+                      <div className="flex-container">
+                        <div className="icons">
+                          <a
+                            href="https://www.linkedin.com/in/shubham-sabat-2781931ab/"
+                            rel="noreferrer"
+                            target="_blank"
+                          >
+                            <i className="fab fa-linkedin fa-2x"></i>
+                          </a>
+                        </div>
 
-                            <div className="icons">
-                              <a
-                                href="https://github.com/Shubham1928196"
-                                rel="noreferrer"
-                                target="_blank"
-                              >
-                                <i className="fab fa-github fa-2x"></i>
-                              </a>
-                            </div>
-                          </div>
-                        </Card.Text>
+                        <div className="icons">
+                          <a
+                            href="https://github.com/Shubham1928196"
+                            rel="noreferrer"
+                            target="_blank"
+                          >
+                            <i className="fab fa-github fa-2x"></i>
+                          </a>
+                        </div>
                       </div>
                     </Card.Body>
                   </div>

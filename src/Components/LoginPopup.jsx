@@ -40,7 +40,6 @@ export default function LoginPopup({
       const name = await user.displayName;
       const emailId = await user.email;
 
-      console.log(user.displayName, user.email);
       try {
         const response = await googleLogin(name, emailId);
         if (response.hasOwnProperty("error")) {
@@ -53,11 +52,9 @@ export default function LoginPopup({
           history.push("/main");
         }
       } catch (err) {
-        console.log(err);
         notify_error("Error signing in through Google");
       }
     } catch (err) {
-      console.log(err.message);
       notify_error("Error signing in through Google");
     }
   };
@@ -81,11 +78,9 @@ export default function LoginPopup({
           history.push("/main");
         }
       } catch (err) {
-        console.log(err);
         notify_error("Sorry! Try Again");
       }
     } catch (err) {
-      console.log(err.message);
       notify_error("Sorry! Try Again");
     }
   };
@@ -107,11 +102,9 @@ export default function LoginPopup({
           history.push("/main");
         }
       } catch (err) {
-        console.log(err);
         notify_error("Check your email/password");
       }
     } catch (err) {
-      console.log(err);
       notify_error("Check your email/password");
     }
   };
@@ -134,8 +127,6 @@ export default function LoginPopup({
                 <label className="loginLabel" htmlFor="chk" aria-hidden="true">
                   Sign up
                 </label>
-
-                {/* <a href=""> <i className="fab fa-google fa-2x"></i></a> */}
 
                 <input
                   className="credInput"

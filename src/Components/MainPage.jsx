@@ -39,8 +39,8 @@ const MainPage = (props) => {
               key={subject._id}
               sid={subject._id}
               schedule={subject.routine}
-              notify_success = {props.notify_success}
-              notify_error = {props.notify_error}
+              notify_success={props.notify_success}
+              notify_error={props.notify_error}
             />
           );
         })}

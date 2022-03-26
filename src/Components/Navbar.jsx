@@ -49,7 +49,6 @@ export const Navbar = (props) => {
         history.push("/");
       }
     } catch (err) {
-      console.log(err.message);
       props.notify_error(err.message);
     }
   };

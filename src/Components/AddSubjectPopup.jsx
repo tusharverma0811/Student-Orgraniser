@@ -139,8 +139,6 @@ const AddSubjectPopup = ({ isOpen, close, notify_success, notify_error }) => {
             <br />
             <div>
               <FormControl sx={{ m: 1, width: "100%" }}>
-                {/* <p>Days</p> */}
-                {/* <InputLabel id="demo-multiple-name-label">Days</InputLabel> */}
                 <Select
                   labelId="demo-multiple-chip-label"
                   id="demo-multiple-chip"
@@ -184,7 +182,11 @@ const AddSubjectPopup = ({ isOpen, close, notify_success, notify_error }) => {
               })}
             </div>
             <button
-              className={!btnActive?"Add-subject-button":"Add-subject-button add-btn-hover"}
+              className={
+                !btnActive
+                  ? "Add-subject-button"
+                  : "Add-subject-button add-btn-hover"
+              }
               onClick={addNewSubject}
               disabled={!btnActive}
             >

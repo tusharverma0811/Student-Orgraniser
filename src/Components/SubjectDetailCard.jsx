@@ -27,10 +27,9 @@ export default function SubjectDetailCard(props) {
         props.notify_success("Successfully Deleted Schedule");
       } else {
         props.notify_error(response.error);
-        console.log(response.error);
       }
     } catch (err) {
-      console.log(err);
+      props.notify_error("Something Went Wrong!");
     }
   };
   const { sched } = props;

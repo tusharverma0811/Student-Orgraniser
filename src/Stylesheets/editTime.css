@@ -1,12 +1,10 @@
-.daySelect{
-    height: 3.5rem;
+.daySelect {
+  height: 3.5rem;
 }
 
-@media(max-width: 900px) {
-
-    .daySelect {
+@media (max-width: 900px) {
+  .daySelect {
     height: 3.5rem;
     width: 14rem;
-}
-    
+  }
 }

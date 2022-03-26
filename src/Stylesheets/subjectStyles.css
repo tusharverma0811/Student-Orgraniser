@@ -74,6 +74,9 @@ bg {
     left: 35%;
     right: 70%;
   }
+  .join-btn-hover:hover {
+    background-color: #ff6782;
+  }
 }
 
 .card-body-styling {

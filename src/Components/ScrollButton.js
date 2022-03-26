@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { FaArrowCircleUp } from "react-icons/fa";
 import { Button } from "./Styles";
 import "../Stylesheets/home.css";
@@ -19,13 +19,18 @@ const ScrollButton = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
-      /* you can also use 'auto' behaviour
-		in place of 'smooth' */
     });
   };
 
-  window.addEventListener("scroll", toggleVisible);
-
+  
+  useEffect(() => {
+    window.addEventListener("scroll", toggleVisible);
+  
+    return () => {
+      window.removeEventListener("scroll",toggleVisible);
+    }
+  }, [])
+  
   return (
     <Button>
       <FaArrowCircleUp

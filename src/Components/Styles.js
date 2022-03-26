@@ -22,8 +22,8 @@ export const Button = styled.div`
   cursor: pointer;
   color: black;
 
-@media (max-width: 90rem) {
-  position: fixed;
+  @media (max-width: 90rem) {
+    position: fixed;
     width: 100%;
     left: 80%;
     margin-bottom: 50px;
@@ -33,5 +33,5 @@ export const Button = styled.div`
     z-index: 1;
     cursor: pointer;
     color: black;
-}
+  }
 `;

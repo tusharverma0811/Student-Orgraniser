@@ -29,7 +29,6 @@ export default function ResetPasswordPopup({
       close();
       notify_success("Email Sent Successfully!");
     } catch (err) {
-      console.log(err);
       notify_error("Something Went Wrong Try Again");
     }
   };

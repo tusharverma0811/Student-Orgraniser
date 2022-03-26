@@ -26,7 +26,7 @@ const SubjectState = (props) => {
         setSubjects(data.subjects);
       }
     } catch (err) {
-      console.log(err);
+      return ({error:"Internal Server Error"});
     }
   };
 
@@ -45,7 +45,7 @@ const SubjectState = (props) => {
         setSubject(data);
       }
     } catch (err) {
-      console.log(err);
+      return ({error:"Internal Server Error"});
     }
   };
 
@@ -62,7 +62,7 @@ const SubjectState = (props) => {
       const data = await response.json();
       return data;
     } catch (err) {
-      console.log(err);
+      return ({error:"Internal Server Error"});
     }
   };
 
@@ -79,7 +79,7 @@ const SubjectState = (props) => {
       const data = await response.json();
       return data;
     } catch (err) {
-      console.log(err);
+      return ({error:"Internal Server Error"});
     }
   };
   const updateRoutine = async (day, time, link, sid, rid) => {
@@ -99,7 +99,7 @@ const SubjectState = (props) => {
       const data = await response.json();
       return data;
     } catch (err) {
-      console.log(err);
+      return ({error:"Internal Server Error"});
     }
   };
 
@@ -119,7 +119,7 @@ const SubjectState = (props) => {
       const data = await response.json();
       return data;
     } catch (err) {
-      console.log(err);
+      return ({error:"Internal Server Error"});
     }
   };
 
@@ -137,7 +137,7 @@ const SubjectState = (props) => {
       const data = await response.json();
       return data;
     } catch (err) {
-      console.log(err);
+      return ({error:"Internal Server Error"});
     }
   };
   return (

@@ -20,7 +20,6 @@ export default function ForgotPasswordPopup({
       notify_success("Email sent!  Kindly check your inbox");
       close();
     } catch (err) {
-      console.log(err);
       notify_error(err.message);
     }
   };

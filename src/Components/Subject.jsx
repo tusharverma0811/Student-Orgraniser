@@ -90,7 +90,6 @@ function Subject(props) {
         await getSubjects();
       }
     } catch (err) {
-      console.log(err);
       notify_error("Sorry! Try Again");
     }
   };

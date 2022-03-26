@@ -25,7 +25,6 @@ const EditTime = (props) => {
   const handleDayChange = (event) => {
     setDay(event.target.value);
     const temp = value.getHours() + ":" + value.getMinutes();
-    console.log(temp);
     props.makeChange(event.target.value, temp, url);
   };
   return (
@@ -76,21 +75,3 @@ const EditTime = (props) => {
 };
 
 export default EditTime;
-
-/* <FloatingLabel
-              controlId="floatingSelect"
-              label="Day"
-            >
-                
-              <Form.Select>
-                <option>Open this select menu</option>
-                <option value="0">Sunday</option>
-                <option value="1">Monday</option>
-                <option value="2">Tuesday</option>
-                <option value="3">Wednesday</option>
-                <option value="4">Thursday</option>
-                <option value="5">Friday</option>
-                <option value="6">Saturday</option>
-              </Form.Select>
-             
-            </FloatingLabel> */

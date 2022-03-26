@@ -24,7 +24,7 @@ h3 {
 
 @media (max-width: 70rem) {
   .photo {
-        position: relative;
+    position: relative;
     left: 32%;
     /* bottom: -23%; */
     /* margin-bottom: 10rem; */
@@ -265,7 +265,7 @@ h3 {
   }
 
   .photo {
-        position: relative;
+    position: relative;
     height: 20rem;
     width: 28rem;
     left: 30%;
