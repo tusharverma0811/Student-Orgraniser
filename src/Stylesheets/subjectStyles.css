@@ -62,7 +62,7 @@ bg {
   /* position: relative; */
 }
 
-.join-btn-hover:hover{
+.join-btn-hover:hover {
   background-color: #ff6782;
 }
 
@@ -184,7 +184,8 @@ a div {
 .main-card-top {
   width: 100%;
   margin-bottom: 1rem;
-  background: #77aaca;
+  background: #398bb9;
+  color: white;
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
   cursor: pointer;
